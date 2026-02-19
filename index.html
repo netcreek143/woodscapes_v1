@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodscape Engineering - Commercial Construction and Interiors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="images/woodscapelogo.png" alt="Woodscape Engineering Logo" class="logo-img">
+            </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <div class="nav-wrapper">
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#" class="nav-link">Services</a></li>
+                    <li><a href="project-details.html" class="nav-link">Projects</a></li>
+                    <li><a href="#" class="nav-link">Industries</a></li>
+                    <li><a href="#" class="nav-link">Why Woodscape</a></li>
+                    <li><a href="#" class="nav-link">Case Studies</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#" class="btn btn-nav-estimate btn-animate-gap" id="requestEstimateBtn">
+                        <span class="btn-text">Request Estimate</span>
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background: url('./images/home-banner.png') center/cover no-repeat;">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <div class="hero-slide" style="background: url('./images/home-banner.png') center/cover no-repeat;">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <div class="hero-slide" style="background: url('./images/home-banner.png') center/cover no-repeat;">
+                <div class="hero-overlay"></div>
+            </div>
+
+            <div class="hero-slide" style="background: url('./images/home-banner.png') center/cover no-repeat;">
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
+
+        <div class="slider-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+        </div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Commercial Construction and Interiors</h1>
+                <p class="hero-description">From shell works to turnkey interiors, we build high-performance commercial
+                    spaces with engineering discipline and predictable timelines.</p>
+                <a href="project-details.html" class="btn btn-split btn-animate-gap">
+                    <span class="btn-text">View Projects</span>
+                    <span class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            <div class="hero-form-card">
+                <h3 class="form-title">Get a quote</h3>
+                <form class="quote-form">
+                    <input type="text" placeholder="Name" class="form-input" required>
+                    <input type="text" placeholder="Mobile Number" class="form-input" required>
+                    <input type="email" placeholder="Email (Optional)" class="form-input">
+                    <textarea placeholder="Message" class="form-textarea" rows="4"></textarea>
+                    <button type="submit" class="btn btn-split btn-submit btn-animate-gap btn-animate-submit">
+                        <span class="btn-text">Submit</span>
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats stats-section">
+        <div class="container stats-grid">
+            <div class="stat-card-wrapper">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="images/years.png" alt="Years of Experience" class="stat-img">
+                    </div>
+                    <div class="stat-number" data-target="50">0+</div>
+                    <div class="stat-label">Years</div>
+                </div>
+            </div>
+            <div class="stat-card-wrapper">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="images/Projects.png" alt="Projects Completed" class="stat-img">
+                    </div>
+                    <div class="stat-number" data-target="100">0+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+            </div>
+            <div class="stat-card-wrapper">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="images/otd.png" alt="On-Time Delivery" class="stat-img">
+                    </div>
+                    <div class="stat-number" data-target="99">0%</div>
+                    <div class="stat-label">On-Time Delivery</div>
+                </div>
+            </div>
+            <div class="stat-card-wrapper">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <img src="images/hse.png" alt="HSE Compliant" class="stat-img">
+                    </div>
+                    <div class="stat-number stat-text">HSE</div>
+                    <div class="stat-label">Compliant</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="commercial-section">
+        <div class="container commercial-container">
+            <div class="commercial-image">
+                <img src="./images/commercial-construction.png" alt="Modern Glass Building Under Construction">
+            </div>
+            <div class="commercial-content">
+                <h2 class="section-title">Commercial Construction</h2>
+                <p class="section-description">End-to-end commercial builds with strict cost control, regulatory
+                    compliance, and on-time based delivery.</p>
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>RCC & shell works</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>BOQ Management</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>MEP coordination</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Approvals</span>
+                    </li>
+                </ul>
+                <br>
+                <button class="btn btn-split btn-commercial btn-animate-gap">
+                    <span class="btn-text">Request Construction Estimate</span>
+                    <span class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Interiors Section -->
+    <section class="commercial-section reversed">
+        <div class="container commercial-container">
+            <div class="commercial-image">
+                <!-- Placeholder image for now, user can swap this easily -->
+                <img src="./images/commercial-interior.png" onerror="this.src='./images/featuresectionimg.png'"
+                    alt="Modern Commercial Interior">
+            </div>
+            <div class="commercial-content">
+                <h2 class="section-title">Commercial Interiors</h2>
+                <p class="section-description">Transforming empty shells into high-performance workspaces. We handle
+                    everything from space planning to custom joinery.</p>
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Office Fit-outs</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Retail Spaces</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Hospitality Interiors</span>
+                    </li>
+                </ul>
+                <br>
+                <button class="btn btn-split btn-commercial btn-animate-gap">
+                    <span class="btn-text">Request Interior Estimate</span>
+                    <span class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Redesign -->
+    <section class="success-stories section-padding">
+        <div class="container">
+            <div class="stories-header">
+                <div class="stories-header-left">
+                    <span class="section-label-red">Project Highlights</span>
+                    <h2 class="display-title">Success Stories</h2>
+                </div>
+                <div class="stories-header-center">
+                    <p class="section-desc-small">We deliver projects with a strong focus on quality and outcomes,
+                        carefully aligned to each client's goals and expectations, executed across sectors, regions, and
+                        timelines, driven by strategy, precision, and accountability, and measured by results that
+                        create lasting value.</p>
+                </div>
+                <div class="stories-header-right">
+                    <div class="stories-nav">
+                        <button class="nav-btn prev" id="storiesPrevBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M19 12H5M5 12L12 19M5 12L12 5" />
+                            </svg>
+                        </button>
+                        <button class="nav-btn next" id="storiesNextBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel - full bleed -->
+        <div class="stories-carousel-wrapper">
+            <div class="stories-carousel" id="storiesCarousel">
+                <!-- Card 1 -->
+                <article class="story-card">
+                    <div class="story-img-wrapper">
+                        <img src="./images/successstories1.png" onerror="this.src='./images/featuresectionimg.png'"
+                            alt="ABC Infrastructure">
+                    </div>
+                    <div class="story-content">
+                        <h3 class="story-title">ABC Infrastructure</h3>
+                        <div class="story-meta">
+                            <div class="meta-row"><span class="meta-label">Industry</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Real Estate</span></div>
+                            <div class="meta-row"><span class="meta-label">Location</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Central Texas</span></div>
+                            <div class="meta-row"><span class="meta-label">Timeline</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Jan 2024 – Jun 2024</span></div>
+                        </div>
+                        <p class="story-impact">Delivered <strong>20% cost savings</strong> through process
+                            optimization.</p>
+                        <div class="story-actions">
+                            <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
+                                <span class="btn-text">View Case Study</span>
+                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="white" stroke-width="2">
+                                        <path d="M4 10H16M16 10L11 5M16 10L11 15" />
+                                    </svg></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="story-card">
+                    <div class="story-img-wrapper">
+                        <img src="./images/successstories2.png" onerror="this.src='./images/featuresectionimg.png'"
+                            alt="YB Retail Group">
+                    </div>
+                    <div class="story-content">
+                        <h3 class="story-title">YB Retail Group</h3>
+                        <div class="story-meta">
+                            <div class="meta-row"><span class="meta-label">Industry</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Retail</span></div>
+                            <div class="meta-row"><span class="meta-label">Location</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Austin, TX</span></div>
+                            <div class="meta-row"><span class="meta-label">Timeline</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Mar 2024 – Aug 2024</span></div>
+                        </div>
+                        <p class="story-impact">Improved customer engagement <strong>by 35%</strong>.</p>
+                        <div class="story-actions">
+                            <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
+                                <span class="btn-text">View Case Study</span>
+                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="white" stroke-width="2">
+                                        <path d="M4 10H16M16 10L11 5M16 10L11 15" />
+                                    </svg></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="story-card">
+                    <div class="story-img-wrapper">
+                        <img src="./images/successstories3.png" onerror="this.src='./images/featuresectionimg.png'"
+                            alt="LMN Tech Solutions">
+                    </div>
+                    <div class="story-content">
+                        <h3 class="story-title">LMN Tech Solutions</h3>
+                        <div class="story-meta">
+                            <div class="meta-row"><span class="meta-label">Industry</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Technology</span></div>
+                            <div class="meta-row"><span class="meta-label">Location</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Dallas, TX</span></div>
+                            <div class="meta-row"><span class="meta-label">Timeline</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Feb 2024 – May 2024</span></div>
+                        </div>
+                        <p class="story-impact">Reduced system downtime <strong>by 50%</strong>.</p>
+                        <div class="story-actions">
+                            <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
+                                <span class="btn-text">View Case Study</span>
+                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="white" stroke-width="2">
+                                        <path d="M4 10H16M16 10L11 5M16 10L11 15" />
+                                    </svg></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="story-card">
+                    <div class="story-img-wrapper">
+                        <img src="./images/successstories1.png" onerror="this.src='./images/featuresectionimg.png'"
+                            alt="Greenfield Hospitality">
+                    </div>
+                    <div class="story-content">
+                        <h3 class="story-title">Greenfield Hospitality</h3>
+                        <div class="story-meta">
+                            <div class="meta-row"><span class="meta-label">Industry</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Hospitality</span></div>
+                            <div class="meta-row"><span class="meta-label">Location</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Houston, TX</span></div>
+                            <div class="meta-row"><span class="meta-label">Timeline</span><span
+                                    class="meta-sep">:</span><span class="meta-val">May 2024 – Oct 2024</span></div>
+                        </div>
+                        <p class="story-impact">Completed hotel renovation <strong>15% under budget</strong>.</p>
+                        <div class="story-actions">
+                            <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
+                                <span class="btn-text">View Case Study</span>
+                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="white" stroke-width="2">
+                                        <path d="M4 10H16M16 10L11 5M16 10L11 15" />
+                                    </svg></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="story-card">
+                    <div class="story-img-wrapper">
+                        <img src="./images/successstories2.png" onerror="this.src='./images/featuresectionimg.png'"
+                            alt="MedCore Healthcare">
+                    </div>
+                    <div class="story-content">
+                        <h3 class="story-title">MedCore Healthcare</h3>
+                        <div class="story-meta">
+                            <div class="meta-row"><span class="meta-label">Industry</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Healthcare</span></div>
+                            <div class="meta-row"><span class="meta-label">Location</span><span
+                                    class="meta-sep">:</span><span class="meta-val">San Antonio, TX</span></div>
+                            <div class="meta-row"><span class="meta-label">Timeline</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Jul 2024 – Nov 2024</span></div>
+                        </div>
+                        <p class="story-impact">Delivered new facility with <strong>zero safety incidents</strong>.
+                        </p>
+                        <div class="story-actions">
+                            <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
+                                <span class="btn-text">View Case Study</span>
+                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="white" stroke-width="2">
+                                        <path d="M4 10H16M16 10L11 5M16 10L11 15" />
+                                    </svg></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="story-card">
+                    <div class="story-img-wrapper">
+                        <img src="./images/successstories3.png" onerror="this.src='./images/featuresectionimg.png'"
+                            alt="PinePeak Institutions">
+                    </div>
+                    <div class="story-content">
+                        <h3 class="story-title">PinePeak Institutions</h3>
+                        <div class="story-meta">
+                            <div class="meta-row"><span class="meta-label">Industry</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Education</span></div>
+                            <div class="meta-row"><span class="meta-label">Location</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Fort Worth, TX</span></div>
+                            <div class="meta-row"><span class="meta-label">Timeline</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Aug 2024 – Dec 2024</span></div>
+                        </div>
+                        <p class="story-impact">Campus expansion delivered <strong>3 weeks early</strong>.</p>
+                        <div class="story-actions">
+                            <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
+                                <span class="btn-text">View Case Study</span>
+                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="white" stroke-width="2">
+                                        <path d="M4 10H16M16 10L11 5M16 10L11 15" />
+                                    </svg></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 7 -->
+                <article class="story-card">
+                    <div class="story-img-wrapper">
+                        <img src="./images/successstories1.png" onerror="this.src='./images/featuresectionimg.png'"
+                            alt="SkyHigh Corporate">
+                    </div>
+                    <div class="story-content">
+                        <h3 class="story-title">SkyHigh Corporate</h3>
+                        <div class="story-meta">
+                            <div class="meta-row"><span class="meta-label">Industry</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Corporate</span></div>
+                            <div class="meta-row"><span class="meta-label">Location</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Austin, TX</span></div>
+                            <div class="meta-row"><span class="meta-label">Timeline</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Sep 2023 – Feb 2024</span></div>
+                        </div>
+                        <p class="story-impact">Office fit-out increased productivity <strong>by 28%</strong>.</p>
+                        <div class="story-actions">
+                            <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
+                                <span class="btn-text">View Case Study</span>
+                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="white" stroke-width="2">
+                                        <path d="M4 10H16M16 10L11 5M16 10L11 15" />
+                                    </svg></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 8 -->
+                <article class="story-card">
+                    <div class="story-img-wrapper">
+                        <img src="./images/successstories2.png" onerror="this.src='./images/featuresectionimg.png'"
+                            alt="NovaBuild Retail">
+                    </div>
+                    <div class="story-content">
+                        <h3 class="story-title">NovaBuild Retail</h3>
+                        <div class="story-meta">
+                            <div class="meta-row"><span class="meta-label">Industry</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Retail</span></div>
+                            <div class="meta-row"><span class="meta-label">Location</span><span
+                                    class="meta-sep">:</span><span class="meta-val">El Paso, TX</span></div>
+                            <div class="meta-row"><span class="meta-label">Timeline</span><span
+                                    class="meta-sep">:</span><span class="meta-val">Nov 2023 – Apr 2024</span></div>
+                        </div>
+                        <p class="story-impact">Flagship store rollout completed with <strong>100% on-time</strong>
+                            delivery.</p>
+                        <div class="story-actions">
+                            <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
+                                <span class="btn-text">View Case Study</span>
+                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                        stroke="white" stroke-width="2">
+                                        <path d="M4 10H16M16 10L11 5M16 10L11 15" />
+                                    </svg></span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Scroll Bar -->
+        <div class="stories-scrollbar-track" id="storiesScrollTrack">
+            <div class="stories-scrollbar-thumb" id="storiesScrollThumb"></div>
+        </div>
+    </section>
+
+    <!-- Delivery Process -->
+    <!-- Delivery Process Redesign -->
+    <section class="process-section section-padding">
+        <div class="container">
+            <!-- Header Row: title left, description right -->
+            <div class="process-header-row">
+                <div class="process-header-left">
+                    <span class="section-label-red">Streamlined</span>
+                    <h2 class="display-title-serif">Delivery Process</h2>
+                </div>
+                <div class="process-header-right">
+                    <p class="process-desc">Our delivery process ensures every project moves smoothly from start to
+                        finish, beginning with rapid discovery and detailed costing, followed by efficient
+                        mobilisation, transparent build tracking, and concluding with timely handover backed by
+                        warranty support.</p>
+                </div>
+            </div>
+
+            <!-- Content Row: image left, steps right -->
+            <div class="process-wrapper">
+                <!-- Left: Image -->
+                <div class="process-image-col">
+                    <img src="./images/commercial-interiors.png" onerror="this.src='./images/featuresectionimg.png'"
+                        alt="Delivery Process Interior" class="process-feature-img">
+                </div>
+
+                <!-- Right: Steps -->
+                <div class="process-content-col">
+                    <div class="process-list">
+                        <!-- Step 1 -->
+                        <div class="process-item">
+                            <h3 class="proc-title">Discovery and site study in 48 hours</h3>
+                            <div class="proc-badge">1</div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="process-item">
+                            <h3 class="proc-title">BOQ and costing in 5 days</h3>
+                            <div class="proc-badge">2</div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="process-item">
+                            <h3 class="proc-title">Mobilisation and approvals</h3>
+                            <div class="proc-badge">3</div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="process-item">
+                            <h3 class="proc-title">Build with weekly dashboards</h3>
+                            <div class="proc-badge">4</div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="process-item">
+                            <h3 class="proc-title">Handover and warranty</h3>
+                            <div class="proc-badge">5</div>
+                        </div>
+                    </div>
+
+                    <p class="process-note">Typical fit-outs delivered in 8 to 14 weeks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Served -->
+    <!-- Industries Served Redesign -->
+    <section class="industries-section section-padding">
+        <div class="container">
+            <div class="industries-header">
+                <h2 class="display-title-serif">Industries Served</h2>
+                <p class="section-desc-small" style="max-width: 600px;">We serve a wide range of industries with
+                    solutions designed to meet their unique operational needs. Our focus is on efficiency, experience,
+                    and long-term value across every sector.</p>
+            </div>
+
+            <div class="industries-grid-redesign">
+                <!-- 1. Corporate Offices -->
+                <div class="industry-card-new">
+                    <div class="ind-icon-red">
+                        <img src="./images/is_corp.png" alt="Corporate Offices Icon">
+                    </div>
+                    <h3 class="ind-title-new">Corporate Offices</h3>
+                    <p class="ind-desc-new">Optimizing office environments for productivity and collaboration.</p>
+                </div>
+
+                <!-- 2. Retail -->
+                <div class="industry-card-new">
+                    <div class="ind-icon-red">
+                        <img src="./images/is_retail.png" alt="Retail Icon">
+                    </div>
+                    <h3 class="ind-title-new">Retail</h3>
+                    <p class="ind-desc-new">Enhancing customer engagement and seamless shopping experiences.</p>
+                </div>
+
+                <!-- 3. Restaurants -->
+                <div class="industry-card-new">
+                    <div class="ind-icon-red">
+                        <img src="./images/is_rest.png" alt="Restaurants Icon">
+                    </div>
+                    <h3 class="ind-title-new">Restaurants</h3>
+                    <p class="ind-desc-new">Improving operational efficiency to elevate dining satisfaction.</p>
+                </div>
+
+                <!-- 4. Hospitality -->
+                <div class="industry-card-new">
+                    <div class="ind-icon-red">
+                        <img src="./images/is_hosp.png" alt="Hospitality Icon">
+                    </div>
+                    <h3 class="ind-title-new">Hospitality</h3>
+                    <p class="ind-desc-new">Creating welcoming spaces that exceed guest expectations.</p>
+                </div>
+
+                <!-- 5. Healthcare -->
+                <div class="industry-card-new">
+                    <div class="ind-icon-red">
+                        <img src="./images/is_health.png" alt="Healthcare Icon">
+                    </div>
+                    <h3 class="ind-title-new">Healthcare</h3>
+                    <p class="ind-desc-new">Supporting patient care with innovative facility solutions.</p>
+                </div>
+
+                <!-- 6. Institutions -->
+                <div class="industry-card-new">
+                    <div class="ind-icon-red">
+                        <img src="./images/is_insti.png" alt="Institutions Icon">
+                    </div>
+                    <h3 class="ind-title-new">Institutions</h3>
+                    <p class="ind-desc-new">Delivering tailored services for educational and public sectors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Static Banner -->
+    <div class="static-banner-wrap">
+        <img src="./images/staticbanner.png" alt="Woodscape Banner" class="static-banner-img">
+    </div>
+
+    <!-- Why Woodscape Section -->
+    <section class="why-woodscape-section">
+        <div class="container">
+            <div class="why-header">
+                <h2 class="why-title">Why Woodscape</h2>
+                <p class="why-desc">
+                    Our approach combines engineering precision, transparent processes, and long-term partnership to
+                    deliver dependable project outcomes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Full-bleed carousel wrapper -->
+        <div class="why-carousel-wrapper" id="whyCarouselWrapper">
+            <div class="why-carousel-track" id="whyCarouselTrack">
+
+                <!-- Card 1 -->
+                <div class="why-card-wrap">
+                    <div class="why-card">
+                        <div class="why-icon-wrapper">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M6 18c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V6c0-.55-.45-1-1-1H7c-.55 0-1 .45-1 1v12z" />
+                                <path d="M21 21v-2" />
+                                <path d="M21 15v-2" />
+                                <path d="M21 9V7" />
+                                <path d="M3 21v-2" />
+                                <path d="M3 15v-2" />
+                                <path d="M3 9V7" />
+                            </svg>
+                        </div>
+                        <h3 class="why-card-title">Engineering-First Planning</h3>
+                        <p class="why-card-desc">Every project begins with technical accuracy and detailed execution
+                            planning.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="why-card-wrap">
+                    <div class="why-card">
+                        <div class="why-icon-wrapper">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="why-card-title">Transparent Costing</h3>
+                        <p class="why-card-desc">Clear pricing with no hidden charges, ensuring complete financial
+                            clarity.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="why-card-wrap">
+                    <div class="why-card">
+                        <div class="why-icon-wrapper">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <polyline points="16 11 18 13 22 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="why-card-title">Single PM Ownership</h3>
+                        <p class="why-card-desc">One dedicated project manager from start to finish for seamless
+                            coordination.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="why-card-wrap">
+                    <div class="why-card">
+                        <div class="why-icon-wrapper">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="why-card-title">Safety Compliance</h3>
+                        <p class="why-card-desc">Strict adherence to HSE protocols ensures zero safety incidents on
+                            site.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="why-card-wrap">
+                    <div class="why-card">
+                        <div class="why-icon-wrapper">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="why-card-title">On-Time Delivery</h3>
+                        <p class="why-card-desc">Milestone-driven timelines keep every project on schedule with zero
+                            delays.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="why-card-wrap">
+                    <div class="why-card">
+                        <div class="why-icon-wrapper">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="why-card-title">Client-First Approach</h3>
+                        <p class="why-card-desc">Every decision is guided by client goals, feedback, and long-term
+                            satisfaction.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Custom Scrollbar -->
+        <div class="why-scrollbar-track" id="whyScrollTrack">
+            <div class="why-scrollbar-thumb" id="whyScrollThumb"></div>
+        </div>
+    </section>
+
+
+    <!-- Featured Case Study Redesign -->
+    <section class="featured-case-section section-padding">
+        <div class="container">
+            <div class="case-study-intro mb-60">
+                <h2 class="display-title-serif">Featured Case Study</h2>
+                <p class="section-desc-small" style="max-width: 800px;">A closer look at how our engineering-led
+                    approach transformed a client's space from concept to successful completion.</p>
+            </div>
+
+            <div class="case-stats-grid">
+                <!-- Challenge -->
+                <div class="case-stat-item">
+                    <div class="stat-icon-red-lg">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="stat-title-lg">Challenge</h3>
+                    <p class="stat-desc-lg">The client required a fast-track interior solution while maintaining strict
+                        quality, safety, and budget constraints across multiple teams.</p>
+                </div>
+
+                <!-- Solution -->
+                <div class="case-stat-item">
+                    <div class="stat-icon-red-lg">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z">
+                            </path>
+                            <path d="M9 21h6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="stat-title-lg">Solution</h3>
+                    <p class="stat-desc-lg">We implemented engineering-first planning, transparent costing, and a single
+                        project manager to ensure smooth coordination and execution.</p>
+                </div>
+
+                <!-- Outcome -->
+                <div class="case-stat-item">
+                    <div class="stat-icon-red-lg">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <path d="m9 15 2 2 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="stat-title-lg">Outcome</h3>
+                    <p class="stat-desc-lg">The project was delivered on time with zero safety incidents and exceeded
+                        client expectations in both quality and functionality.</p>
+                </div>
+            </div>
+
+            <div class="case-visuals-redesign">
+
+                <!-- Row 1: Before / After images -->
+                <div class="case-img-panel">
+                    <span class="case-img-label">Before</span>
+                    <img src="./images/construction-site.png" onerror="this.src='./images/featuresectionimg.png'"
+                        alt="Before">
+                </div>
+                <div class="case-img-panel">
+                    <span class="case-img-label">After</span>
+                    <img src="./images/project3.png" onerror="this.src='./images/featuresectionimg.png'" alt="After">
+                </div>
+
+                <!-- Row 2 Left: Client Experience testimonial -->
+                <div class="case-testimonial-wrap">
+                    <div class="case-testimonial-card">
+                        <h3 class="testimonial-red-title">Client Experience</h3>
+                        <p class="testimonial-body">Woodscape delivered exactly what they promised. Communication was
+                            clear and consistent throughout the project. Execution was disciplined, structured, and well
+                            managed at every stage. Quality standards were never compromised from start to finish. The
+                            entire experience reflected professionalism and reliability.</p>
+                        <p class="testimonial-author-name">Akshay – LMN Tech Solutions</p>
+                        <div class="testimonial-dot-row">
+                            <span class="tdot"></span>
+                            <span class="tdot"></span>
+                            <span class="tdot"></span>
+                            <span class="tdot active"></span>
+                            <span class="tdot"></span>
+                        </div>
+                        <span class="testimonial-quote-mark">"</span>
+                    </div>
+                </div>
+
+                <!-- Row 2 Right: Request Estimate CTA -->
+                <div class="case-cta-wrap">
+                    <div class="case-cta-card">
+                        <h3 class="case-cta-title">Request a<br>Similar Estimate</h3>
+                        <p class="case-cta-desc">Planning a project? Let's discuss your requirements and deliver a
+                            solution tailored to your space.</p>
+                        <a href="#" class="btn-split btn-animate-gap case-cta-btn" id="requestEstimateBtn2">
+                            <span class="btn-text">Get an Estimate</span>
+                            <span class="btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                                    <polyline points="7 7 17 7 17 17"></polyline>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Founder Message Redesign (Migrated) -->
+    <section class="founder-section-migrated">
+        <img src="./images/founderbg.png" alt="Founder background" class="founder-bg-img">
+
+        <div class="founder-overlay">
+            <!-- <h2 class="founder-title-top">FOUNDER</h2>
+            <h3 class="founder-title-bottom">MESSAGE</h3> -->
+
+            <button class="founder-play-btn" id="founderPlayBtn" onclick="openFounderModal()">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="founder-play-icon">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+            </button>
+
+            <p class="founder-text">
+                A message from our founder on vision, values, and the commitment that drives every Woodscape project
+                forward.
+            </p>
+            <p class="founder-label">
+                Founder's Perspective
+            </p>
+        </div>
+    </section>
+
+    <!-- Founder Video Modal -->
+    <div id="founderVideoModal" class="founder-modal-overlay" onclick="closeFounderModal(event)">
+        <div class="founder-modal-box">
+            <button class="founder-modal-close" onclick="closeFounderModal(null, true)" aria-label="Close video">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="founder-modal-iframe-wrapper">
+                <iframe id="founderYoutubeIframe" src="" title="Founder Message" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Stories (Migrated) -->
+    <section class="client-stories-section">
+        <div class="container">
+            <div class="client-stories-header">
+                <h2 class="client-stories-title">Client Stories</h2>
+                <p class="client-stories-desc">Real experiences from clients who trusted Woodscape to deliver with
+                    precision.</p>
+            </div>
+
+            <!-- Video Carousel Wrapper -->
+            <div class="client-carousel-wrapper" id="clientCarouselWrapper">
+                <div class="client-carousel-track" id="clientCarouselTrack">
+
+                    <!-- Video Card 1 (cv1) -->
+                    <div class="client-video-card-wrap">
+                        <div class="client-video-card">
+                            <video src="./videos/cv1.mp4" loop muted playsinline autoplay></video>
+                            <button class="client-video-mute-btn" aria-label="Toggle Mute">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                                </svg>
+                            </button>
+                            <div class="client-overlay"></div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 2 (cv2) -->
+                    <div class="client-video-card-wrap">
+                        <div class="client-video-card">
+                            <video src="./videos/cv2.mp4" loop muted playsinline autoplay></video>
+                            <button class="client-video-mute-btn" aria-label="Toggle Mute">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                                </svg>
+                            </button>
+                            <div class="client-overlay"></div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 3 (cv3) -->
+                    <div class="client-video-card-wrap">
+                        <div class="client-video-card">
+                            <video src="./videos/cv3.mp4" loop muted playsinline autoplay></video>
+                            <button class="client-video-mute-btn" aria-label="Toggle Mute">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                                </svg>
+                            </button>
+                            <div class="client-overlay"></div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 4 (cv1) -->
+                    <div class="client-video-card-wrap">
+                        <div class="client-video-card">
+                            <video src="./videos/cv1.mp4" loop muted playsinline autoplay></video>
+                            <button class="client-video-mute-btn" aria-label="Toggle Mute">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                                </svg>
+                            </button>
+                            <div class="client-overlay"></div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 5 (cv2) -->
+                    <div class="client-video-card-wrap">
+                        <div class="client-video-card">
+                            <video src="./videos/cv2.mp4" loop muted playsinline autoplay></video>
+                            <button class="client-video-mute-btn" aria-label="Toggle Mute">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                                </svg>
+                            </button>
+                            <div class="client-overlay"></div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 6 (cv3) -->
+                    <div class="client-video-card-wrap">
+                        <div class="client-video-card">
+                            <video src="./videos/cv3.mp4" loop muted playsinline autoplay></video>
+                            <button class="client-video-mute-btn" aria-label="Toggle Mute">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                                </svg>
+                            </button>
+                            <div class="client-overlay"></div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 7 (cv1) -->
+                    <div class="client-video-card-wrap">
+                        <div class="client-video-card">
+                            <video src="./videos/cv1.mp4" loop muted playsinline autoplay></video>
+                            <button class="client-video-mute-btn" aria-label="Toggle Mute">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                                </svg>
+                            </button>
+                            <div class="client-overlay"></div>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 8 (cv2) -->
+                    <div class="client-video-card-wrap">
+                        <div class="client-video-card">
+                            <video src="./videos/cv2.mp4" loop muted playsinline autoplay></video>
+                            <button class="client-video-mute-btn" aria-label="Toggle Mute">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                                </svg>
+                            </button>
+                            <div class="client-overlay"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Controls: Scrollbar Only -->
+            <div class="client-controls-row">
+                <div class="client-scrollbar-track" id="clientScrollTrack">
+                    <div class="client-scrollbar-thumb" id="clientScrollThumb"></div>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- Estimate Form (Migrated) -->
+    <section class="estimate-section">
+        <div class="estimate-bg-pattern"></div>
+        <div class="estimate-container">
+            <h2 class="estimate-title">Quick Estimate Form</h2>
+            <p class="estimate-desc">Request an initial estimate for your upcoming project. Designed to give you clarity
+                on scope and budget. No commitments, just informed next steps.</p>
+
+            <form class="estimate-form-grid">
+                <div class="estimate-form-row">
+                    <input type="text" placeholder="Name" class="estimate-input">
+                    <input type="text" placeholder="Phone Number" class="estimate-input">
+                </div>
+                <div class="estimate-form-row">
+                    <input type="text" placeholder="Company" class="estimate-input">
+                    <input type="email" placeholder="Email" class="estimate-input">
+                </div>
+                <div class="estimate-form-row">
+                    <select class="estimate-select">
+                        <option>Service</option>
+                        <option>Construction</option>
+                        <option>Interiors</option>
+                    </select>
+                    <input type="text" placeholder="Sq.ft" class="estimate-input">
+                </div>
+                <div class="estimate-form-row">
+                    <select class="estimate-select">
+                        <option>Budget</option>
+                        <option>$10k - $50k</option>
+                        <option>$50k - $100k</option>
+                        <option>$100k+</option>
+                    </select>
+                    <input type="text" placeholder="Project Location" class="estimate-input">
+                </div>
+
+                <div style="text-align: right;">
+                    <button class="estimate-submit-btn">
+                        Request Estimate
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ (Migrated) -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-desc">Find answers to common questions about our process, timelines, pricing, and project
+                execution.</p>
+
+            <div class="faq-list">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-question-btn active" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">Delivery Timelines</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer-panel open">
+                        <p class="faq-a-text">Delivery timelines are defined during the planning stage based on project
+                            scope and complexity. Fixed milestones are shared upfront to ensure predictable and on-time
+                            delivery.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-question-btn" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">Pricing</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <p class="faq-a-text">We offer transparent pricing models tailored to your project needs, with
+                            detailed breakdowns provided before any commitment.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-question-btn" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">Approvals</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <p class="faq-a-text">We handle all necessary regulatory approvals and permits as part of our
+                            comprehensive service package.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-question-btn" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">Warranty</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <p class="faq-a-text">All our projects come with a standard warranty period covering workmanship
+                            and materials for your peace of mind.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <button class="faq-question-btn" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">Safety</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <p class="faq-a-text">We maintain strict HSE compliance on all sites with zero tolerance for
+                            safety violations.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <button class="faq-question-btn" onclick="toggleFaq(this)">
+                        <span class="faq-q-text">Payment Schedule</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer-panel">
+                        <p class="faq-a-text">Payment schedules are linked to project milestones, ensuring you only pay
+                            for completed and verified work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get an Expert Now (CTA Migrated) -->
+    <section class="cta-footer-section">
+        <div class="cta-overlay"></div>
+        <div class="cta-content container">
+            <h2 class="cta-title">Get an Expert Now!</h2>
+            <p class="cta-desc">Transform your ideas into reality with expert guidance, precise execution, and
+                personalized solutions tailored to your space. From planning to handover, we ensure clarity, quality,
+                and results you can trust.</p>
+
+            <div class="cta-buttons">
+                <a href="#" class="cta-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                        </path>
+                    </svg>
+                    Connect to an Expert <span style="color: var(--primary-red); margin-left: 0.25rem;">↗</span>
+                </a>
+                <a href="#" class="cta-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+                    </svg>
+                    Reach us via Whatsapp <span style="color: var(--primary-red); margin-left: 0.25rem;">↗</span>
+                </a>
+                <a href="#" class="cta-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Get an estimate <span style="color: var(--primary-red); margin-left: 0.25rem;">↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Migrated) -->
+    <footer class="footer-migrated">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="./images/woodscapelogo.png" alt="Woodscape Logo" class="footer-logo-img">
+                    </a>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg></a>
+                        <a href="#" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                                </path>
+                            </svg></a>
+                        <a href="#" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg></a>
+                        <a href="#" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg></a>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-size: 0.75rem; color: #6B7280; line-height: 1.6;">
+                        Engineering-led interior and fit-out solutions designed for performance, safety, and long-term
+                        value. We partner with businesses to deliver spaces that are efficient, compliant, and built to
+                        last.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Commercial Construction</a></li>
+                        <li><a href="#">Commercial Interiors</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Delivery Process</a></li>
+                        <li><a href="#">Industries Served</a></li>
+                        <li><a href="#">Why Woodscape</a></li>
+                    </ul>
+                </div>
+
+                <!-- More Links -->
+                <div class="footer-col">
+                    <h4>More Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Case Study</a></li>
+                        <li><a href="#">Founder Message</a></li>
+                        <li><a href="#">Client Stories</a></li>
+                        <li><a href="#">Estimation Form</a></li>
+                        <li><a href="#">Process Submission</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4>Get in Touch</h4>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-label">Email :</span>
+                        <a href="mailto:admin@woodscape.com" class="footer-contact-val">admin@woodscape.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-label">Phone :</span>
+                        <a href="tel:+919790924754" class="footer-contact-val">+91 97909 24754</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-label">Location:</span>
+                        <span style="color: white; font-size: 0.875rem;">15,62nd street, Ashok
+                            Nagar,<br>Chennai-600083</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Woodscape. All rights reserved.</p>
+                <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+                    <a href="#" style="text-decoration: none; color: #4B5563;">Privacy Policy</a>
+                    <a href="#" style="text-decoration: none; color: #4B5563;">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <style>
+        /* Founder Video Modal */
+        .founder-modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(6px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .founder-modal-overlay.active {
+            display: flex;
+            animation: founderFadeIn 0.3s ease;
+        }
+
+        @keyframes founderFadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .founder-modal-box {
+            position: relative;
+            width: min(900px, 92vw);
+            background: #111;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
+            animation: founderScaleIn 0.3s ease;
+        }
+
+        @keyframes founderScaleIn {
+            from {
+                transform: scale(0.92);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .founder-modal-iframe-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 16:9 */
+        }
+
+        .founder-modal-iframe-wrapper iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .founder-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.12);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #fff;
+            transition: background 0.2s;
+        }
+
+        .founder-modal-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+    </style>
+
+    <script>
+        var FOUNDER_VIDEO_SRC = 'https://www.youtube.com/embed/4SCjXcBeW1E?si=nDAoXosX1TiWj7xX&autoplay=1';
+
+
+        function openFounderModal() {
+            var modal = document.getElementById('founderVideoModal');
+            var iframe = document.getElementById('founderYoutubeIframe');
+            iframe.src = FOUNDER_VIDEO_SRC;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFounderModal(event, force) {
+            if (!force && event && event.target !== document.getElementById('founderVideoModal')) return;
+            var modal = document.getElementById('founderVideoModal');
+            var iframe = document.getElementById('founderYoutubeIframe');
+            iframe.src = ''; // stops the video
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeFounderModal(null, true);
+        });
+    </script>
+
+    <script>
+        function toggleFaq(btn) {
+            // If already active, do nothing (keep it open)
+            if (btn.classList.contains('active')) return;
+
+            // Close all panels
+            document.querySelectorAll('.faq-question-btn').forEach(function (b) {
+                b.classList.remove('active');
+                b.nextElementSibling.classList.remove('open');
+                b.querySelector('.faq-icon polyline').setAttribute('points', '7 7 17 7 17 17');
+            });
+
+            // Open the clicked one
+            btn.classList.add('active');
+            btn.nextElementSibling.classList.add('open');
+        }
+    </script>
+
+    <!-- Request Estimate Modal -->
+    <div class="modal-overlay" id="estimateModal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-inner">
+                <!-- Header Row -->
+                <div class="modal-titleRow">
+                    <div class="avatar">
+                        <img src="./images/avatar.jpg" alt="Engineering Team"
+                            onerror="this.src='./images/woodscapelogo.png'">
+                    </div>
+                    <div class="modal-heading-block">
+                        <span class="heading-line1">Book a Project Consultation with</span>
+                        <span class="heading-line2" id="modalTitle">Our Engineering Team</span>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form class="modal-form" id="modalEstimateForm">
+                    <div class="form-grid">
+                        <!-- Row 1 -->
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Name" required class="modal-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Mobile Number" required class="modal-input">
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email (Optional)" class="modal-input">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="company" placeholder="Company" class="modal-input">
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="form-group full-width">
+                            <textarea name="message" placeholder="Message" rows="1"
+                                class="modal-input modal-textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="modal-actions">
+                        <button type="submit" class="btn-modal-submit">Submit</button>
+                        <button type="button" class="btn-modal-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // ── Stories Carousel ────────────────────────────────────────────────
+        (function () {
+            const carousel = document.getElementById('storiesCarousel');
+            const wrapper = carousel ? carousel.parentElement : null;
+            const prevBtn = document.getElementById('storiesPrevBtn');
+            const nextBtn = document.getElementById('storiesNextBtn');
+            const track = document.getElementById('storiesScrollTrack');
+            const thumb = document.getElementById('storiesScrollThumb');
+
+            if (!carousel || !wrapper || !track || !thumb) return;
+
+            const CARD_STEP = 410; // card width (380) + gap (30)
+            let currentX = 0;
+
+            function getMaxX() {
+                return carousel.scrollWidth - wrapper.clientWidth;
+            }
+
+            function clamp(val, min, max) {
+                return Math.max(min, Math.min(max, val));
+            }
+
+            function applyTranslate(x) {
+                currentX = clamp(x, 0, getMaxX());
+                carousel.style.transform = 'translateX(-' + currentX + 'px)';
+                syncThumb();
+            }
+
+            function syncThumb() {
+                var maxX = getMaxX();
+                var ratio = maxX > 0 ? currentX / maxX : 0;
+                var trackW = track.clientWidth;
+                var thumbW = Math.max(60, trackW * (wrapper.clientWidth / carousel.scrollWidth));
+                var maxLeft = trackW - thumbW;
+                thumb.style.width = thumbW + 'px';
+                thumb.style.left = (ratio * maxLeft) + 'px';
+            }
+
+            // Button nav
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function () {
+                    applyTranslate(currentX - CARD_STEP);
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function () {
+                    applyTranslate(currentX + CARD_STEP);
+                });
+            }
+
+            // Drag on carousel
+            var isDragging = false;
+            var dragStartX = 0;
+            var dragStartScrollX = 0;
+
+            wrapper.addEventListener('mousedown', function (e) {
+                isDragging = true;
+                dragStartX = e.clientX;
+                dragStartScrollX = currentX;
+                wrapper.classList.add('is-dragging');
+                carousel.style.transition = 'none';
+            });
+
+            document.addEventListener('mousemove', function (e) {
+                if (!isDragging) return;
+                var dx = e.clientX - dragStartX;
+                applyTranslate(dragStartScrollX - dx);
+            });
+
+            document.addEventListener('mouseup', function () {
+                if (!isDragging) return;
+                isDragging = false;
+                wrapper.classList.remove('is-dragging');
+                carousel.style.transition = '';
+            });
+
+            // Touch drag
+            wrapper.addEventListener('touchstart', function (e) {
+                dragStartX = e.touches[0].clientX;
+                dragStartScrollX = currentX;
+                carousel.style.transition = 'none';
+            }, { passive: true });
+
+            wrapper.addEventListener('touchmove', function (e) {
+                var dx = e.touches[0].clientX - dragStartX;
+                applyTranslate(dragStartScrollX - dx);
+            }, { passive: true });
+
+            wrapper.addEventListener('touchend', function () {
+                carousel.style.transition = '';
+            });
+
+            // Scrollbar track click
+            track.addEventListener('click', function (e) {
+                if (e.target === thumb) return;
+                var rect = track.getBoundingClientRect();
+                var clickRatio = (e.clientX - rect.left) / rect.width;
+                applyTranslate(clickRatio * getMaxX());
+            });
+
+            // Scrollbar thumb drag
+            var thumbDragging = false;
+            var thumbDragStartX = 0;
+            var thumbDragStartScrollX = 0;
+
+            thumb.addEventListener('mousedown', function (e) {
+                e.stopPropagation();
+                thumbDragging = true;
+                thumbDragStartX = e.clientX;
+                thumbDragStartScrollX = currentX;
+                thumb.classList.add('is-dragging');
+                carousel.style.transition = 'none';
+            });
+
+            document.addEventListener('mousemove', function (e) {
+                if (!thumbDragging) return;
+                var dx = e.clientX - thumbDragStartX;
+                var trackW = track.clientWidth;
+                var thumbW = thumb.clientWidth;
+                var maxLeft = trackW - thumbW;
+                var ratio = maxLeft > 0 ? dx / maxLeft : 0;
+                applyTranslate(thumbDragStartScrollX + ratio * getMaxX());
+            });
+
+            document.addEventListener('mouseup', function () {
+                if (!thumbDragging) return;
+                thumbDragging = false;
+                thumb.classList.remove('is-dragging');
+                carousel.style.transition = '';
+            });
+
+            // Init
+            syncThumb();
+            window.addEventListener('resize', syncThumb);
+        })();
+    </script>
+</body>
+
+</html>

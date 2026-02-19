@@ -1,0 +1,727 @@
+/* =========================================
+   Project Details Page - Pixel Perfect Styles
+   ========================================= */
+
+:root {
+    /* Colors */
+    --pd-black: #0b0b0b;
+    --pd-white: #ffffff;
+    --pd-red: #e10600;
+    --pd-red-hover: #c00500;
+    --pd-navy: #0b1324;
+    --pd-text-primary: #111111;
+    --pd-text-muted: #6f6f6f;
+    --pd-text-light: #7a7a7a;
+    --pd-border: #e9e9e9;
+    --pd-overlay: rgba(0, 0, 0, 0.55);
+
+    /* Fonts */
+    --font-serif: "Playfair Display", serif;
+    --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+    /* Spacing */
+    --pd-pad-x-desktop: 80px;
+    --pd-pad-x-tablet: 48px;
+    --pd-pad-x-mobile: 20px;
+
+    --pd-space-lg: 90px;
+    --pd-space-md: 60px;
+}
+
+/* Global Reset for this page specific elements */
+body {
+    background-color: var(--pd-white);
+    color: var(--pd-text-primary);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+.pd-container {
+    max-width: 1360px;
+    /* 1200 + padding */
+    margin: 0 auto;
+    padding: 0 var(--pd-pad-x-desktop);
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    color: var(--pd-text-primary);
+    margin: 0;
+    line-height: 1.05;
+}
+
+/* =========================================
+   SECTION 0: HERO
+   ========================================= */
+.pd-hero {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    /* Standard desktop height */
+    min-height: 500px;
+    background: #000;
+    overflow: hidden;
+}
+
+.pd-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pd-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.pd-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 40%, rgba(0, 0, 0, 0) 100%);
+}
+
+.pd-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px var(--pd-pad-x-desktop);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 10;
+}
+
+.pd-logo img {
+    height: 48px;
+    /* Approx match */
+    width: auto;
+}
+
+.pd-back-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--pd-white);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.pd-back-icon {
+    width: 8px;
+    height: 8px;
+    background-color: var(--pd-red);
+    display: inline-block;
+}
+
+.pd-progress {
+    margin-left: 12px;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* =========================================
+   SECTION 1: PROJECT DESCRIPTION
+   ========================================= */
+.pd-description-section {
+    padding: var(--pd-space-lg) 0;
+    position: relative;
+}
+
+.pd-main-title {
+    font-size: 54px;
+    margin-bottom: 60px;
+    /* Whitespace below title */
+}
+
+.pd-desc-grid {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    gap: 60px;
+    align-items: start;
+}
+
+.pd-project-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.pd-project-sub {
+    font-size: 14px;
+    color: var(--pd-text-muted);
+    margin-bottom: 40px;
+    max-width: 90%;
+}
+
+.pd-meta-block {
+    margin-bottom: 22px;
+}
+
+.pd-meta-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--pd-text-light);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.pd-meta-value {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pd-text-primary);
+}
+
+/* Right Col */
+.pd-overview-heading {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.pd-overview-text {
+    font-size: 15px;
+    color: var(--pd-text-muted);
+    margin-bottom: 40px;
+    max-width: 95%;
+}
+
+/* Square Red Button System */
+.pd-btn-black {
+    display: inline-flex;
+    align-items: center;
+    background: var(--pd-black);
+    color: var(--pd-white);
+    height: 40px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.pd-btn-text {
+    padding: 0 24px;
+}
+
+.pd-btn-icon-red {
+    background: var(--pd-red);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pd-btn-black:hover {
+    background-color: #222;
+    transform: translateY(-1px);
+}
+
+/* Side Nav Arrows */
+.pd-side-nav {
+    position: absolute;
+    right: var(--pd-pad-x-desktop);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+.pd-nav-arrow {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--pd-border);
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.pd-nav-arrow.pd-next {
+    background: var(--pd-black);
+    border-color: var(--pd-black);
+}
+
+.pd-nav-arrow:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   SECTION 2: GALLERY
+   ========================================= */
+.pd-gallery-section {
+    padding-bottom: var(--pd-space-lg);
+}
+
+.pd-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+    padding: 0 var(--pd-pad-x-desktop);
+    /* align with container */
+}
+
+.pd-gallery-item {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+}
+
+.pd-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pd-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.pd-gallery-controls {
+    padding: 0 var(--pd-pad-x-desktop);
+    display: flex;
+    justify-content: flex-end;
+    /* Right align */
+    align-items: center;
+    gap: 40px;
+}
+
+.pd-next-project-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: 1px solid var(--pd-border);
+    padding: 10px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pd-next-project-btn:hover {
+    border-color: var(--pd-black);
+}
+
+.pd-gallery-counter {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-style: italic;
+    color: var(--pd-text-muted);
+}
+
+/* =========================================
+   SECTION 3: FORM
+   ========================================= */
+.pd-form-section {
+    position: relative;
+    padding: var(--pd-space-lg) 0;
+    color: var(--pd-white);
+}
+
+.pd-form-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.pd-form-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pd-form-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.pd-form-container {
+    text-align: center;
+}
+
+.pd-form-title {
+    font-size: 48px;
+    color: var(--pd-white);
+    margin-bottom: 12px;
+}
+
+.pd-form-subtitle {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pd-estimate-form {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.pd-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.pd-input-group input,
+.pd-input-group select {
+    width: 100%;
+    height: 40px;
+    background: var(--pd-white);
+    border: 1px solid transparent;
+    padding: 0 16px;
+    font-size: 14px;
+    color: var(--pd-text-primary);
+    font-family: var(--font-sans);
+}
+
+.pd-submit-btn {
+    background: var(--pd-red);
+    color: var(--pd-white);
+    border: none;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding-left: 24px;
+    padding-right: 4px;
+    /* Space for arrow box */
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pd-submit-btn:hover {
+    background: var(--pd-red-hover);
+}
+
+.pd-submit-arrow {
+    background: rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 16px;
+}
+
+/* =========================================
+   SECTION 4: FAQ
+   ========================================= */
+.pd-faq-section {
+    padding: var(--pd-space-lg) 0;
+}
+
+.pd-faq-title {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.pd-faq-subtitle {
+    font-size: 15px;
+    color: var(--pd-text-muted);
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--pd-border);
+    padding-bottom: 30px;
+}
+
+.pd-accordion {
+    max-width: 100%;
+}
+
+.pd-accordion-item {
+    border-bottom: 1px solid var(--pd-border);
+    overflow: hidden;
+}
+
+.pd-accordion-header {
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.pd-accordion-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.pd-accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.pd-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.pd-accordion-content p {
+    padding-bottom: 24px;
+    font-size: 15px;
+    color: var(--pd-text-muted);
+    max-width: 800px;
+}
+
+/* Active State */
+.pd-accordion-item.active .pd-accordion-title {
+    color: var(--pd-red);
+}
+
+.pd-accordion-item.active .pd-accordion-icon {
+    transform: rotate(180deg);
+}
+
+.pd-accordion-item.active .pd-accordion-content {
+    max-height: 200px;
+    /* Approximate max height */
+}
+
+/* =========================================
+   SECTION 5: CTA STRIP
+   ========================================= */
+.pd-cta-strip {
+    background: linear-gradient(90deg, #1f4ea5 0%, #6a2aa8 100%);
+    padding: 80px 0;
+    color: var(--pd-white);
+    text-align: center;
+}
+
+.pd-cta-heading {
+    font-size: 44px;
+    color: var(--pd-white);
+    margin-bottom: 12px;
+}
+
+.pd-cta-sub {
+    font-size: 16px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.pd-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pd-cta-btn {
+    background: var(--pd-black);
+    color: var(--pd-white);
+    height: 48px;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pd-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   SECTION 6: FOOTER
+   ========================================= */
+.pd-footer {
+    background: var(--pd-navy);
+    color: var(--pd-white);
+    padding: 80px 0 20px;
+}
+
+.pd-footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.pd-footer-logo {
+    height: 40px;
+    margin-bottom: 24px;
+    filter: brightness(0) invert(1);
+    /* Make it white */
+}
+
+.pd-footer-desc {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.pd-footer-heading {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+
+.pd-footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.pd-footer-links li {
+    margin-bottom: 12px;
+}
+
+.pd-footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.pd-footer-links a:hover {
+    color: var(--pd-white);
+}
+
+.pd-footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================= */
+
+/* Tablet (768px - 1199px) */
+@media (max-width: 1199px) {
+    :root {
+        --pd-pad-x-desktop: 48px;
+    }
+
+    .pd-main-title {
+        font-size: 44px;
+    }
+
+    .pd-desc-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .pd-side-nav {
+        display: none;
+        /* Hide side nav on tablet/mobile as it might overlap */
+    }
+
+    .pd-gallery-grid {
+        padding: 0 var(--pd-pad-x-desktop);
+    }
+
+    .pd-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile (≤ 767px) */
+@media (max-width: 767px) {
+    :root {
+        --pd-pad-x-desktop: 20px;
+        --pd-space-lg: 60px;
+        --pd-space-md: 40px;
+    }
+
+    .pd-header {
+        padding: 20px;
+    }
+
+    .pd-logo img {
+        height: 32px;
+    }
+
+    .pd-back-text {
+        display: none;
+    }
+
+    /* Hide text, keep icon/progress */
+
+    .pd-main-title {
+        font-size: 36px;
+    }
+
+    .pd-gallery-grid {
+        grid-template-columns: 1fr;
+        /* Stack images on mobile */
+    }
+
+    .pd-gallery-controls {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pd-form-bg {
+        position: relative;
+        height: 200px;
+    }
+
+    .pd-form-title {
+        font-size: 32px;
+    }
+
+    .pd-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .pd-cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pd-cta-btn {
+        justify-content: center;
+    }
+}

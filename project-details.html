@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Woodscape Engineering</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-details.css">
+</head>
+
+<body>
+    <!-- SECTION 0: HERO / TOP BANNER -->
+    <section class="pd-hero">
+        <div class="pd-hero-bg">
+            <img src="images/commercial-construction.png" alt="Project Hero Building" class="pd-hero-img">
+            <div class="pd-hero-overlay"></div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">
+                    <img src="images/woodscapelogo.png" alt="Woodscape Engineering Logo" class="logo-img">
+                </a>
+
+                <div class="nav-right-content" style="display: flex; align-items: center; gap: 30px;">
+                    <a href="index.html" class="btn btn-nav-estimate btn-back-home">
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                        <span class="btn-text">Back to Home</span>
+                    </a>
+                    <span class="page-counter"
+                        style="color: white; font-family: var(--font-serif); font-size: 18px; opacity: 0.8;">1 /
+                        6</span>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- SECTION 1: PROJECT DESCRIPTION -->
+    <section class="pd-section pd-description-section">
+        <div class="pd-container">
+            <h1 class="pd-main-title">Project Description</h1>
+
+            <div class="pd-desc-grid">
+                <!-- Left Column: Metadata -->
+                <div class="pd-desc-left">
+                    <h2 class="pd-project-name">ABC Infrastructure – Commercial Development</h2>
+                    <p class="pd-project-sub">Delivering precision engineering and high-performance commercial spaces
+                        globally.</p>
+
+                    <div class="pd-meta-block">
+                        <span class="pd-meta-label">INDUSTRY</span>
+                        <span class="pd-meta-value">Real Estate</span>
+                    </div>
+
+                    <div class="pd-meta-block">
+                        <span class="pd-meta-label">LOCATION</span>
+                        <span class="pd-meta-value">Central Texas</span>
+                    </div>
+
+                    <div class="pd-meta-block">
+                        <span class="pd-meta-label">TIMELINE</span>
+                        <span class="pd-meta-value">Jan 2024 – Jun 2024</span>
+                    </div>
+
+                    <div class="pd-meta-block">
+                        <span class="pd-meta-label">PROJECT SIZE</span>
+                        <span class="pd-meta-value">20,000 Sq.ft</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Overview + CTA -->
+                <div class="pd-desc-right">
+                    <h3 class="pd-overview-heading">Project Overview</h3>
+                    <p class="pd-overview-text">
+                        This commercial development represents a cutting-edge approach to sustainable infrastructure.
+                        By integrating advanced engineering principles with modern design aesthetics, we delivered a
+                        space that maximizes operational efficiency while providing a premium experience for occupants.
+                        From the initial shell works to the final interior fit-outs, every detail was executed with
+                        precision
+                        to meet the highest standards of safety and quality.
+                    </p>
+
+                    <button class="btn btn-split btn-commercial btn-animate-gap">
+                        <span class="btn-text">Request Estimate</span>
+                        <span class="btn-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <path d="M4 10H16M16 10L11 5M16 10L11 15" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Side Navigation Arrows -->
+            <div class="pd-side-nav">
+                <button class="pd-nav-arrow pd-prev">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button class="pd-nav-arrow pd-next">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: IMAGE GALLERY STRIP -->
+    <section class="pd-gallery-section">
+        <div class="pd-gallery-grid">
+            <div class="pd-gallery-item">
+                <img src="images/successtories1.png" alt="Project View 1">
+            </div>
+            <div class="pd-gallery-item">
+                <img src="images/successstories2.png" alt="Project View 2">
+            </div>
+            <div class="pd-gallery-item">
+                <img src="images/successstories3.png" alt="Project View 3">
+            </div>
+        </div>
+
+        <div class="pd-gallery-controls">
+            <button class="pd-next-project-btn">
+                <span class="pd-np-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg></span>
+                NEXT PROJECTS <span class="pd-arrow">→</span>
+            </button>
+            <div class="pd-gallery-counter">1 / 7</div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: QUICK ESTIMATE FORM -->
+    <section class="pd-form-section">
+        <div class="pd-form-bg">
+            <img src="images/commercial-interior.png" alt="Form Background">
+            <div class="pd-form-overlay"></div>
+        </div>
+
+        <div class="pd-container pd-form-container">
+            <h2 class="pd-form-title">Quick Estimate Form</h2>
+            <p class="pd-form-subtitle">Request an initial estimate for your upcoming project. Designed to give you
+                clarity on scope and budget.</p>
+
+            <form class="pd-estimate-form" id="estimateForm">
+                <div class="pd-form-grid">
+                    <!-- Left Column -->
+                    <div class="pd-input-group">
+                        <input type="text" placeholder="Name" required>
+                    </div>
+                    <div class="pd-input-group">
+                        <input type="text" placeholder="Company Name" required>
+                    </div>
+                    <div class="pd-input-group">
+                        <select required>
+                            <option value="" disabled selected>Service needed</option>
+                            <option value="construction">Construction</option>
+                            <option value="interiors">Interiors</option>
+                        </select>
+                    </div>
+                    <div class="pd-input-group">
+                        <select required>
+                            <option value="" disabled selected>Budget Range</option>
+                            <option value="low">$10k - $50k</option>
+                            <option value="medium">$50k - $200k</option>
+                            <option value="high">$200k+</option>
+                        </select>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="pd-input-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="pd-input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="pd-input-group">
+                        <input type="text" placeholder="Project Sq.ft" required>
+                    </div>
+                    <div class="pd-input-group">
+                        <input type="text" placeholder="Project Location" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-split btn-submit btn-animate-gap btn-animate-submit">
+                    <span class="btn-text">Request Estimate</span>
+                    <span class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" />
+                        </svg>
+                    </span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- SECTION 4: FAQ -->
+    <section class="pd-section pd-faq-section">
+        <div class="pd-container">
+            <h2 class="pd-faq-title">Frequently Asked Questions</h2>
+            <p class="pd-faq-subtitle">Everything you need to know about our process and delivery.</p>
+
+            <div class="pd-accordion">
+                <!-- Item 1 -->
+                <div class="pd-accordion-item active">
+                    <div class="pd-accordion-header">
+                        <span class="pd-accordion-title">Delivery Timelines</span>
+                        <span class="pd-accordion-icon">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="pd-accordion-content">
+                        <p>Delivery time depends on building complexity and square footage. A project team can
+                            accurately forecast timelines once measured drawings and scope are verified.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="pd-accordion-item">
+                    <div class="pd-accordion-header">
+                        <span class="pd-accordion-title">Pricing</span>
+                        <span class="pd-accordion-icon">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="pd-accordion-content">
+                        <p>Our pricing model is transparent and itemized layout based. We provide detailed BOQs to
+                            ensure no hidden costs.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="pd-accordion-item">
+                    <div class="pd-accordion-header">
+                        <span class="pd-accordion-title">Approvals</span>
+                        <span class="pd-accordion-icon">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="pd-accordion-content">
+                        <p>We handle all necessary approvals and permits required for commercial construction and
+                            interior fit-outs.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="pd-accordion-item">
+                    <div class="pd-accordion-header">
+                        <span class="pd-accordion-title">Warranty</span>
+                        <span class="pd-accordion-icon">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="pd-accordion-content">
+                        <p>We offer comprehensive warranty coverage on workmanship and materials to ensure long-term
+                            peace of mind.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="pd-accordion-item">
+                    <div class="pd-accordion-header">
+                        <span class="pd-accordion-title">Safety</span>
+                        <span class="pd-accordion-icon">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="pd-accordion-content">
+                        <p>Our strict HSE protocols ensure a safe working environment, minimizing risks and preventing
+                            accidents.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="pd-accordion-item">
+                    <div class="pd-accordion-header">
+                        <span class="pd-accordion-title">Payment Schedule</span>
+                        <span class="pd-accordion-icon">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="pd-accordion-content">
+                        <p>Flexible payment schedules aligned with project milestones to ensure smooth cash flow and
+                            project progression.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: CTA GRADIENT STRIP -->
+    <section class="pd-cta-strip">
+        <div class="pd-container pd-cta-container">
+            <h2 class="pd-cta-heading">Get an Expert Now!</h2>
+            <p class="pd-cta-sub">Ready to start your project? Connect with our team today.</p>
+
+            <div class="pd-cta-buttons">
+                <a href="#" class="btn btn-split btn-commercial btn-animate-gap" style="height: auto; padding: 0;">
+                    <span class="btn-text">Connect to an Expert</span>
+                    <span class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </a>
+                <a href="#" class="btn btn-split btn-commercial btn-animate-gap" style="height: auto; padding: 0;">
+                    <span class="btn-text">Reach us via Whatsapp</span>
+                    <span class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </a>
+                <a href="#" class="btn btn-split btn-commercial btn-animate-gap" style="height: auto; padding: 0;">
+                    <span class="btn-text">Get an estimate</span>
+                    <span class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FOOTER -->
+    <footer class="pd-footer">
+        <div class="pd-container">
+            <div class="pd-footer-grid">
+                <!-- Col 1 -->
+                <div class="pd-footer-col">
+                    <img src="images/woodscapelogo.png" alt="Woodscape" class="pd-footer-logo">
+                    <p class="pd-footer-desc">End-to-end commercial builds with strict cost control, regulatory
+                        compliance, and on-time based delivery.</p>
+                    <div class="pd-socials">
+                        <!-- Social Icons Placeholder -->
+                        <div class="pd-social-icon"></div>
+                        <div class="pd-social-icon"></div>
+                        <div class="pd-social-icon"></div>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="pd-footer-col">
+                    <h4 class="pd-footer-heading">Quick Links</h4>
+                    <ul class="pd-footer-links">
+                        <li><a href="#">Commercial Construction</a></li>
+                        <li><a href="#">Commercial Interiors</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Delivery Process</a></li>
+                        <li><a href="#">Industries Served</a></li>
+                        <li><a href="#">Why Woodscape</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="pd-footer-col">
+                    <h4 class="pd-footer-heading">Get in Touch</h4>
+                    <ul class="pd-footer-links">
+                        <li><a href="mailto:info@woodscape.com">Email</a></li>
+                        <li><a href="tel:+1234567890">Phone</a></li>
+                        <li><a href="#">Location</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pd-footer-bottom">
+                <div class="pd-copyright">© 2026 Woodscape. All rights reserved.</div>
+                <div class="pd-policy">Privacy Policy | Terms & Condition</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="project-details.js"></script>
+</body>
+
+</html>
