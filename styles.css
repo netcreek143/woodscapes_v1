@@ -32,8 +32,11 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
-    /* Spacing */
+    /* Match navbar: logo left = 120px, arrow right = 60px */
+    --pad-left: 120px;
+    --pad-right: 120px;
     --container-padding: 60px;
+    /* fallback for symmetric uses */
     --section-spacing: 120px;
 }
 
@@ -62,9 +65,9 @@ h6 {
 }
 
 .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 var(--container-padding);
+    max-width: 100%;
+    margin: 0;
+    padding: 0 var(--pad-right) 0 var(--pad-left);
     width: 100%;
 }
 
@@ -81,7 +84,7 @@ h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 15px var(--pad-right) 15px var(--pad-left);
 }
 
 /* Offset anchor scroll targets below the fixed navbar */
@@ -112,8 +115,6 @@ h6 {
 
 .logo-img {
     height: 120px;
-    padding-left: 90px;
-    /* Adjusted visual height */
     width: auto;
     transition: all 0.3s ease;
 }
@@ -127,8 +128,6 @@ h6 {
     align-items: center;
     gap: 30px;
     margin-left: auto;
-    padding-right: 30px;
-    /* Balance logo padding */
 }
 
 .nav-menu {
@@ -427,27 +426,16 @@ h6 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 6rem 60px 4rem 120px;
+    padding: 6rem var(--pad-right) 4rem var(--pad-left);
     gap: 4rem;
     max-width: 100%;
-    /* Changed from 1400px */
-    margin: 0 auto;
-}
-
-@media (min-width: 1200px) {
-    .hero-container {
-        padding-left: 20px;
-        margin-left: 0;
-        max-width: none;
-        width: 100%;
-        padding-right: 120px;
-    }
+    margin: 0;
 }
 
 .hero-content {
     max-width: 700px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 
@@ -586,6 +574,10 @@ h6 {
     background: #E60024;
 }
 
+.btn-commercial {
+    align-self: flex-start;
+}
+
 .btn-submit {
     width: 100%;
     height: 56px;
@@ -699,16 +691,19 @@ h6 {
 }
 
 .hero-form-card {
-    background: radial-gradient(ellipse at top left, rgba(23, 48, 86, 0.814) 0%, rgba(0, 0, 0, 0.584) 100%);
+    background: url('./images/getquotebg.png') center/100% 100% no-repeat;
+    padding: 50px 45px;
+    min-height: 595px;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    padding: 30px;
-    height: 635px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Based on image aspect ratio 1096x1242 */
     animation: fadeInRight 1s ease-out 0.3s backwards;
     width: 525px;
     flex-shrink: 0;
-    margin: 0;
+    margin: -60px 0 0 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .form-title {
@@ -791,13 +786,13 @@ h6 {
 
 .stats {
     background-color: #FFFFFF;
-    padding: 80px 60px;
+    padding: 80px var(--pad-right) 80px var(--pad-left);
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3px;
+    gap: 40px;
     max-width: 100%;
     margin: 0 auto;
 }
@@ -839,6 +834,8 @@ h6 {
 .stat-card {
     background-color: #ffffff;
     padding: 20px 28px 32px;
+    max-width: 480px;
+    /* Increased from implicitly smaller flex limits */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1255,7 +1252,7 @@ h6 {
 
 .stories-header-center {
     flex: 1 1 auto;
-    max-width: 480px;
+    max-width: 680px;
 }
 
 .stories-header-right {
@@ -1265,7 +1262,7 @@ h6 {
 }
 
 .section-desc-small {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #4B5563;
     line-height: 1.65;
     margin-bottom: 0;
@@ -1279,7 +1276,7 @@ h6 {
 .nav-btn {
     width: 52px;
     height: 52px;
-    border: 1.5px solid #1a1a1a;
+    border: 1.5px solid #000000;
     background: #fff;
     display: flex;
     align-items: center;
@@ -1325,14 +1322,14 @@ h6 {
     will-change: transform;
     padding-bottom: 4px;
     /* left-align first card with the container's content */
-    padding-left: max(60px, calc((100vw - 1280px) / 2 + 60px));
-    padding-right: max(60px, calc((100vw - 1280px) / 2 + 60px));
+    padding-left: var(--pad-left);
+    padding-right: var(--pad-right);
 }
 
 /* Custom Scrollbar */
 .stories-scrollbar-track {
-    width: calc(100% - max(120px, calc((100vw - 1280px) + 120px)));
-    margin-left: max(60px, calc((100vw - 1280px) / 2 + 60px));
+    width: calc(100% - var(--pad-left) - var(--pad-right));
+    margin-left: var(--pad-left);
     height: 4px;
     background: #E5E7EB;
     margin-top: 36px;
@@ -1365,10 +1362,11 @@ h6 {
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    flex: 0 0 400px;
-    width: 400px;
+    flex: 0 0 calc((100vw - var(--pad-left) - var(--pad-right) - 60px) / 3);
+    width: calc((100vw - var(--pad-left) - var(--pad-right) - 60px) / 3);
+    height: 75vh;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    --story-cut: 36px;
+    --story-cut: 96px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--story-cut)), calc(100% - var(--story-cut)) 100%, 0 100%);
 }
 
@@ -1378,7 +1376,7 @@ h6 {
 }
 
 .story-img-wrapper {
-    height: 220px;
+    height: 30%;
     width: 100%;
     overflow: hidden;
 }
@@ -1402,8 +1400,8 @@ h6 {
 }
 
 .story-title {
-    font-size: 1.375rem;
-    font-weight: 700;
+    font-size: 2.375rem;
+    font-weight: 600;
     color: #0a0a0a;
     margin-bottom: 14px;
     font-family: 'Inter', sans-serif;
@@ -1416,7 +1414,7 @@ h6 {
 
 .meta-row {
     display: flex;
-    font-size: 1rem;
+    font-size: 1.34rem;
     margin-bottom: 10px;
     color: #1a1a1a;
     align-items: baseline;
@@ -1440,7 +1438,7 @@ h6 {
 }
 
 .story-impact {
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     color: #374151;
     margin-bottom: 30px;
@@ -2506,7 +2504,7 @@ h6 {
 .why-header {
     text-align: left;
     margin-bottom: 4rem;
-    padding: 0 max(60px, calc((100vw - 1280px) / 2 + 60px));
+    padding: 0 var(--pad-right) 0 var(--pad-left);
 }
 
 .why-title {
@@ -2555,13 +2553,13 @@ h6 {
     display: flex;
     gap: 24px;
     width: max-content;
-    padding: 0 max(60px, calc((100vw - 1280px) / 2 + 60px));
+    padding: 0 var(--pad-right) 0 var(--pad-left);
 }
 
 /* Scrollbar */
 .why-scrollbar-track {
-    width: calc(100% - max(120px, calc((100vw - 1280px) + 120px)));
-    margin-left: max(60px, calc((100vw - 1280px) / 2 + 60px));
+    width: calc(100% - var(--pad-left) - var(--pad-right));
+    margin-left: var(--pad-left);
     height: 4px;
     background: #E5E7EB;
     margin-top: 36px;
@@ -2750,7 +2748,7 @@ h6 {
 
 .client-stories-header {
     margin-bottom: 4rem !important;
-    padding: 0 max(60px, calc((100vw - 1280px) / 2 + 60px)) !important;
+    padding: 0 var(--pad-right) 0 var(--pad-left) !important;
     text-align: left !important;
 }
 
@@ -2800,13 +2798,13 @@ h6 {
     display: flex;
     gap: 20px;
     width: max-content;
-    padding: 0 max(60px, calc((100vw - 1280px) / 2 + 60px));
+    padding: 0 var(--pad-right) 0 var(--pad-left);
 }
 
 /* Video Card with Corner Cut */
 .client-video-card-wrap {
     /* Show exactly 3 cards on desktop within the 1280px max-width container minus the 20px gaps */
-    width: calc((min(100vw, 1280px) - 120px - 40px) / 3);
+    width: calc((100vw - var(--pad-left) - var(--pad-right) - 40px) / 3);
     max-width: 400px;
     /* safety cap */
     /* Ensure they are tall, taking up ~75% of section/viewport as requested */
@@ -2890,7 +2888,7 @@ h6 {
 /* Controls Row (Scrollbar Only) */
 .client-controls-row {
     margin-top: 40px;
-    padding: 0 max(60px, calc((100vw - 1280px) / 2 + 60px));
+    padding: 0 var(--pad-right) 0 var(--pad-left);
     display: flex;
     align-items: center;
     gap: 24px;
@@ -2940,10 +2938,10 @@ h6 {
 .estimate-container {
     position: relative;
     z-index: 10;
-    max-width: 1280px;
-    margin: 0 auto;
+    max-width: 100%;
+    margin: 0;
     text-align: left;
-    padding: 0 60px;
+    padding: 0 var(--pad-right) 0 var(--pad-left);
 }
 
 .estimate-title {
@@ -3760,54 +3758,17 @@ h6 {
 }
 
 /* ============================================ */
-/* Responsive: Reduce 90px → 30px at ≤1200px   */
+/* Responsive: Reduce margins at ≤1200px        */
 /* ============================================ */
 @media (max-width: 1200px) {
     :root {
+        --pad-left: 30px;
+        --pad-right: 30px;
         --container-padding: 30px;
     }
 
-    .stats {
-        padding: 80px 30px;
-    }
-
-    .stories-carousel {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .stories-scrollbar-track {
-        width: calc(100% - 60px);
-        margin-left: 30px;
-    }
-
-    .why-header {
-        padding: 0 30px;
-    }
-
-    .why-carousel-track {
-        padding: 0 30px;
-    }
-
-    .why-scrollbar-track {
-        width: calc(100% - 60px);
-        margin-left: 30px;
-    }
-
-    .client-stories-header {
-        padding: 0 30px !important;
-    }
-
-    .client-carousel-track {
-        padding: 0 30px;
-    }
-
-    .client-controls-row {
-        padding: 0 30px;
-    }
-
-    .estimate-container {
-        padding: 0 30px;
+    .logo-img {
+        padding-left: 0;
     }
 
     .client-video-card-wrap {
@@ -3816,54 +3777,13 @@ h6 {
 }
 
 /* ============================================ */
-/* Responsive: Full width at ≤768px             */
+/* Responsive: Mobile at ≤768px                 */
 /* ============================================ */
 @media (max-width: 768px) {
     :root {
+        --pad-left: 16px;
+        --pad-right: 16px;
         --container-padding: 16px;
-    }
-
-    .stats {
-        padding: 60px 16px;
-    }
-
-    .stories-carousel {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-
-    .stories-scrollbar-track {
-        width: calc(100% - 32px);
-        margin-left: 16px;
-    }
-
-    .why-header {
-        padding: 0 16px;
-    }
-
-    .why-carousel-track {
-        padding: 0 16px;
-    }
-
-    .why-scrollbar-track {
-        width: calc(100% - 32px);
-        margin-left: 16px;
-    }
-
-    .client-stories-header {
-        padding: 0 16px !important;
-    }
-
-    .client-carousel-track {
-        padding: 0 16px;
-    }
-
-    .client-controls-row {
-        padding: 0 16px;
-    }
-
-    .estimate-container {
-        padding: 0 16px;
     }
 
     .client-video-card-wrap {
