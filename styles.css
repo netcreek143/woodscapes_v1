@@ -2947,7 +2947,7 @@ h6 {
 }
 
 .estimate-title {
-    font-size: 2.25rem;
+    font-size: 3rem;
     font-family: 'Playfair Display', serif;
     color: white;
     margin-bottom: 1rem;
@@ -2955,13 +2955,13 @@ h6 {
 
 @media (min-width: 768px) {
     .estimate-title {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 }
 
 .estimate-desc {
     color: #9CA3AF;
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     margin-bottom: 3rem;
 }
 
