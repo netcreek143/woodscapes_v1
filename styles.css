@@ -1104,7 +1104,6 @@ h6 {
     .hero-form-card {
         width: 100%;
         max-width: 480px;
-        margin-top: 2rem;
     }
 
     .commercial-container {
@@ -1566,7 +1565,7 @@ h6 {
 }
 
 .process-desc {
-    font-size: 0.9375rem;
+    font-size: 1.2rem;
     color: #6B7280;
     line-height: 1.6;
     margin-bottom: 0;
@@ -1583,15 +1582,16 @@ h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 0;
+    padding: 36px 0;
+    /* Increased from 24px */
     border-bottom: 1px solid #E5E7EB;
     cursor: default;
     transition: background 0.2s ease;
 }
 
 .proc-title {
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: 1.62rem;
+    font-weight: 400;
     color: var(--text-dark);
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -1606,8 +1606,8 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
-    font-size: 0.9rem;
+    font-weight: 500;
+    font-size: 1rem;
     flex-shrink: 0;
     transition: background 0.2s ease, color 0.2s ease;
 }
@@ -1625,7 +1625,7 @@ h6 {
 
 .process-note {
     margin-top: 30px;
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: #9CA3AF;
 }
 
@@ -1704,7 +1704,7 @@ h6 {
 }
 
 .ind-title-new {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--text-dark);
     margin-bottom: 12px;
@@ -1712,7 +1712,7 @@ h6 {
 }
 
 .ind-desc-new {
-    font-size: 0.9375rem;
+    font-size: 1.136rem;
     color: #6B7280;
     line-height: 1.6;
 }
@@ -1810,6 +1810,7 @@ h6 {
 .stat-desc-lg {
     font-size: 1rem;
     color: #6B7280;
+    font-weight: 450;
     line-height: 1.6;
 }
 
@@ -1817,15 +1818,23 @@ h6 {
 .case-visuals-redesign {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 300px auto;
-    gap: 0;
+    grid-template-rows: auto auto;
+    gap: 24px;
 }
 
 /* ── Before / After image panels ─── */
 .case-img-panel {
     position: relative;
     overflow: hidden;
-    height: 300px;
+    height: 480px;
+    --cut: 50px;
+    transform: translateZ(0);
+    /* Prevent Safari border deformation on hover */
+}
+
+/* Only the right-side image gets the cut corner */
+.case-img-panel:last-child {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
 }
 
 .case-img-panel img {
@@ -1842,65 +1851,105 @@ h6 {
 
 .case-img-label {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 0;
+    left: 0;
     background: var(--primary-red);
     color: #fff;
-    padding: 6px 16px;
-    font-size: 0.8125rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    padding: 10px 24px;
+    font-size: 1.25rem;
+    font-weight: 600;
     z-index: 2;
 }
 
 /* ── Testimonial panel (bottom-left) ── */
 .case-testimonial-wrap {
-    --cut: 40px;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
     background: #E5E7EB;
     /* border colour */
-    padding: 1px;
+    padding: 0;
 }
 
 .case-testimonial-card {
-    background: #F5F5F5;
-    padding: 44px 40px 52px;
+
+    padding: 60px 48px;
     height: 100%;
     box-sizing: border-box;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+/* HTML background image and overlay positioning */
+.case-test-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.case-test-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(244, 244, 244, 0.94);
+    z-index: 0;
+}
+
+
+
+.case-testimonial-card::before {
+    top: -40px;
+    left: 20px;
+}
+
+.case-testimonial-card::after {
+    bottom: -160px;
+    right: 20px;
+}
+
 
 .testimonial-red-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-style: italic;
+    font-size: 2.8rem;
     color: var(--primary-red);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     line-height: 1.2;
+    z-index: 1;
+    position: relative;
 }
 
 .testimonial-body {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: #4B5563;
     line-height: 1.65;
-    margin-bottom: 24px;
-    max-width: 420px;
+    margin-bottom: 32px;
+    max-width: 480px;
+    z-index: 1;
+    position: relative;
 }
 
 .testimonial-author-name {
-    font-size: 0.9375rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #111827;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     font-family: 'Inter', sans-serif;
+    z-index: 1;
+    position: relative;
 }
 
 .testimonial-dot-row {
     display: flex;
     gap: 8px;
     align-items: center;
+    z-index: 1;
+    position: relative;
 }
 
 .tdot {
@@ -1932,15 +1981,15 @@ h6 {
 
 /* ── CTA panel (bottom-right) ── */
 .case-cta-wrap {
-    --cut: 40px;
+    --cut: 80px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
     background: #000;
-    padding: 1px;
+    padding: 0;
 }
 
 .case-cta-card {
-    background: #111;
-    padding: 44px 40px;
+    background: #000;
+    padding: 60px 48px;
     height: 100%;
     box-sizing: border-box;
     display: flex;
@@ -1950,34 +1999,56 @@ h6 {
 
 .case-cta-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.25rem;
-    font-weight: 700;
+    font-size: 2.8rem;
+    font-weight: 300;
     color: #ffffff;
     line-height: 1.15;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 .case-cta-desc {
-    font-size: 0.9375rem;
-    color: #9CA3AF;
+    font-size: 1.1rem;
+    color: #E5E7EB;
     line-height: 1.6;
-    margin-bottom: 36px;
-    max-width: 400px;
+    margin-bottom: 40px;
+    max-width: 440px;
 }
 
-/* Button override for dark background */
-.case-cta-btn .btn-text {
+/* Custom CTA Button Styling */
+.case-cta-btn.btn-animate-gap {
+    align-self: flex-start;
+}
+
+.case-cta-btn.btn-animate-gap .btn-text {
     background: #fff;
     color: #111;
-    font-size: 0.9375rem;
-    padding: 0.75rem 1.5rem;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-.case-cta-btn .btn-icon {
-    width: 48px;
-    height: 48px;
+.case-cta-btn.btn-animate-gap .btn-icon {
     background: var(--primary-red);
+    color: #fff;
+    transition: background 0.3s ease, color 0.3s ease;
 }
+
+/* Base Arrow Tilt (Top Right) */
+.case-cta-btn.btn-animate-gap .btn-icon svg {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+/* Hover: Make it all red and straighten arrow right */
+.case-cta-btn.btn-animate-gap:hover .btn-text,
+.case-cta-btn.btn-animate-gap:hover .btn-icon {
+    background: var(--primary-red);
+    color: #fff;
+}
+
+.case-cta-btn.btn-animate-gap:hover .btn-icon svg {
+    transform: rotate(45deg);
+}
+
+
 
 @media (max-width: 1024px) {
     .case-visuals-redesign {
@@ -2104,7 +2175,7 @@ h6 {
 }
 
 .faq-question {
-    font-size: 1.25rem;
+    font-size: 8rem;
     font-weight: 600;
     color: var(--text-dark);
     cursor: pointer;
@@ -2502,7 +2573,7 @@ h6 {
 }
 
 .why-header {
-    text-align: left;
+    text-align: center;
     margin-bottom: 4rem;
     padding: 0 var(--pad-right) 0 var(--pad-left);
 }
@@ -2518,7 +2589,7 @@ h6 {
 .why-desc {
     color: #6B7280;
     max-width: 42rem;
-    margin: 0;
+    margin: 0 auto;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -2590,7 +2661,7 @@ h6 {
     /* Show exactly 3 cards, accounting for 2 gaps of 24px */
     flex: 0 0 calc((100vw - max(48px, calc((100vw - 1280px) + 48px)) - 48px) / 3);
     aspect-ratio: 1 / 1;
-    --cut: 40px;
+    --cut: 90px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
     background: #E5E7EB;
     /* border colour */
@@ -2614,13 +2685,11 @@ h6 {
 
 .why-icon-wrapper {
     margin-bottom: 1.5rem;
-    background-color: #FEF2F2;
     width: 4rem;
     height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #FEE2E2;
     color: var(--primary-red);
 }
 
@@ -2812,7 +2881,7 @@ h6 {
     max-height: 800px;
     flex-shrink: 0;
     position: relative;
-    --cut: 40px;
+    --cut: 60px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
     background: #E5E7EB;
     padding: 1px;
@@ -2931,8 +3000,8 @@ h6 {
 .estimate-bg-pattern {
     position: absolute;
     inset: 0;
-    background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
-    opacity: 0.1;
+    background: url('./images/qef_bg.png') center/cover no-repeat;
+    z-index: 0;
 }
 
 .estimate-container {
@@ -2940,7 +3009,7 @@ h6 {
     z-index: 10;
     max-width: 100%;
     margin: 0;
-    text-align: left;
+    text-align: center;
     padding: 0 var(--pad-right) 0 var(--pad-left);
 }
 
@@ -2950,24 +3019,30 @@ h6 {
     color: rgb(255, 255, 255);
     font-weight: 300;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
     .estimate-title {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 }
 
 .estimate-desc {
-    color: #ffffffb2;
+    color: #E5E7EB;
     font-size: 1.125rem;
-    margin-bottom: 3rem;
+    margin: 0 auto 3rem auto;
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.6;
 }
 
 .estimate-form-grid {
     display: grid;
     gap: 1rem;
     text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -2981,74 +3056,110 @@ h6 {
 .estimate-input,
 .estimate-select {
     background-color: #ffffff;
-    color: white;
-    border: 1px solid #1f2937;
-    padding: 1rem;
+    color: #111;
+    border: none;
+    padding: 1rem 1.25rem;
     width: 100%;
     outline: none;
-    transition: border-color 0.2s;
+    transition: box-shadow 0.2s;
 }
 
 .estimate-input:focus,
 .estimate-select:focus {
-    border-color: var(--primary-red);
+    box-shadow: 0 0 0 2px var(--primary-red);
 }
 
 .estimate-select {
-    color: #9CA3AF;
+    color: #6B7280;
     appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
 }
 
 .estimate-submit-btn {
     background-color: var(--primary-red);
     color: white;
-    font-weight: 800;
-    padding: 1rem 3.2rem;
-    padding-left: 1.267rem;
-    padding-right: 1.267rem;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0 1.5rem;
+    height: 56px;
+    width: 100%;
     display: inline-flex;
     align-items: center;
-    gap: 17rem;
-    transition: background-color 0.2s;
+    justify-content: space-between;
+    transition: background-color 0.2s, transform 0.2s;
     border: none;
     cursor: pointer;
-    margin-top: 2rem;
+}
+
+.estimate-submit-btn svg {
+    transition: transform 0.3s ease;
 }
 
 .estimate-submit-btn:hover {
-    background-color: #b91c1c;
+    background-color: var(--primary-red-hover);
+    transform: translateY(-2px);
 }
+
+.estimate-submit-btn:hover svg {
+    transform: rotate(45deg);
+}
+
+.estimate-submit-wrap {
+    text-align: right;
+}
+
+@media (min-width: 768px) {
+    .estimate-submit-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .estimate-submit-btn {
+        grid-column: 2;
+    }
+}
+
+
 
 /* --- 5. FAQ --- */
 .faq-section {
-    padding: 6rem 0;
+    padding: 6rem;
     background-color: #ffffff;
 }
 
 .faq-container {
-    max-width: 56rem;
+    max-width: 70rem;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .faq-title {
-    font-size: 2.25rem;
+    font-size: 3rem;
     font-family: 'Playfair Display', serif;
     color: #111827;
     text-align: center;
-    margin-bottom: 1rem;
+    margin: 0 auto 1.5rem auto;
+    width: 100%;
+    line-height: 1.1;
 }
 
 @media (min-width: 768px) {
     .faq-title {
-        font-size: 3rem;
+        font-size: 4.25rem;
     }
 }
 
 .faq-desc {
     text-align: center;
     color: #6B7280;
-    font-size: 0.875rem;
-    margin-bottom: 4rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto 4rem auto;
 }
 
 .faq-item {
@@ -3056,39 +3167,44 @@ h6 {
     margin-bottom: 0;
 }
 
+.faq-item:first-child {
+    border-top: 1px solid #E5E7EB;
+}
+
 .faq-item:last-child {
-    border-bottom: none;
+    border-bottom: 1px solid #E5E7EB;
 }
 
 .faq-question-btn {
     width: 100%;
     text-align: left;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: none;
     border: none;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: color 0.2s;
 }
 
 .faq-question-btn:hover {
-    background-color: #F9FAFB;
+    background-color: transparent;
 }
 
 .faq-icon {
     flex-shrink: 0;
+    stroke: #111827;
     transition: transform 0.3s ease, stroke 0.3s ease;
 }
 
 .faq-question-btn.active {
-    background-color: white;
+    background-color: transparent;
 }
 
 .faq-q-text {
-    font-weight: 700;
-    font-size: 1.125rem;
+    font-weight: 500;
+    font-size: 1.85rem;
     color: #111827;
 }
 
@@ -3098,6 +3214,8 @@ h6 {
 
 .faq-question-btn.active .faq-icon {
     stroke: var(--primary-red);
+    transform: rotate(90deg);
+    /* Assuming the SVG is naturally top-right, 90deg makes it bottom-right, 180 makes it bottom-left. Let's use 90deg to point down and right. The reference mock uses bottom-left, so 180deg */
     transform: rotate(180deg);
     transition: transform 0.3s ease, stroke 0.3s ease;
 }
@@ -3115,16 +3233,16 @@ h6 {
 }
 
 .faq-a-text {
-    padding: 0 1.5rem 1.5rem 1.5rem;
+    padding: 0 0 1.5rem 0;
     color: #6B7280;
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     line-height: 1.6;
 }
 
 /* --- 6. CTA Footer --- */
 .cta-footer-section {
     padding: 5rem 0;
-    background: linear-gradient(to right, #1e3a8a, #312e81, #581c87);
+    background: url('./images/getanexpert_bg.png') center/cover no-repeat;
     color: white;
     text-align: center;
     position: relative;
@@ -3151,16 +3269,18 @@ h6 {
 
 @media (min-width: 768px) {
     .cta-title {
-        font-size: 3rem;
+        font-size: 4rem;
+        font-weight: 400;
     }
 }
 
 .cta-desc {
-    color: #BFDBFE;
-    max-width: 42rem;
+    color: #e5e5e5;
+    max-width: 66rem;
     margin: 0 auto 2.5rem auto;
-    font-size: 0.875rem;
-    line-height: 1.6;
+    font-size: 1.23rem;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 .cta-buttons {
@@ -3191,9 +3311,9 @@ h6 {
 /* --- 7. Footer Migrated --- */
 .footer-migrated {
     background-color: #0b0f19;
-    color: #9CA3AF;
+    color: #fefefe;
     padding: 4rem 0;
-    font-size: 0.875rem;
+    font-size: 1.23rem;
 }
 
 .footer-grid {
@@ -3212,7 +3332,7 @@ h6 {
 
 .footer-brand h1 {
     color: white;
-    font-size: 1rem;
+    font-size: 1.8rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -3231,17 +3351,17 @@ h6 {
 .footer-social-link {
     width: 2rem;
     height: 2rem;
-    background-color: #1f2937;
+    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #9CA3AF;
+    color: #000000;
     transition: all 0.2s;
 }
 
 .footer-social-link:hover {
     background-color: var(--primary-red);
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .footer-col h4 {
@@ -3261,7 +3381,7 @@ h6 {
 }
 
 .footer-links a {
-    color: #9CA3AF;
+    color: #ffffff;
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -3276,8 +3396,9 @@ h6 {
 
 .footer-contact-label {
     display: block;
-    font-size: 0.75rem;
-    color: #6B7280;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
 }
 
 .footer-contact-val {
@@ -3293,7 +3414,7 @@ h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     color: #4B5563;
 }
 
