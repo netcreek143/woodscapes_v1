@@ -2750,31 +2750,32 @@ h6 {
 }
 
 .client-stories-header {
-    margin-bottom: 4rem;
-    padding: 0 max(60px, calc((100vw - 1280px) / 2 + 60px));
-    text-align: left;
+    margin-bottom: 4rem !important;
+    padding: 0 max(60px, calc((100vw - 1280px) / 2 + 60px)) !important;
+    text-align: left !important;
 }
 
 .client-stories-title {
-    font-size: 3.25rem;
+    font-size: 3.25rem !important;
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     color: #0a0a0a;
-    margin-bottom: 0.75rem;
-    line-height: 1.1;
+    margin-bottom: 0.75rem !important;
+    line-height: 1.1 !important;
 }
 
 @media (min-width: 768px) {
     .client-stories-title {
-        font-size: 3rem;
+        font-size: 4rem !important;
     }
 }
 
 .client-stories-desc {
     color: #6B7280;
-    font-size: 0.9375rem;
-    max-width: 440px;
-    line-height: 1.6;
+    font-size: 0.9375rem !important;
+    max-width: 440px !important;
+    line-height: 1.6 !important;
+    margin: 0 !important;
 }
 
 /* Carousel Track */
@@ -2805,8 +2806,13 @@ h6 {
 
 /* Video Card with Corner Cut */
 .client-video-card-wrap {
-    width: 295px;
-    aspect-ratio: 9 / 16;
+    /* Show exactly 3 cards on desktop within the 1280px max-width container minus the 20px gaps */
+    width: calc((min(100vw, 1280px) - 120px - 40px) / 3);
+    max-width: 400px;
+    /* safety cap */
+    /* Ensure they are tall, taking up ~75% of section/viewport as requested */
+    height: 75vh;
+    max-height: 800px;
     flex-shrink: 0;
     position: relative;
     --cut: 40px;
@@ -2814,6 +2820,22 @@ h6 {
     background: #E5E7EB;
     padding: 1px;
     box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    .client-video-card-wrap {
+        /* Show 2 cards on tablet */
+        width: calc((100vw - 120px - 20px) / 2);
+        height: 60vh;
+    }
+}
+
+@media (max-width: 640px) {
+    .client-video-card-wrap {
+        /* Show 1 card on mobile */
+        width: calc(100vw - 120px);
+        height: 60vh;
+    }
 }
 
 .client-video-card {
