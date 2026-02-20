@@ -1,15 +1,73 @@
+/* -----------------------------------------------------------------------
+   SCROLL SPY — Active nav link tracking
+   ----------------------------------------------------------------------- */
+(function () {
+    const sections = [
+        { id: 'services', href: '#services' },
+        { id: 'projects', href: '#projects' },
+        { id: 'industries', href: '#industries' },
+        { id: 'why-woodscape', href: '#why-woodscape' },
+        { id: 'case-studies', href: '#case-studies' },
+    ];
+
+    function setActive(href) {
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === href) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Home link goes active when above the first anchor section
+    function checkHome() {
+        const first = document.getElementById('services');
+        if (!first) return false;
+        return window.scrollY < first.getBoundingClientRect().top + window.scrollY - 200;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const match = sections.find(s => s.id === entry.target.id);
+                    if (match) setActive(match.href);
+                }
+            });
+        },
+        {
+            rootMargin: '-120px 0px -50% 0px', // trigger when top of section crosses below navbar
+            threshold: 0
+        }
+    );
+
+    document.addEventListener('DOMContentLoaded', () => {
+        sections.forEach(({ id }) => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
+        // Reset to Home when scrolled back to top
+        window.addEventListener('scroll', () => {
+            if (checkHome()) setActive('#');
+        }, { passive: true });
+    });
+})();
+
 function animateCounter(element, target, duration = 2000) {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
+    // Detect suffix: '+' or '%' from the element's original text
+    const suffix = element.textContent.replace(/[0-9]/g, '').trim();
 
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-            element.textContent = target;
+            element.textContent = target + suffix;
             clearInterval(timer);
         } else {
-            element.textContent = Math.floor(current);
+            element.textContent = Math.floor(current) + suffix;
         }
     }, 16);
 }

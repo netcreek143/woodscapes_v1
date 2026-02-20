@@ -8,8 +8,8 @@
 
 :root {
     /* Brand Colors */
-    --primary-red: #E10600;
-    --primary-red-hover: #CC0000;
+    --primary-red: #E60024;
+    --primary-red-hover: #C8001F;
     --primary-dark: #0A0A0A;
     /* Deep Black for refined look */
 
@@ -79,7 +79,18 @@ h6 {
     background: transparent;
     transition: all 0.3s ease;
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    padding: 15px 30px;
+}
+
+/* Offset anchor scroll targets below the fixed navbar */
+#services,
+#projects,
+#industries,
+#why-woodscape,
+#case-studies {
+    scroll-margin-top: 100px;
 }
 
 .navbar.scrolled {
@@ -93,11 +104,15 @@ h6 {
 .nav-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
 }
 
 .logo-img {
     height: 120px;
+    padding-left: 90px;
     /* Adjusted visual height */
     width: auto;
     transition: all 0.3s ease;
@@ -110,23 +125,26 @@ h6 {
 .nav-wrapper {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    padding: 30px;
+    gap: 30px;
+    margin-left: auto;
+    padding-right: 30px;
+    /* Balance logo padding */
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 32px;
+    gap: 30px;
     align-items: center;
     margin: 0;
     padding: 0;
+    margin-left: auto;
 }
 
 .nav-link {
     color: var(--white);
     text-decoration: none;
-    font-size: 0.9375rem;
+    font-size: 1.4rem;
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
@@ -159,8 +177,8 @@ h6 {
 }
 
 .btn-sm {
-    padding: 0.6rem 1.25rem;
-    font-size: 0.875rem;
+    font-size: 3rem;
+    font-weight: 500;
 }
 
 /* Mobile Menu Button */
@@ -341,7 +359,7 @@ h6 {
 }
 
 .indicator.active {
-    background: #E50914;
+    background: #E60024;
     width: 50px;
 }
 
@@ -363,7 +381,7 @@ h6 {
 }
 
 .slider-nav:hover {
-    background: rgba(230, 0, 0, 0.8);
+    background: rgba(230, 0, 36, 0.8);
 }
 
 .slider-prev {
@@ -398,7 +416,7 @@ h6 {
 }
 
 .dot.active {
-    background: #E60000;
+    background: #E60024;
     width: 32px;
     border-radius: 6px;
 }
@@ -409,19 +427,20 @@ h6 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 6rem 2rem 4rem;
+    padding: 6rem 60px 4rem 120px;
     gap: 4rem;
-    max-width: 1400px;
+    max-width: 100%;
+    /* Changed from 1400px */
     margin: 0 auto;
 }
 
 @media (min-width: 1200px) {
     .hero-container {
-        padding-left: 0;
+        padding-left: 20px;
         margin-left: 0;
         max-width: none;
         width: 100%;
-        padding-right: 5%;
+        padding-right: 120px;
     }
 }
 
@@ -434,8 +453,9 @@ h6 {
 
 .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: 64px;
-    font-weight: 700;
+    font-size: 82px;
+    font-weight: 300;
+    width: auto;
     line-height: 1.1;
     letter-spacing: -0.5px;
     color: var(--white);
@@ -445,21 +465,10 @@ h6 {
     animation: fadeInUp 1s ease-out;
 }
 
-.hero-subtitle {
-    display: block;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--primary-red);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    animation: fadeInUp 1s ease-out;
-}
 
 .hero-description {
     color: var(--white);
-    font-size: 1rem;
+    font-size: 1.173rem;
     line-height: 1.6;
     margin-bottom: 2rem;
     opacity: 0.95;
@@ -512,7 +521,7 @@ h6 {
 .btn-red:hover {
     background: var(--primary-red-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px -5px rgba(225, 6, 0, 0.4);
+    box-shadow: 0 10px 20px -5px rgba(230, 0, 36, 0.4);
 }
 
 .btn-black {
@@ -569,30 +578,31 @@ h6 {
 }
 
 .btn-commercial .btn-text {
-    background: var(--dark);
+    background: #000000;
     color: var(--white);
 }
 
 .btn-commercial .btn-text:hover {
-    background: #1a1a1a;
+    background: #E60024;
 }
 
 .btn-submit {
     width: 100%;
-    height: 52px;
+    height: 56px;
     background: var(--primary-red);
     color: var(--white);
     font-size: 1rem;
     font-weight: 600;
     justify-content: space-between;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
     box-shadow: var(--shadow-md);
+    text-align: left;
 }
 
 .btn-submit:hover {
     background: var(--primary-red-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px -5px rgba(225, 6, 0, 0.4);
+    box-shadow: 0 10px 20px -5px rgba(230, 0, 36, 0.4);
 }
 
 .btn svg {
@@ -633,7 +643,6 @@ h6 {
 .btn-animate-gap:hover .btn-text,
 .btn-animate-gap:hover .btn-icon {
     box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
 }
 
 .btn-animate-gap .btn-icon svg {
@@ -690,21 +699,24 @@ h6 {
 }
 
 .hero-form-card {
-    background: radial-gradient(ellipse at top left, rgba(10, 22, 40, 0.545) 0%, rgba(0, 0, 0, 0.584) 100%);
+    background: radial-gradient(ellipse at top left, rgba(23, 48, 86, 0.814) 0%, rgba(0, 0, 0, 0.584) 100%);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    padding: 60px;
+    padding: 30px;
     height: 635px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     animation: fadeInRight 1s ease-out 0.3s backwards;
-    width: 575px;
+    width: 525px;
     flex-shrink: 0;
     margin: 0;
 }
 
 .form-title {
     font-family: 'Playfair Display', serif;
-    font-size: 32px;
+    font-size: 56px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
     font-weight: 400;
     color: var(--white);
     margin-bottom: 1.25rem;
@@ -736,7 +748,7 @@ h6 {
 .form-textarea:focus {
     outline: none;
     border-color: var(--primary-red);
-    box-shadow: 0 0 0 3px rgba(230, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0 3px rgba(230, 0, 36, 0.15), 0 4px 12px rgba(0, 0, 0, 0.15);
     transform: translateY(-1px);
 }
 
@@ -756,21 +768,37 @@ h6 {
 
 .btn-submit {
     margin-top: 0.5rem;
-    box-shadow: 0 4px 16px rgba(230, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background: var(--primary-red);
+    color: var(--white);
+    box-shadow: 0 4px 16px rgba(230, 0, 36, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
     font-weight: 600;
     letter-spacing: 0.02em;
 }
 
+.btn-submit svg {
+    transform: rotate(-45deg);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-submit:hover svg {
+    transform: rotate(0deg);
+}
+
 .stats {
-    background-color: var(--light-gray);
-    padding: 120px 24px;
+    background-color: #FFFFFF;
+    padding: 80px 60px;
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    max-width: 1400px;
+    gap: 3px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -792,21 +820,18 @@ h6 {
     position: relative;
     background-color: #dedcdcf3;
     /* Default border color */
-    padding: 2px;
+    padding: 1.5px;
     /* Border thickness */
     --cut: 60px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
     transition: all 0.4s ease;
-    height: 100%;
-    width: 100%;
-    /* Max width constraint for responsiveness */
+    width: 90%;
     max-width: 400px;
     margin: 0 auto;
-    aspect-ratio: 1 / 1;
 }
 
 .stat-card-wrapper:hover {
-    background: linear-gradient(90deg, #000000, #f10505, #ee4e4e);
+    background: linear-gradient(90deg, #000000, #E60024, #ff4d6a);
     background-size: 300% 300%;
     animation: gradientMove 3s linear infinite;
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.08));
@@ -814,18 +839,18 @@ h6 {
 
 .stat-card {
     background-color: #ffffff;
-    padding: 30px;
-    height: 100%;
+    padding: 20px 28px 32px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    --cut: 59.5px;
+    justify-content: flex-start;
+    --cut: 59.9px;
     /* Slightly smaller to fit inside wrapper */
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
 }
 
 .stat-icon {
+    margin-top: 14px;
     margin-bottom: 24px;
     height: 92px;
     width: 92px;
@@ -838,17 +863,25 @@ h6 {
 }
 
 .stat-number {
-    font-size: 48px;
-    font-weight: 700;
+    font-size: 86px;
+    font-weight: 500;
     color: var(--text-dark);
-    line-height: 1.2;
-    margin-bottom: 12px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
 }
 
 .stat-label {
-    font-size: 18px;
-    color: #6E6E6E;
-    font-weight: 500;
+    font-size: 24px;
+    color: #000000;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+/* Hover: text turns red */
+.stat-card-wrapper:hover .stat-number,
+.stat-card-wrapper:hover .stat-label {
+    color: var(--primary-red);
 }
 
 @keyframes gradientMove {
@@ -978,8 +1011,8 @@ h6 {
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    font-weight: 600;
+    font-size: 86px;
+    font-weight: 400;
     color: var(--text-dark);
     margin-bottom: 24px;
     line-height: 1.2;
@@ -987,7 +1020,7 @@ h6 {
 }
 
 .section-description {
-    font-size: 1rem;
+    font-size: 1.18rem;
     color: #666666;
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -1003,13 +1036,14 @@ h6 {
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
-    font-size: 1rem;
-    color: #333333;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #000000;
 }
 
 .feature-item svg {
     flex-shrink: 0;
-    border: 2px solid #c9c7c7;
+    border: 1px solid #c9c7c7;
     padding: 2px;
 }
 
@@ -1182,39 +1216,42 @@ h6 {
 /* Success Stories Redesign */
 .success-stories {
     overflow-x: clip;
+    background-color: #F4F4F4;
 }
 
 .section-padding {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 .section-label-red {
     color: var(--primary-red);
-    font-size: 1.83rem;
-    font-weight: 500;
+    font-size: 1.6rem;
+    font-weight: 200;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     margin-bottom: 10px;
     display: block;
 }
 
 .display-title {
     font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    line-height: 1.1;
-    color: var(--text-dark);
-    font-weight: 500;
+    font-size: 4.5rem;
+    line-height: 1.0;
+    color: #0a0a0a;
+    font-weight: 400;
 }
 
 .stories-header {
     display: flex;
     align-items: flex-end;
-    margin-bottom: 60px;
-    gap: 40px;
+    margin-bottom: 48px;
+    gap: 60px;
     justify-content: space-between;
 }
 
 .stories-header-left {
     flex: 0 0 auto;
-    min-width: 220px;
+    min-width: 320px;
 }
 
 .stories-header-center {
@@ -1229,10 +1266,10 @@ h6 {
 }
 
 .section-desc-small {
-    font-size: 0.9375rem;
-    color: #6B7280;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    font-size: 0.875rem;
+    color: #4B5563;
+    line-height: 1.65;
+    margin-bottom: 0;
 }
 
 .stories-nav {
@@ -1241,9 +1278,9 @@ h6 {
 }
 
 .nav-btn {
-    width: 48px;
-    height: 48px;
-    border: 1px solid #E5E7EB;
+    width: 52px;
+    height: 52px;
+    border: 1.5px solid #1a1a1a;
     background: #fff;
     display: flex;
     align-items: center;
@@ -1324,16 +1361,16 @@ h6 {
 
 .story-card {
     background: #fff;
-    --cut: 40px;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
-    outline: 1px solid #E5E7EB;
-    outline-offset: -1px;
+    border: 1px solid #e8e8e8;
     padding: 0;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    flex: 0 0 380px;
-    width: 380px;
+    flex: 0 0 400px;
+    width: 400px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --story-cut: 36px;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--story-cut)), calc(100% - var(--story-cut)) 100%, 0 100%);
 }
 
 .story-card:hover {
@@ -1342,7 +1379,7 @@ h6 {
 }
 
 .story-img-wrapper {
-    height: 240px;
+    height: 220px;
     width: 100%;
     overflow: hidden;
 }
@@ -1359,18 +1396,19 @@ h6 {
 }
 
 .story-content {
-    padding: 32px;
+    padding: 24px 28px 28px;
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
 .story-title {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 20px;
+    color: #0a0a0a;
+    margin-bottom: 14px;
     font-family: 'Inter', sans-serif;
+    line-height: 1.3;
 }
 
 .story-meta {
@@ -1379,22 +1417,27 @@ h6 {
 
 .meta-row {
     display: flex;
-    font-size: 0.9375rem;
-    margin-bottom: 8px;
-    color: #374151;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    align-items: baseline;
 }
 
 .meta-label {
-    width: 80px;
-    font-weight: 600;
+    width: 90px;
+    font-weight: 700;
+    color: #111;
+    flex-shrink: 0;
 }
 
 .meta-sep {
-    margin-right: 15px;
+    margin-right: 12px;
+    font-weight: 700;
 }
 
 .meta-val {
-    color: #6B7280;
+    color: #374151;
+    font-weight: 400;
 }
 
 .story-impact {
@@ -1450,23 +1493,23 @@ h6 {
     }
 
     .story-card {
-        flex: 0 0 320px;
-        width: 320px;
+        flex: 0 0 340px;
+        width: 340px;
     }
 
     .display-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 }
 
 @media (max-width: 768px) {
     .story-card {
-        flex: 0 0 280px;
-        width: 280px;
+        flex: 0 0 290px;
+        width: 290px;
     }
 
     .display-title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 }
 
@@ -1518,10 +1561,11 @@ h6 {
 
 .display-title-serif {
     font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
+    font-size: 4rem;
     line-height: 1;
     color: var(--text-dark);
     margin-bottom: 20px;
+    font-weight: 300;
 }
 
 .process-desc {
@@ -2467,17 +2511,18 @@ h6 {
 }
 
 .why-title {
-    font-size: 2.25rem;
+    font-size: 4.5rem;
     font-family: 'Playfair Display', serif;
     color: #111827;
     margin-bottom: 1rem;
+    font-weight: 300;
 }
 
 .why-desc {
     color: #6B7280;
     max-width: 42rem;
     margin: 0 auto;
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
@@ -2583,15 +2628,15 @@ h6 {
 }
 
 .why-card-title {
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-size: 2.125rem;
+    font-weight: 500;
     color: #111827;
     margin-bottom: 0.75rem;
     font-family: 'Inter', sans-serif;
 }
 
 .why-card-desc {
-    font-size: 0.875rem;
+    font-size: 1.135rem;
     color: #6B7280;
     line-height: 1.625;
 }
@@ -3295,46 +3340,68 @@ h6 {
 }
 
 /* Navigation Request Estimate Button */
+
+/* Navigation Request Estimate Button */
 .btn-nav-estimate {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
     background: transparent;
     padding: 0;
-    gap: 15px;
+    gap: 30px;
+    /* Aligned with other nav items */
     transition: all 0.3s ease;
 }
 
+/* Apply strict nav-link styling to text */
 .btn-nav-estimate .btn-text {
     color: var(--white);
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 500;
     background: transparent;
     padding: 0;
-    /* Override default .btn-text styles if any */
+    position: relative;
+    opacity: 0.9;
+    transition: color 0.3s ease;
 }
 
+/* Hover effect on text only */
+.btn-nav-estimate:hover .btn-text {
+    color: var(--primary-red);
+    opacity: 1;
+}
+
+
+
+/* Keep icon independent */
 .btn-nav-estimate .btn-icon {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     background-color: var(--primary-red);
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Square box with slight radius */
     transition: all 0.3s ease;
+    /* No hover transform sync */
 }
 
 .btn-nav-estimate svg {
     transform: rotate(-45deg);
-    /* Tilted arrow */
     transition: transform 0.3s ease;
+    width: 20px;
+    height: 20px;
+}
+
+/* Explicitly override gap animation if class is present in HTML */
+.btn-nav-estimate.btn-animate-gap:hover {
+    gap: 30px !important;
+    /* Prevent gap closing */
 }
 
 .btn-nav-estimate:hover .btn-icon {
     background-color: var(--primary-red-hover);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(225, 6, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(230, 0, 36, 0.3);
 }
 
 .btn-nav-estimate:hover svg {
@@ -3518,7 +3585,7 @@ h6 {
 .modal-input:focus {
     outline: none;
     border-bottom-color: #111;
-    /* Dark focus or #e10600 */
+    /* Dark focus or #E60024 */
 }
 
 .modal-input::placeholder {
@@ -3549,7 +3616,7 @@ h6 {
 .btn-modal-submit {
     width: 180px;
     height: 54px;
-    background: #e10600;
+    background: #E60024;
     color: #fff;
     font-weight: 700;
     font-size: 16px;

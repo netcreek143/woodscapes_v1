@@ -31,11 +31,11 @@
             <div class="nav-wrapper">
                 <ul class="nav-menu">
                     <li><a href="#" class="nav-link active">Home</a></li>
-                    <li><a href="#" class="nav-link">Services</a></li>
-                    <li><a href="project-details.html" class="nav-link">Projects</a></li>
-                    <li><a href="#" class="nav-link">Industries</a></li>
-                    <li><a href="#" class="nav-link">Why Woodscape</a></li>
-                    <li><a href="#" class="nav-link">Case Studies</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#industries" class="nav-link">Industries</a></li>
+                    <li><a href="#why-woodscape" class="nav-link">Why Woodscape</a></li>
+                    <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
                 </ul>
                 <div class="nav-cta">
                     <a href="#" class="btn btn-nav-estimate btn-animate-gap" id="requestEstimateBtn">
@@ -55,19 +55,19 @@
 
     <section class="hero">
         <div class="hero-slider">
-            <div class="hero-slide active" style="background: url('./images/home-banner.png') center/cover no-repeat;">
+            <div class="hero-slide active" style="background: url('./images/slider1.png') center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="background: url('./images/home-banner.png') center/cover no-repeat;">
+            <div class="hero-slide" style="background: url('./images/slider2.png') center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="background: url('./images/home-banner.png') center/cover no-repeat;">
+            <div class="hero-slide" style="background: url('./images/slider3.png') center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="background: url('./images/home-banner.png') center/cover no-repeat;">
+            <div class="hero-slide" style="background: url('./images/slider4.png') center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
         </div>
@@ -101,15 +101,12 @@
                     <input type="text" placeholder="Mobile Number" class="form-input" required>
                     <input type="email" placeholder="Email (Optional)" class="form-input">
                     <textarea placeholder="Message" class="form-textarea" rows="4"></textarea>
-                    <button type="submit" class="btn btn-split btn-submit btn-animate-gap btn-animate-submit">
-                        <span class="btn-text">Submit</span>
-                        <span class="btn-icon">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
+                    <button type="submit" class="btn btn-submit">
+                        <span>Submit</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
                     </button>
                 </form>
             </div>
@@ -157,7 +154,7 @@
         </div>
     </section>
 
-    <section class="commercial-section">
+    <section id="services" class="commercial-section">
         <div class="container commercial-container">
             <div class="commercial-image">
                 <img src="./images/commercial-construction.png" alt="Modern Glass Building Under Construction">
@@ -169,28 +166,28 @@
                 <ul class="features-list">
                     <li class="feature-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                         <span>RCC & shell works</span>
                     </li>
                     <li class="feature-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                         <span>BOQ Management</span>
                     </li>
                     <li class="feature-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                         <span>MEP coordination</span>
                     </li>
                     <li class="feature-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
                         <span>Approvals</span>
@@ -220,29 +217,37 @@
             </div>
             <div class="commercial-content">
                 <h2 class="section-title">Commercial Interiors</h2>
-                <p class="section-description">Transforming empty shells into high-performance workspaces. We handle
-                    everything from space planning to custom joinery.</p>
+                <p class="section-description">Turnkey office,retail,and hospitality interiors designed to perform,
+                    impress, and open on schedule.
+                </p>
                 <ul class="features-list">
                     <li class="feature-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
-                        <span>Office Fit-outs</span>
+                        <span>Fit-outs and joinery</span>
                     </li>
                     <li class="feature-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
-                        <span>Retail Spaces</span>
+                        <span>FF&E procurement</span>
                     </li>
                     <li class="feature-item">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E50914" stroke-width="2" stroke-linecap="round"
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
-                        <span>Hospitality Interiors</span>
+                        <span>Brand compliance</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Fast delivery</span>
                     </li>
                 </ul>
                 <br>
@@ -260,7 +265,7 @@
     </section>
 
     <!-- Success Stories Redesign -->
-    <section class="success-stories section-padding">
+    <section id="projects" class="success-stories section-padding">
         <div class="container">
             <div class="stories-header">
                 <div class="stories-header-left">
@@ -276,14 +281,14 @@
                 <div class="stories-header-right">
                     <div class="stories-nav">
                         <button class="nav-btn prev" id="storiesPrevBtn">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <path d="M19 12H5M5 12L12 19M5 12L12 5" />
                             </svg>
                         </button>
                         <button class="nav-btn next" id="storiesNextBtn">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" />
                             </svg>
                         </button>
@@ -315,7 +320,7 @@
                         <div class="story-actions">
                             <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
                                 <span class="btn-text">View Case Study</span>
-                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                         stroke="white" stroke-width="2">
                                         <path d="M4 10H16M16 10L11 5M16 10L11 15" />
                                     </svg></span>
@@ -344,7 +349,7 @@
                         <div class="story-actions">
                             <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
                                 <span class="btn-text">View Case Study</span>
-                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                         stroke="white" stroke-width="2">
                                         <path d="M4 10H16M16 10L11 5M16 10L11 15" />
                                     </svg></span>
@@ -373,7 +378,7 @@
                         <div class="story-actions">
                             <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
                                 <span class="btn-text">View Case Study</span>
-                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                         stroke="white" stroke-width="2">
                                         <path d="M4 10H16M16 10L11 5M16 10L11 15" />
                                     </svg></span>
@@ -402,7 +407,7 @@
                         <div class="story-actions">
                             <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
                                 <span class="btn-text">View Case Study</span>
-                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                         stroke="white" stroke-width="2">
                                         <path d="M4 10H16M16 10L11 5M16 10L11 15" />
                                     </svg></span>
@@ -432,7 +437,7 @@
                         <div class="story-actions">
                             <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
                                 <span class="btn-text">View Case Study</span>
-                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                         stroke="white" stroke-width="2">
                                         <path d="M4 10H16M16 10L11 5M16 10L11 15" />
                                     </svg></span>
@@ -461,7 +466,7 @@
                         <div class="story-actions">
                             <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
                                 <span class="btn-text">View Case Study</span>
-                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                         stroke="white" stroke-width="2">
                                         <path d="M4 10H16M16 10L11 5M16 10L11 15" />
                                     </svg></span>
@@ -490,7 +495,7 @@
                         <div class="story-actions">
                             <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
                                 <span class="btn-text">View Case Study</span>
-                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                         stroke="white" stroke-width="2">
                                         <path d="M4 10H16M16 10L11 5M16 10L11 15" />
                                     </svg></span>
@@ -520,7 +525,7 @@
                         <div class="story-actions">
                             <a href="#" class="btn btn-split btn-commercial btn-animate-gap">
                                 <span class="btn-text">View Case Study</span>
-                                <span class="btn-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                <span class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                         stroke="white" stroke-width="2">
                                         <path d="M4 10H16M16 10L11 5M16 10L11 15" />
                                     </svg></span>
@@ -605,7 +610,7 @@
 
     <!-- Industries Served -->
     <!-- Industries Served Redesign -->
-    <section class="industries-section section-padding">
+    <section id="industries" class="industries-section section-padding">
         <div class="container">
             <div class="industries-header">
                 <h2 class="display-title-serif">Industries Served</h2>
@@ -678,7 +683,7 @@
     </div>
 
     <!-- Why Woodscape Section -->
-    <section class="why-woodscape-section">
+    <section id="why-woodscape" class="why-woodscape-section">
         <div class="container">
             <div class="why-header">
                 <h2 class="why-title">Why Woodscape</h2>
@@ -812,7 +817,7 @@
 
 
     <!-- Featured Case Study Redesign -->
-    <section class="featured-case-section section-padding">
+    <section id="case-studies" class="featured-case-section section-padding">
         <div class="container">
             <div class="case-study-intro mb-60">
                 <h2 class="display-title-serif">Featured Case Study</h2>
