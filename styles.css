@@ -33,7 +33,7 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
     /* Spacing */
-    --container-padding: 24px;
+    --container-padding: 90px;
     --section-spacing: 120px;
 }
 
@@ -791,7 +791,7 @@ h6 {
 
 .stats {
     background-color: #FFFFFF;
-    padding: 80px 60px;
+    padding: 80px 90px;
 }
 
 .stats-grid {
@@ -825,9 +825,8 @@ h6 {
     --cut: 60px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
     transition: all 0.4s ease;
-    width: 90%;
-    max-width: 400px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
 }
 
 .stat-card-wrapper:hover {
@@ -1326,14 +1325,14 @@ h6 {
     will-change: transform;
     padding-bottom: 4px;
     /* left-align first card with the container's content */
-    padding-left: max(24px, calc((100vw - 1280px) / 2 + 24px));
-    padding-right: max(24px, calc((100vw - 1280px) / 2 + 24px));
+    padding-left: max(90px, calc((100vw - 1280px) / 2 + 90px));
+    padding-right: max(90px, calc((100vw - 1280px) / 2 + 90px));
 }
 
 /* Custom Scrollbar */
 .stories-scrollbar-track {
-    width: calc(100% - max(48px, calc((100vw - 1280px) + 48px)));
-    margin-left: max(24px, calc((100vw - 1280px) / 2 + 24px));
+    width: calc(100% - max(180px, calc((100vw - 1280px) + 180px)));
+    margin-left: max(90px, calc((100vw - 1280px) / 2 + 90px));
     height: 4px;
     background: #E5E7EB;
     margin-top: 36px;
@@ -2505,9 +2504,9 @@ h6 {
 }
 
 .why-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 4rem;
-    padding: 0 1.5rem;
+    padding: 0 max(90px, calc((100vw - 1280px) / 2 + 90px));
 }
 
 .why-title {
@@ -2521,7 +2520,7 @@ h6 {
 .why-desc {
     color: #6B7280;
     max-width: 42rem;
-    margin: 0 auto;
+    margin: 0;
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -2556,13 +2555,13 @@ h6 {
     display: flex;
     gap: 24px;
     width: max-content;
-    padding: 0 max(24px, calc((100vw - 1280px) / 2 + 24px));
+    padding: 0 max(90px, calc((100vw - 1280px) / 2 + 90px));
 }
 
 /* Scrollbar */
 .why-scrollbar-track {
-    width: calc(100% - max(48px, calc((100vw - 1280px) + 48px)));
-    margin-left: max(24px, calc((100vw - 1280px) / 2 + 24px));
+    width: calc(100% - max(180px, calc((100vw - 1280px) + 180px)));
+    margin-left: max(90px, calc((100vw - 1280px) / 2 + 90px));
     height: 4px;
     background: #E5E7EB;
     margin-top: 36px;
@@ -2751,7 +2750,7 @@ h6 {
 
 .client-stories-header {
     margin-bottom: 4rem !important;
-    padding: 0 max(60px, calc((100vw - 1280px) / 2 + 60px)) !important;
+    padding: 0 max(90px, calc((100vw - 1280px) / 2 + 90px)) !important;
     text-align: left !important;
 }
 
@@ -2766,14 +2765,14 @@ h6 {
 
 @media (min-width: 768px) {
     .client-stories-title {
-        font-size: 4rem !important;
+        font-size: 5rem !important;
     }
 }
 
 .client-stories-desc {
     color: #6B7280;
-    font-size: 0.9375rem !important;
-    max-width: 440px !important;
+    font-size: 1.23rem !important;
+    max-width: 700px !important;
     line-height: 1.6 !important;
     margin: 0 !important;
 }
@@ -2801,13 +2800,13 @@ h6 {
     display: flex;
     gap: 20px;
     width: max-content;
-    padding: 0 max(60px, calc((100vw - 1280px) / 2 + 60px));
+    padding: 0 max(90px, calc((100vw - 1280px) / 2 + 90px));
 }
 
 /* Video Card with Corner Cut */
 .client-video-card-wrap {
     /* Show exactly 3 cards on desktop within the 1280px max-width container minus the 20px gaps */
-    width: calc((min(100vw, 1280px) - 120px - 40px) / 3);
+    width: calc((min(100vw, 1280px) - 180px - 40px) / 3);
     max-width: 400px;
     /* safety cap */
     /* Ensure they are tall, taking up ~75% of section/viewport as requested */
@@ -2891,7 +2890,7 @@ h6 {
 /* Controls Row (Scrollbar Only) */
 .client-controls-row {
     margin-top: 40px;
-    padding: 0 max(60px, calc((100vw - 1280px) / 2 + 60px));
+    padding: 0 max(90px, calc((100vw - 1280px) / 2 + 90px));
     display: flex;
     align-items: center;
     gap: 24px;
@@ -2941,26 +2940,28 @@ h6 {
 .estimate-container {
     position: relative;
     z-index: 10;
-    max-width: 56rem;
+    max-width: 1280px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
+    padding: 0 90px;
 }
 
 .estimate-title {
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-family: 'Playfair Display', serif;
-    color: white;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
     margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
     .estimate-title {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 }
 
 .estimate-desc {
-    color: #9CA3AF;
+    color: #ffffffb2;
     font-size: 1.125rem;
     margin-bottom: 3rem;
 }
@@ -3756,4 +3757,117 @@ h6 {
     }
 
     /* Ensure buttons distinct? Or keep row? They fit in one row usually. */
+}
+
+/* ============================================ */
+/* Responsive: Reduce 90px → 30px at ≤1200px   */
+/* ============================================ */
+@media (max-width: 1200px) {
+    :root {
+        --container-padding: 30px;
+    }
+
+    .stats {
+        padding: 80px 30px;
+    }
+
+    .stories-carousel {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .stories-scrollbar-track {
+        width: calc(100% - 60px);
+        margin-left: 30px;
+    }
+
+    .why-header {
+        padding: 0 30px;
+    }
+
+    .why-carousel-track {
+        padding: 0 30px;
+    }
+
+    .why-scrollbar-track {
+        width: calc(100% - 60px);
+        margin-left: 30px;
+    }
+
+    .client-stories-header {
+        padding: 0 30px !important;
+    }
+
+    .client-carousel-track {
+        padding: 0 30px;
+    }
+
+    .client-controls-row {
+        padding: 0 30px;
+    }
+
+    .estimate-container {
+        padding: 0 30px;
+    }
+
+    .client-video-card-wrap {
+        width: calc((100vw - 60px - 40px) / 2);
+    }
+}
+
+/* ============================================ */
+/* Responsive: Full width at ≤768px             */
+/* ============================================ */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 16px;
+    }
+
+    .stats {
+        padding: 60px 16px;
+    }
+
+    .stories-carousel {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .stories-scrollbar-track {
+        width: calc(100% - 32px);
+        margin-left: 16px;
+    }
+
+    .why-header {
+        padding: 0 16px;
+    }
+
+    .why-carousel-track {
+        padding: 0 16px;
+    }
+
+    .why-scrollbar-track {
+        width: calc(100% - 32px);
+        margin-left: 16px;
+    }
+
+    .client-stories-header {
+        padding: 0 16px !important;
+    }
+
+    .client-carousel-track {
+        padding: 0 16px;
+    }
+
+    .client-controls-row {
+        padding: 0 16px;
+    }
+
+    .estimate-container {
+        padding: 0 16px;
+    }
+
+    .client-video-card-wrap {
+        width: calc(100vw - 32px);
+        height: 60vh;
+    }
 }
