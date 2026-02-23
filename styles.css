@@ -143,8 +143,8 @@ h6 {
 .nav-link {
     color: var(--white);
     text-decoration: none;
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 1.28rem;
+    font-weight: 400;
     transition: color 0.3s ease;
     position: relative;
     opacity: 0.9;
@@ -456,7 +456,8 @@ h6 {
 
 .hero-description {
     color: var(--white);
-    font-size: 1.173rem;
+    font-size: 1.28rem;
+    font-weight: 400;
     line-height: 1.6;
     margin-bottom: 2rem;
     opacity: 0.95;
@@ -541,8 +542,8 @@ h6 {
     background: var(--white);
     color: var(--text-dark);
     padding: 1rem 2rem;
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1.23rem;
+    font-weight: 300;
     display: flex;
     align-items: center;
     transition: background 0.3s ease;
@@ -3660,7 +3661,6 @@ h6 {
     height: 74px;
     overflow: hidden;
     flex-shrink: 0;
-    background: #eee;
 }
 
 .avatar img {
@@ -3910,5 +3910,90 @@ h6 {
     .client-video-card-wrap {
         width: calc(100vw - 32px);
         height: 60vh;
+    }
+}
+/* ============================================ */
+/* NEW: Comprehensive Mobile Alignment Override */
+/* ============================================ */
+@media (max-width: 768px) {
+    /* 1. Global Left Alignment for Typography */
+    .hero-title, 
+    .hero-description, 
+    .section-title, 
+    .section-description, 
+    .faq-title, 
+    .faq-desc, 
+    .estimate-title, 
+    .estimate-desc, 
+    .cta-title, 
+    .cta-desc, 
+    .why-title,
+    .commercial-content {
+        text-align: left !important;
+        margin-left: 0 !important;
+        width: 100% !important;
+        align-items: flex-start !important;
+    }
+    
+    /* Center aligning containers that might have centered before */
+    .hero-container,
+    .hero-content,
+    .estimate-container,
+    .faq-container,
+    .cta-footer-section {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    /* 2. Global Buttons (Full Width & Flex Space Between) */
+    .btn, 
+    .btn-split, 
+    .case-cta-btn, 
+    .estimate-submit-btn,
+    .footer-button {
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: space-between !important;
+        display: flex !important;
+    }
+    
+    .btn-icon, .faq-icon {
+        margin-left: auto; /* Push icon to the right if space-between isn't enough */
+    }
+
+    /* 3. Stats Grid Fix (Keep 2x2) */
+    .stats-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* 4. Grid Adjustments (Force 1 Column) */
+    .case-visuals-redesign,
+    .why-grid,
+    .estimate-submit-wrap,
+    .form-row,
+    .footer-grid,
+    .faq-item {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Adjust specific elements inside grids */
+    .case-img-panel {
+        clip-path: none !important; /* Remove clip path on mobile if any */
+        border-radius: 4px;
+    }
+    
+    /* 5. Footer Left Align */
+    .footer-col,
+    .footer-brand,
+    .footer-links,
+    .footer-contact {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+    
+    .footer-social {
+        justify-content: flex-start !important;
     }
 }
