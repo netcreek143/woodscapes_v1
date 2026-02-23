@@ -9,23 +9,22 @@
     --pd-red: #E60024;
     --pd-red-hover: #c00500;
     --pd-navy: #0b1324;
-    --pd-text-primary: #111111;
+    --pd-text-primary: #000000;
     --pd-text-muted: #6f6f6f;
     --pd-text-light: #7a7a7a;
     --pd-border: #e9e9e9;
     --pd-overlay: rgba(0, 0, 0, 0.55);
 
-    /* Fonts */
-    --font-serif: "Playfair Display", serif;
-    --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
-
-    /* Spacing */
-    --pd-pad-x-desktop: 80px;
-    --pd-pad-x-tablet: 48px;
-    --pd-pad-x-mobile: 20px;
-
     --pd-space-lg: 90px;
     --pd-space-md: 60px;
+
+    /* Standardized Typography */
+    --heading-font: 'Playfair Display', serif;
+    --subheading-font: 'Inter', sans-serif;
+    --heading-size: 82px;
+    --heading-weight: 300;
+    --subheading-size: 14px;
+    --subheading-weight: 700;
 }
 
 /* Global Reset for this page specific elements */
@@ -52,8 +51,9 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: var(--font-serif);
-    font-weight: 500;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
+    font-weight: var(--heading-weight);
     color: var(--pd-text-primary);
     margin: 0;
     line-height: 1.05;
@@ -147,7 +147,9 @@ h4 {
 }
 
 .pd-main-title {
-    font-size: 54px;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
+    font-weight: var(--heading-weight);
     margin-bottom: 60px;
     /* Whitespace below title */
 }
@@ -160,14 +162,17 @@ h4 {
 }
 
 .pd-project-name {
-    font-size: 20px;
-    font-weight: 700;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
+    font-weight: var(--heading-weight);
     margin-bottom: 8px;
     line-height: 1.4;
 }
 
 .pd-project-sub {
-    font-size: 14px;
+    font-family: var(--subheading-font);
+    font-size: var(--subheading-size);
+    font-weight: var(--subheading-weight);
     color: var(--pd-text-muted);
     margin-bottom: 40px;
     max-width: 90%;
@@ -179,8 +184,9 @@ h4 {
 
 .pd-meta-label {
     display: block;
-    font-size: 11px;
-    font-weight: 700;
+    font-family: var(--subheading-font);
+    font-size: var(--subheading-size);
+    font-weight: var(--subheading-weight);
     letter-spacing: 0.12em;
     color: var(--pd-text-light);
     text-transform: uppercase;
@@ -189,14 +195,17 @@ h4 {
 
 .pd-meta-value {
     display: block;
-    font-size: 14px;
+    font-family: var(--subheading-font);
+    font-size: var(--subheading-size);
     font-weight: 600;
     color: var(--pd-text-primary);
 }
 
 /* Right Col */
 .pd-overview-heading {
-    font-size: 32px;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
+    font-weight: var(--heading-weight);
     margin-bottom: 24px;
 }
 
@@ -377,13 +386,17 @@ h4 {
 }
 
 .pd-form-title {
-    font-size: 48px;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
+    font-weight: var(--heading-weight);
     color: var(--pd-white);
     margin-bottom: 12px;
 }
 
 .pd-form-subtitle {
-    font-size: 15px;
+    font-family: var(--subheading-font);
+    font-size: var(--subheading-size);
+    font-weight: var(--subheading-weight);
     color: rgba(255, 255, 255, 0.7);
     margin-bottom: 50px;
     max-width: 600px;
@@ -454,12 +467,16 @@ h4 {
 }
 
 .pd-faq-title {
-    font-size: 48px;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
+    font-weight: var(--heading-weight);
     margin-bottom: 8px;
 }
 
 .pd-faq-subtitle {
-    font-size: 15px;
+    font-family: var(--subheading-font);
+    font-size: var(--subheading-size);
+    font-weight: var(--subheading-weight);
     color: var(--pd-text-muted);
     margin-bottom: 50px;
     border-bottom: 1px solid var(--pd-border);
@@ -531,13 +548,17 @@ h4 {
 }
 
 .pd-cta-heading {
-    font-size: 44px;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
+    font-weight: var(--heading-weight);
     color: var(--pd-white);
     margin-bottom: 12px;
 }
 
 .pd-cta-sub {
-    font-size: 16px;
+    font-family: var(--subheading-font);
+    font-size: var(--subheading-size);
+    font-weight: var(--subheading-weight);
     margin-bottom: 40px;
     opacity: 0.9;
 }

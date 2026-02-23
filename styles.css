@@ -20,7 +20,7 @@
     --white: #FFFFFF;
 
     /* Text Colors */
-    --text-dark: #111111;
+    --text-dark: #000000;
     --text-body: #4B5563;
     --text-light: #9CA3AF;
 
@@ -38,6 +38,14 @@
     --container-padding: 60px;
     /* fallback for symmetric uses */
     --section-spacing: 120px;
+
+    /* Standardized Typography */
+    --heading-font: 'Playfair Display', serif;
+    --subheading-font: 'Inter', sans-serif;
+    --heading-size: 82px;
+    --heading-weight: 300;
+    --subheading-size: 14px;
+    --subheading-weight: 700;
 }
 
 body {
@@ -58,7 +66,9 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
+    font-weight: var(--heading-weight);
     color: var(--text-dark);
     margin: 0 0 1.5rem 0;
     line-height: 1.2;
@@ -345,21 +355,21 @@ h6 {
 }
 
 .indicator {
-    width: 40px;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.4);
+    width: 80px;
+    height: 2px;
+    background: rgb(255, 255, 255);
     cursor: pointer;
     transition: all 0.3s ease;
     pointer-events: auto;
 }
 
 .indicator:hover {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgb(255, 255, 255);
 }
 
 .indicator.active {
     background: #E60024;
-    width: 50px;
+    width: 80px;
 }
 
 
@@ -440,9 +450,9 @@ h6 {
 }
 
 .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 82px;
-    font-weight: 300;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
+    font-weight: var(--heading-weight);
     width: auto;
     line-height: 1.1;
     letter-spacing: -0.5px;
@@ -541,9 +551,9 @@ h6 {
 .btn-text {
     background: var(--white);
     color: var(--text-dark);
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.8rem;
     font-size: 1.23rem;
-    font-weight: 300;
+    font-weight: 400;
     display: flex;
     align-items: center;
     transition: background 0.3s ease;
@@ -551,8 +561,8 @@ h6 {
 
 .btn-icon {
     background: var(--primary-red);
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     /* Matched height calculation approx */
     display: flex;
     align-items: center;
@@ -563,7 +573,7 @@ h6 {
 /* Ensure equal height for split button parts effectively */
 .btn-split .btn-text {
     height: 100%;
-    min-height: 60px;
+    min-height: 55px;
 }
 
 .btn-commercial .btn-text {
@@ -581,10 +591,10 @@ h6 {
 
 .btn-submit {
     width: 100%;
-    height: 56px;
+    height: 66px;
     background: var(--primary-red);
     color: var(--white);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     justify-content: space-between;
     padding: 0 2rem;
@@ -610,27 +620,31 @@ h6 {
 .btn-animate-gap {
     display: inline-flex;
     align-items: stretch;
-    /* Ensure equal height */
-    gap: 12px;
-    /* Initial gap */
+    gap: 8px;
+    /* Re-introduced gap as requested */
     background: transparent;
     padding: 0;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: none !important;
-    /* Remove shadow from container, applied to children */
+    /* Shadow moves to children for split look */
+    border-radius: 0;
+    /* Removed radius as requested */
     overflow: visible;
-    /* Allow children shadows */
+    /* Allow child shadows to show */
 }
 
 .btn-animate-gap:hover {
     gap: 0;
-    /* Close gap */
 }
 
 .btn-animate-gap .btn-text,
 .btn-animate-gap .btn-icon {
+    height: 55px;
+    /* Maintain locked height to prevent vertical deformation */
     box-shadow: var(--shadow-md);
     transition: all 0.3s ease;
+    border-radius: 0;
+    /* Ensure no radius on segments */
 }
 
 .btn-animate-gap:hover .btn-text,
@@ -708,12 +722,11 @@ h6 {
 }
 
 .form-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 56px;
-    padding-top: 30px;
-    padding-bottom: 20px;
+    font-family: var(--subheading-font);
+    font-size: 3rem;
+    padding-bottom: 10px;
     text-align: center;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--white);
     margin-bottom: 1.25rem;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -733,7 +746,8 @@ h6 {
     /* Adjust padding for fixed height */
     border: 1px solid #DADADA;
     font-family: 'Inter', sans-serif;
-    font-size: 0.9375rem;
+    font-size: 1.2rem;
+    font-weight: 400;
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 1);
     color: #1F2937;
@@ -794,8 +808,10 @@ h6 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
-    max-width: 100%;
+    max-width: 1400px;
+    /* Limit width to keep cards closer and centered */
     margin: 0 auto;
+    justify-content: center;
 }
 
 @media (max-width: 1200px) {
@@ -834,8 +850,8 @@ h6 {
 
 .stat-card {
     background-color: #ffffff;
-    padding: 20px 28px 32px;
-    max-width: 480px;
+    padding: 28px 80px 32px;
+    max-width: 580px;
     /* Increased from implicitly smaller flex limits */
     width: 100%;
     display: flex;
@@ -869,16 +885,22 @@ h6 {
 }
 
 .stat-label {
-    font-size: 24px;
+    font-family: var(--subheading-font);
+    font-size: var(--subheading-size);
+    font-weight: var(--subheading-weight);
     color: #000000;
-    font-weight: 400;
+    text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
-/* Hover: text turns red */
+/* Hover: text turns into gradient */
 .stat-card-wrapper:hover .stat-number,
 .stat-card-wrapper:hover .stat-label {
-    color: var(--primary-red);
+    background: linear-gradient(90deg, #000000, #E60024, #ff4d6a);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s linear infinite;
 }
 
 @keyframes gradientMove {
@@ -1007,9 +1029,9 @@ h6 {
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 86px;
-    font-weight: 400;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
+    font-weight: var(--heading-weight);
     color: var(--text-dark);
     margin-bottom: 24px;
     line-height: 1.2;
@@ -1025,14 +1047,14 @@ h6 {
 
 .features-list {
     list-style: none;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-size: 2rem;
     font-weight: 500;
     color: #000000;
@@ -1221,20 +1243,20 @@ h6 {
 
 .section-label-red {
     color: var(--primary-red);
-    font-size: 1.6rem;
-    font-weight: 200;
+    font-family: var(--subheading-font);
+    font-size: 1.78rem;
+    font-weight: 300;
     letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     display: block;
 }
 
 .display-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
+    font-family: var(--heading-font);
+    font-size: var(--heading-size);
     line-height: 1.0;
     color: #0a0a0a;
-    font-weight: 400;
+    font-weight: var(--heading-weight);
 }
 
 .stories-header {
@@ -1265,7 +1287,7 @@ h6 {
     font-size: 1.2rem;
     color: #4B5563;
     line-height: 1.65;
-    margin-bottom: 0;
+    margin-bottom: 22px;
 }
 
 .stories-nav {
@@ -1283,18 +1305,14 @@ h6 {
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
+
+    margin-bottom: 22px;
 }
 
 .nav-btn:hover {
     border-color: var(--dark);
     background: var(--dark);
     color: #fff;
-}
-
-.nav-btn.next {
-    background: var(--dark);
-    color: #fff;
-    border-color: var(--dark);
 }
 
 /* Carousel Wrapper - full bleed */
@@ -1364,7 +1382,7 @@ h6 {
     flex-direction: column;
     flex: 0 0 calc((100vw - var(--pad-left) - var(--pad-right) - 60px) / 3);
     width: calc((100vw - var(--pad-left) - var(--pad-right) - 60px) / 3);
-    height: 75vh;
+    height: 65vh;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     --story-cut: 96px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--story-cut)), calc(100% - var(--story-cut)) 100%, 0 100%);
@@ -1400,11 +1418,11 @@ h6 {
 }
 
 .story-title {
-    font-size: 2.375rem;
-    font-weight: 600;
+    font-family: var(--subheading-font);
+    font-size: 2.3rem;
+    font-weight: 900;
     color: #0a0a0a;
     margin-bottom: 14px;
-    font-family: 'Inter', sans-serif;
     line-height: 1.3;
 }
 
@@ -1421,14 +1439,14 @@ h6 {
 }
 
 .meta-label {
-    width: 90px;
+    width: 120px;
     font-weight: 700;
     color: #111;
     flex-shrink: 0;
 }
 
 .meta-sep {
-    margin-right: 12px;
+    margin-right: 15px;
     font-weight: 700;
 }
 
@@ -1439,7 +1457,7 @@ h6 {
 
 .story-impact {
     font-size: 1.2rem;
-    line-height: 1.5;
+    line-height: 1.4rem;
     color: #374151;
     margin-bottom: 30px;
     flex: 1;
@@ -1522,9 +1540,11 @@ h6 {
 /* Process header row: title left | description right */
 .process-header-row {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
+    /* Aligned to top to match photo */
     gap: 80px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+    /* Reduced to push content up */
 }
 
 .process-header-left {
@@ -1576,7 +1596,8 @@ h6 {
 .process-list {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #E5E7EB;
+    border-top: none;
+    /* Removed top border as requested */
 }
 
 .process-item {
@@ -1584,24 +1605,28 @@ h6 {
     justify-content: space-between;
     align-items: center;
     padding: 36px 0;
-    /* Increased from 24px */
     border-bottom: 1px solid #E5E7EB;
     cursor: default;
     transition: background 0.2s ease;
 }
 
+.process-item:first-child {
+    padding-top: 0;
+    /* Align first step text with image top */
+}
+
 .proc-title {
-    font-size: 1.62rem;
+    font-family: var(--subheading-font);
+    font-size: 1.65rem;
     font-weight: 400;
     color: var(--text-dark);
     margin: 0;
-    font-family: 'Inter', sans-serif;
     transition: font-weight 0.2s ease, color 0.2s ease;
 }
 
 .proc-badge {
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
     background: #F3F4F6;
     color: #374151;
     display: flex;
@@ -1610,7 +1635,18 @@ h6 {
     font-weight: 500;
     font-size: 1rem;
     flex-shrink: 0;
-    transition: background 0.2s ease, color 0.2s ease;
+    border-radius: 0;
+    /* Square as per photo */
+    transition: all 0.2s ease;
+}
+
+.active-step .proc-badge {
+    background: var(--primary-red);
+    color: #fff;
+}
+
+.active-step .proc-title {
+    font-weight: 700;
 }
 
 
@@ -1626,7 +1662,7 @@ h6 {
 
 .process-note {
     margin-top: 30px;
-    font-size: 1rem;
+    font-size: 1.23rem;
     color: #9CA3AF;
 }
 
@@ -1688,32 +1724,32 @@ h6 {
     border-right: none;
 }
 
-.industry-card-new:hover {
+/* .industry-card-new:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
     z-index: 2;
     transform: translateY(-5px);
     border-color: transparent;
-}
+} */
 
 .ind-icon-red {
     color: var(--primary-red);
     margin-bottom: 24px;
-    height: 82px;
-    width: 82px;
+    height: 120px;
+    width: 120px;
     display: flex;
     align-items: center;
 }
 
 .ind-title-new {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-family: var(--subheading-font);
+    font-size: 2.2rem;
+    font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 12px;
-    font-family: 'Inter', sans-serif;
 }
 
 .ind-desc-new {
-    font-size: 1.136rem;
+    font-size: 1.23rem;
     color: #6B7280;
     line-height: 1.6;
 }
@@ -1786,12 +1822,12 @@ h6 {
     border-right: none;
 }
 
-.case-stat-item:hover {
+/* .case-stat-item:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
     z-index: 2;
     transform: translateY(-5px);
     border-color: transparent;
-}
+} */
 
 .stat-icon-red-lg {
     color: var(--primary-red);
@@ -1809,9 +1845,9 @@ h6 {
 }
 
 .stat-desc-lg {
-    font-size: 1rem;
+    font-size: 1.23rem;
     color: #6B7280;
-    font-weight: 450;
+    font-weight: 400;
     line-height: 1.6;
 }
 
@@ -1864,7 +1900,7 @@ h6 {
 
 /* ── Testimonial panel (bottom-left) ── */
 .case-testimonial-wrap {
-    background: #E5E7EB;
+    background: #ffffff;
     /* border colour */
     padding: 0;
 }
@@ -1917,7 +1953,8 @@ h6 {
 
 .testimonial-red-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
+    font-size: 3.2rem;
+    font-weight: 400;
     color: var(--primary-red);
     margin-bottom: 24px;
     line-height: 1.2;
@@ -1926,17 +1963,17 @@ h6 {
 }
 
 .testimonial-body {
-    font-size: 1.1rem;
+    font-size: 1.19rem;
     color: #4B5563;
     line-height: 1.65;
     margin-bottom: 32px;
-    max-width: 480px;
+    max-width: 680px;
     z-index: 1;
     position: relative;
 }
 
 .testimonial-author-name {
-    font-size: 1.1rem;
+    font-size: 1.32rem;
     font-weight: 700;
     color: #111827;
     margin-bottom: 32px;
@@ -2000,7 +2037,7 @@ h6 {
 
 .case-cta-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
+    font-size: 3.2rem;
     font-weight: 300;
     color: #ffffff;
     line-height: 1.15;
@@ -2008,11 +2045,11 @@ h6 {
 }
 
 .case-cta-desc {
-    font-size: 1.1rem;
+    font-size: 1.23rem;
     color: #E5E7EB;
     line-height: 1.6;
     margin-bottom: 40px;
-    max-width: 440px;
+    max-width: 560px;
 }
 
 /* Custom CTA Button Styling */
@@ -2258,7 +2295,7 @@ h6 {
 }
 
 .footer-logo img {
-    height: 80px;
+    height: 120px;
     width: auto;
     display: block;
     margin-bottom: 24px;
@@ -2695,11 +2732,11 @@ h6 {
 }
 
 .why-card-title {
-    font-size: 2.125rem;
+    font-family: var(--subheading-font);
+    font-size: 2.23rem;
     font-weight: 500;
     color: #111827;
     margin-bottom: 0.75rem;
-    font-family: 'Inter', sans-serif;
 }
 
 .why-card-desc {
@@ -2795,18 +2832,18 @@ h6 {
 .founder-text {
     color: #ffffff;
     font-size: 1.125rem;
-    max-width: 36rem;
+    max-width: 42rem;
     line-height: 1.65;
     font-weight: 500;
 }
 
 .founder-label {
     color: var(--primary-red);
-    font-size: 0.8rem;
+    font-size: 1.125rem;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.6em;
     margin-top: 1rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 /* --- 3. Client Stories (Video Carousel) --- */
@@ -3015,34 +3052,34 @@ h6 {
 }
 
 .estimate-title {
-    font-size: 2.25rem;
+    font-size: 3.9rem;
     font-family: 'Playfair Display', serif;
     color: rgb(255, 255, 255);
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 1rem;
     text-align: center;
 }
 
 @media (min-width: 768px) {
     .estimate-title {
-        font-size: 4rem;
+        font-size: 5.2rem;
     }
 }
 
 .estimate-desc {
     color: #E5E7EB;
-    font-size: 1.125rem;
-    margin: 0 auto 3rem auto;
-    max-width: 600px;
+    font-size: 1.23rem;
+    margin: 0 auto 3.5rem auto;
+    max-width: 800px;
     text-align: center;
     line-height: 1.6;
 }
 
 .estimate-form-grid {
     display: grid;
-    gap: 1rem;
+    gap: 1.25rem;
     text-align: left;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -3059,10 +3096,18 @@ h6 {
     background-color: #ffffff;
     color: #111;
     border: none;
-    padding: 1rem 1.25rem;
+    padding: 1.25rem 1.5rem;
+    /* Increased padding for more height */
     width: 100%;
     outline: none;
     transition: box-shadow 0.2s;
+    font-size: 1.15rem;
+    /* Increased base font size */
+}
+
+.estimate-input::placeholder {
+    font-size: 1.15rem;
+    color: #9CA3AF;
 }
 
 .estimate-input:focus,
@@ -3083,9 +3128,10 @@ h6 {
     background-color: var(--primary-red);
     color: white;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.15rem;
     padding: 0 1.5rem;
-    height: 56px;
+    height: 64px;
+    /* Increased height to match inputs better */
     width: 100%;
     display: inline-flex;
     align-items: center;
@@ -3142,25 +3188,30 @@ h6 {
     font-size: 3rem;
     font-family: 'Playfair Display', serif;
     color: #111827;
-    text-align: center;
-    margin: 0 auto 1.5rem auto;
+    text-align: left;
+    margin: 0 0 1.5rem 0;
     width: 100%;
     line-height: 1.1;
+    white-space: nowrap;
+    /* Force single line */
 }
 
 @media (min-width: 768px) {
     .faq-title {
-        font-size: 4.25rem;
+        font-size: 5.4rem;
+        /* Adjusted to fit 70rem container on one line */
     }
 }
 
 .faq-desc {
-    text-align: center;
+    text-align: left;
     color: #6B7280;
-    font-size: 1rem;
+    font-size: 1.23rem;
     line-height: 1.6;
-    max-width: 500px;
-    margin: 0 auto 4rem auto;
+    max-width: 700px;
+    /* Spans wider but stays left-aligned */
+    margin: 0 0 4rem 0;
+    /* Left margin 0 */
 }
 
 .faq-item {
@@ -3204,7 +3255,7 @@ h6 {
 }
 
 .faq-q-text {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.85rem;
     color: #111827;
 }
@@ -3288,39 +3339,70 @@ h6 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    /* Increased gap */
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .cta-btn {
     background-color: #000;
     color: white;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.875rem;
-    font-weight: 700;
+    padding: 1.25rem 2rem;
+    font-size: 1.15rem;
+    /* Increased size to match reference */
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: background-color 0.2s;
+    justify-content: space-between;
+    /* Arrow to far right */
+    gap: 1rem;
+    border: none;
+    /* Removed border */
+    border-radius: 0;
+    /* Square corners */
+    transition: background-color 0.2s, transform 0.2s;
     text-decoration: none;
+    min-width: 320px;
+    /* Ensure enough width for content */
+    flex: 1 1 300px;
+    /* Allow growth but stack on mobile */
+}
+
+.cta-btn-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.cta-btn-arrow {
+    color: white;
+    /* Changed from red to white */
+    font-size: 1.25rem;
+    font-weight: 800;
+    margin-left: auto;
 }
 
 .cta-btn:hover {
-    background-color: #111;
+    background-color: #1a1a1a;
+    transform: translateY(-2px);
 }
 
 /* --- 7. Footer Migrated --- */
 .footer-migrated {
-    background-color: #0b0f19;
+    background-color: #03091e;
     color: #fefefe;
-    padding: 4rem 0;
-    font-size: 1.23rem;
+    padding: 6rem 0;
+    /* Slightly more padding */
+    font-size: 1.15rem;
+    /* Adjusted base size */
 }
 
 .footer-grid {
     display: grid;
     gap: 3rem;
-    border-bottom: 1px solid #1f2937;
     padding-bottom: 3rem;
     margin-bottom: 2rem;
 }
@@ -3367,8 +3449,14 @@ h6 {
 
 .footer-col h4 {
     color: white;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+    font-family: 'Inter', sans-serif;
+    /* Switched to sans-serif */
+    font-size: 1.75rem;
+    /* Adjusted size */
+    font-weight: 600;
+    /* Semi-bold look */
+    margin-bottom: 2.5rem;
+    /* More space below heading */
 }
 
 .footer-links {
@@ -3384,6 +3472,8 @@ h6 {
 .footer-links a {
     color: #ffffff;
     text-decoration: none;
+    font-weight: 400;
+    font-size: 1.15rem;
     transition: color 0.2s;
 }
 
@@ -3397,14 +3487,17 @@ h6 {
 
 .footer-contact-label {
     display: block;
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.15rem;
+    font-weight: 600;
     color: #ffffff;
+    margin-bottom: 0.25rem;
 }
 
 .footer-contact-val {
     color: white;
     text-decoration: none;
+    font-size: 1.23rem;
+    font-weight: 400;
 }
 
 .footer-contact-val:hover {
@@ -3500,8 +3593,8 @@ h6 {
 /* Apply strict nav-link styling to text */
 .btn-nav-estimate .btn-text {
     color: var(--white);
-    font-size: 1.4rem;
-    font-weight: 500;
+    font-size: 1.23rem;
+    font-weight: 400;
     background: transparent;
     padding: 0;
     position: relative;
@@ -3912,21 +4005,23 @@ h6 {
         height: 60vh;
     }
 }
+
 /* ============================================ */
 /* NEW: Comprehensive Mobile Alignment Override */
 /* ============================================ */
 @media (max-width: 768px) {
+
     /* 1. Global Left Alignment for Typography */
-    .hero-title, 
-    .hero-description, 
-    .section-title, 
-    .section-description, 
-    .faq-title, 
-    .faq-desc, 
-    .estimate-title, 
-    .estimate-desc, 
-    .cta-title, 
-    .cta-desc, 
+    .hero-title,
+    .hero-description,
+    .section-title,
+    .section-description,
+    .faq-title,
+    .faq-desc,
+    .estimate-title,
+    .estimate-desc,
+    .cta-title,
+    .cta-desc,
     .why-title,
     .commercial-content {
         text-align: left !important;
@@ -3934,7 +4029,7 @@ h6 {
         width: 100% !important;
         align-items: flex-start !important;
     }
-    
+
     /* Center aligning containers that might have centered before */
     .hero-container,
     .hero-content,
@@ -3946,9 +4041,9 @@ h6 {
     }
 
     /* 2. Global Buttons (Full Width & Flex Space Between) */
-    .btn, 
-    .btn-split, 
-    .case-cta-btn, 
+    .btn,
+    .btn-split,
+    .case-cta-btn,
     .estimate-submit-btn,
     .footer-button {
         width: 100% !important;
@@ -3956,9 +4051,11 @@ h6 {
         justify-content: space-between !important;
         display: flex !important;
     }
-    
-    .btn-icon, .faq-icon {
-        margin-left: auto; /* Push icon to the right if space-between isn't enough */
+
+    .btn-icon,
+    .faq-icon {
+        margin-left: auto;
+        /* Push icon to the right if space-between isn't enough */
     }
 
     /* 3. Stats Grid Fix (Keep 2x2) */
@@ -3977,13 +4074,14 @@ h6 {
         display: grid !important;
         grid-template-columns: 1fr !important;
     }
-    
+
     /* Adjust specific elements inside grids */
     .case-img-panel {
-        clip-path: none !important; /* Remove clip path on mobile if any */
+        clip-path: none !important;
+        /* Remove clip path on mobile if any */
         border-radius: 4px;
     }
-    
+
     /* 5. Footer Left Align */
     .footer-col,
     .footer-brand,
@@ -3992,8 +4090,24 @@ h6 {
         align-items: flex-start !important;
         text-align: left !important;
     }
-    
+
     .footer-social {
         justify-content: flex-start !important;
     }
+}
+
+/* -------------------------------------------------------------------------- */
+/* CAROUSEL ENTRANCE ANIMATIONS                                                */
+/* -------------------------------------------------------------------------- */
+.reveal-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }

@@ -500,6 +500,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const ratio = (e.clientX - rect.left) / rect.width;
         wrapper.scrollLeft = ratio * (wrapper.scrollWidth - wrapper.clientWidth);
     });
+
+    // --- Auto Scroll ---
+    let autoScrollInterval;
+    const scrollStep = 410; // Match card width + gap
+
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+            const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+            if (wrapper.scrollLeft >= maxScroll - 10) {
+                wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                wrapper.scrollBy({ left: scrollStep, behavior: 'smooth' });
+            }
+        }, 3000);
+    }
+
+    function stopAutoScroll() {
+        clearInterval(autoScrollInterval);
+    }
+
+    wrapper.addEventListener('mouseenter', stopAutoScroll);
+    wrapper.addEventListener('mouseleave', startAutoScroll);
+    startAutoScroll();
 });
 
 /* -------------------------------------------------------------------------- */
@@ -574,6 +597,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const ratio = (e.clientX - rect.left) / rect.width;
             wrapper.scrollLeft = ratio * (wrapper.scrollWidth - wrapper.clientWidth);
         });
+
+        // --- Auto Scroll ---
+        let autoScrollInterval;
+        const scrollStep = 450; // Approximated card width + gap
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+                if (wrapper.scrollLeft >= maxScroll - 10) {
+                    wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    wrapper.scrollBy({ left: scrollStep, behavior: 'smooth' });
+                }
+            }, 3000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        wrapper.addEventListener('mouseenter', stopAutoScroll);
+        wrapper.addEventListener('mouseleave', startAutoScroll);
+        startAutoScroll();
     }
 
     // --- Mute Toggle Logic ---
@@ -638,3 +684,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/* -------------------------------------------------------------------------- */
+/* CAROUSEL REVEAL ANIMATIONS                                                 */
+/* -------------------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    const revealCards = document.querySelectorAll('.reveal-card');
+
+    if (revealCards.length === 0) return;
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add a small delay based on index for staggering effect if multiple enter at once
+                // However, since they enter individually as we scroll sideways, simple reveal is usually fine.
+                // For vertical scroll (entrance), staggering works well.
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px' // Trigger slightly before it fully enters
+    });
+
+    revealCards.forEach(card => {
+        revealObserver.observe(card);
+    });
+});
+
