@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.classList.add('active');
             }
         });
-    }, 100);
+    });
 });
 
 window.addEventListener('scroll', () => {
