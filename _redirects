@@ -1,0 +1,5 @@
+# Force HTTPS
+http://* https://:hostname/:splat 301!
+
+# Handle SPAs if needed (not needed for this static site, but good practice)
+/* /index.html 200

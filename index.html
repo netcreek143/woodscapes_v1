@@ -5,6 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Woodscape Engineering - Commercial Construction and Interiors</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Woodscape Engineering — Premium commercial construction and interior solutions. Quality craftsmanship delivered on time.">
+    <meta name="keywords"
+        content="commercial construction, interior design, Woodscape Engineering, building contractor, turnkey interiors">
+    <meta name="author" content="Woodscape Engineering">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://woodscapeengineering.com/">
+    <meta property="og:title" content="Woodscape Engineering - Commercial Construction and Interiors">
+    <meta property="og:description"
+        content="Premium commercial construction and interior solutions. Quality craftsmanship delivered on time.">
+    <meta property="og:image" content="https://woodscapeengineering.com/images/home-banner.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/woodscapelogo.png">
+    <link rel="apple-touch-icon" href="images/woodscapelogo.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,7 +32,7 @@
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.min.css">
 </head>
 
 <body>
@@ -30,7 +50,7 @@
 
             <div class="nav-wrapper">
                 <ul class="nav-menu">
-                    <li><a href="#" class="nav-link active">Home</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#services" class="nav-link">Services</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#industries" class="nav-link">Industries</a></li>
@@ -53,22 +73,22 @@
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-slider">
             <div class="hero-slide active"
-                style="background: url('./images/bgherosection1.png') center/cover no-repeat;">
+                style="background: url('./images/bgherosection1.jpg') center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="background: url('./images/bgherosection1.png') center/cover no-repeat;">
+            <div class="hero-slide" style="background: url('./images/bgherosection1.jpg') center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="background: url('./images/bgherosection1.png') center/cover no-repeat;">
+            <div class="hero-slide" style="background: url('./images/bgherosection1.jpg') center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="background: url('./images/bgherosection1.png') center/cover no-repeat;">
+            <div class="hero-slide" style="background: url('./images/bgherosection1.jpg') center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
         </div>
@@ -155,65 +175,72 @@
         </div>
     </section>
 
-    <section id="services" class="commercial-section">
-        <div class="container commercial-container">
-            <div class="commercial-image">
-                <img src="./images/commercial-construction.png" alt="Modern Glass Building Under Construction">
+    <div class="sticky-parent" id="services">
+        <section class="commercial-section">
+            <div class="container commercial-container">
+                <div class="commercial-image">
+                    <img src="./images/commercial-construction.jpg" alt="Modern Glass Building Under Construction">
+                </div>
+                <div class="commercial-content">
+                    <h2 class="section-title">Commercial Construction</h2>
+                    <p class="section-description">End-to-end commercial builds with strict cost control, regulatory
+                        compliance, and on-time based delivery.</p>
+                    <ul class="features-list">
+                        <li class="feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>RCC & shell works</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>BOQ Management</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>MEP coordination</span>
+                        </li>
+                        <li class="feature-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            <span>Approvals</span>
+                        </li>
+                    </ul>
+                    <br>
+                    <button class="btn btn-split btn-commercial btn-animate-gap">
+                        <span class="btn-text">Request Construction Estimate</span>
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
             </div>
-            <div class="commercial-content">
-                <h2 class="section-title">Commercial Construction</h2>
-                <p class="section-description">End-to-end commercial builds with strict cost control, regulatory
-                    compliance, and on-time based delivery.</p>
-                <ul class="features-list">
-                    <li class="feature-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        <span>RCC & shell works</span>
-                    </li>
-                    <li class="feature-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        <span>BOQ Management</span>
-                    </li>
-                    <li class="feature-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        <span>MEP coordination</span>
-                    </li>
-                    <li class="feature-item">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                        <span>Approvals</span>
-                    </li>
-                </ul>
-                <br>
-                <button class="btn btn-split btn-commercial btn-animate-gap">
-                    <span class="btn-text">Request Construction Estimate</span>
-                    <span class="btn-icon">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </span>
-                </button>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Commercial Interiors Section -->
     <section class="commercial-section reversed">
         <div class="container commercial-container">
             <div class="commercial-image">
                 <!-- Placeholder image for now, user can swap this easily -->
-                <img src="./images/commercial-interior.png" onerror="this.src='./images/featuresectionimg.png'"
+                <img src="./images/commercial-interior.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
                     alt="Modern Commercial Interior">
             </div>
             <div class="commercial-content">
@@ -303,7 +330,7 @@
                 <!-- Card 1 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories1.png" onerror="this.src='./images/featuresectionimg.png'"
+                        <img src="./images/successstories1.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
                             alt="ABC Infrastructure">
                     </div>
                     <div class="story-content">
@@ -333,7 +360,7 @@
                 <!-- Card 2 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories2.png" onerror="this.src='./images/featuresectionimg.png'"
+                        <img src="./images/successstories2.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
                             alt="YB Retail Group">
                     </div>
                     <div class="story-content">
@@ -362,7 +389,7 @@
                 <!-- Card 3 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories3.png" onerror="this.src='./images/featuresectionimg.png'"
+                        <img src="./images/successstories3.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
                             alt="LMN Tech Solutions">
                     </div>
                     <div class="story-content">
@@ -391,7 +418,7 @@
                 <!-- Card 4 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories1.png" onerror="this.src='./images/featuresectionimg.png'"
+                        <img src="./images/successstories1.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
                             alt="Greenfield Hospitality">
                     </div>
                     <div class="story-content">
@@ -420,7 +447,7 @@
                 <!-- Card 5 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories2.png" onerror="this.src='./images/featuresectionimg.png'"
+                        <img src="./images/successstories2.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
                             alt="MedCore Healthcare">
                     </div>
                     <div class="story-content">
@@ -450,7 +477,7 @@
                 <!-- Card 6 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories3.png" onerror="this.src='./images/featuresectionimg.png'"
+                        <img src="./images/successstories3.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
                             alt="PinePeak Institutions">
                     </div>
                     <div class="story-content">
@@ -479,7 +506,7 @@
                 <!-- Card 7 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories1.png" onerror="this.src='./images/featuresectionimg.png'"
+                        <img src="./images/successstories1.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
                             alt="SkyHigh Corporate">
                     </div>
                     <div class="story-content">
@@ -508,7 +535,7 @@
                 <!-- Card 8 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories2.png" onerror="this.src='./images/featuresectionimg.png'"
+                        <img src="./images/successstories2.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
                             alt="NovaBuild Retail">
                     </div>
                     <div class="story-content">
@@ -565,7 +592,7 @@
             <div class="process-wrapper">
                 <!-- Left: Image -->
                 <div class="process-image-col">
-                    <img src="./images/deliverypro.png" onerror="this.src='./images/featuresectionimg.png'"
+                    <img src="./images/deliverypro.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
                         alt="Delivery Process Interior" class="process-feature-img">
                 </div>
 
@@ -680,7 +707,7 @@
 
     <!-- Static Banner -->
     <div class="static-banner-wrap">
-        <img src="./images/staticbanner.png" alt="Woodscape Banner" class="static-banner-img">
+        <img src="./images/staticbanner.jpg" alt="Woodscape Banner" class="static-banner-img">
     </div>
 
     <!-- Why Woodscape Section -->
@@ -839,11 +866,11 @@
                 <!-- Row 1: Before / After images -->
                 <div class="case-img-panel">
                     <span class="case-img-label">Before</span>
-                    <img src="./images/fcs_before.png" onerror="this.src='./images/featuresectionimg.png'" alt="Before">
+                    <img src="./images/fcs_before.jpg" onerror="this.src='./images/featuresectionimg.jpg'" alt="Before">
                 </div>
                 <div class="case-img-panel">
                     <span class="case-img-label">After</span>
-                    <img src="./images/fcs_after.png" onerror="this.src='./images/featuresectionimg.png'" alt="After">
+                    <img src="./images/fcs_after.jpg" onerror="this.src='./images/featuresectionimg.jpg'" alt="After">
                 </div>
 
                 <!-- Row 2 Left: Client Experience testimonial -->
@@ -895,7 +922,7 @@
 
     <!-- Founder Message Redesign (Migrated) -->
     <section class="founder-section-migrated">
-        <img src="./images/founderbg.png" alt="Founder background" class="founder-bg-img">
+        <img src="./images/founderbg.jpg" alt="Founder background" class="founder-bg-img">
 
         <div class="founder-overlay">
             <!-- <h2 class="founder-title-top">FOUNDER</h2>
@@ -1398,7 +1425,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.min.js"></script>
 
     <style>
         /* Founder Video Modal */
@@ -1536,6 +1563,14 @@
     <!-- Request Estimate Modal -->
     <div class="modal-overlay" id="estimateModal" aria-hidden="true">
         <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close-btn" aria-label="Close"
+                onclick="document.getElementById('estimateModal').classList.remove('is-open'); document.getElementById('estimateModal').setAttribute('aria-hidden','true'); document.body.style.overflow='';">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
             <div class="modal-inner">
                 <!-- Header Row -->
                 <div class="modal-titleRow">
@@ -1602,7 +1637,8 @@
 
             if (!carousel || !wrapper || !track || !thumb) return;
 
-            const CARD_STEP = 410; // card width (380) + gap (30)
+            const isMobile = window.innerWidth <= 600;
+            const CARD_STEP = isMobile ? 320 : 410; // card width + gap
             let currentX = 0;
 
             function getMaxX() {
@@ -1689,8 +1725,56 @@
                 var rect = track.getBoundingClientRect();
                 var clickRatio = (e.clientX - rect.left) / rect.width;
                 applyTranslate(clickRatio * getMaxX());
-                resetAutoScroll();
+                if (storiesSectionVisible) resetStoriesAutoScroll();
             });
+
+            // ── Stories Auto Scroll Logic ────────────────────────────────────
+            let storiesAutoInterval;
+            const STORIES_AUTO_DELAY = 3500;
+
+            function startStoriesAutoScroll() {
+                storiesAutoInterval = setInterval(() => {
+                    let nextX = currentX + CARD_STEP;
+                    if (nextX > getMaxX()) {
+                        nextX = 0;
+                    }
+                    carousel.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                    applyTranslate(nextX);
+                }, STORIES_AUTO_DELAY);
+            }
+
+            function stopStoriesAutoScroll() {
+                clearInterval(storiesAutoInterval);
+            }
+
+            function resetStoriesAutoScroll() {
+                stopStoriesAutoScroll();
+                startStoriesAutoScroll();
+            }
+
+            // Pause on hover
+            wrapper.addEventListener('mouseenter', stopStoriesAutoScroll);
+            wrapper.addEventListener('mouseleave', () => {
+                if (storiesSectionVisible) startStoriesAutoScroll();
+            });
+
+            // Start only when section is in view
+            let storiesSectionVisible = false;
+            const storiesSection = document.getElementById('projects');
+            if (storiesSection) {
+                const storiesObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            storiesSectionVisible = true;
+                            startStoriesAutoScroll();
+                        } else {
+                            storiesSectionVisible = false;
+                            stopStoriesAutoScroll();
+                        }
+                    });
+                }, { threshold: 0.2 });
+                storiesObserver.observe(storiesSection);
+            }
 
             // ── Auto Scroll Logic ───────────────────────────────────────────
             let autoScrollInterval;
@@ -1720,10 +1804,27 @@
 
             // Pause on hover
             wrapper.addEventListener('mouseenter', stopAutoScroll);
-            wrapper.addEventListener('mouseleave', startAutoScroll);
+            wrapper.addEventListener('mouseleave', () => {
+                if (sectionVisible) startAutoScroll();
+            });
 
-            // Initial start
-            startAutoScroll();
+            // Start only when section is in view
+            let sectionVisible = false;
+            const clientSection = document.querySelector('.client-stories-section');
+            if (clientSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            sectionVisible = true;
+                            startAutoScroll();
+                        } else {
+                            sectionVisible = false;
+                            stopAutoScroll();
+                        }
+                    });
+                }, { threshold: 0.2 });
+                observer.observe(clientSection);
+            }
 
             // Scrollbar thumb drag
             var thumbDragging = false;
@@ -1760,6 +1861,16 @@
             syncThumb();
             window.addEventListener('resize', syncThumb);
         })();
+
+        // ── Footer Accordion (Mobile Only) ──────────────────────────────────
+        document.querySelectorAll('.footer-col h4').forEach(header => {
+            header.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    const col = header.parentElement;
+                    col.classList.toggle('active');
+                }
+            });
+        });
     </script>
 </body>
 

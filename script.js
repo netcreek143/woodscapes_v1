@@ -159,25 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const fadeElements = document.querySelectorAll('.commercial-content, .commercial-image');
 
-    const fadeObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, {
-        threshold: 0.2
-    });
-
-    fadeElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        fadeObserver.observe(el);
-    });
 
     const formInputs = document.querySelectorAll('.form-input, .form-textarea');
     formInputs.forEach(input => {
@@ -268,104 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoPlay();
 });
 
-// GSAP Animation Implementation
-document.addEventListener('DOMContentLoaded', () => {
-    // Only run if GSAP is loaded
-    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-        console.warn('GSAP or ScrollTrigger not found');
-        return;
-    }
 
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Initial Setup: Wrap sections for pinning
-    const sections = document.querySelectorAll('.commercial-section');
-    if (sections.length < 2) return; // Need at least 2 sections
-
-    const section1 = sections[0];
-    const section2 = sections[1];
-
-    // Create wrapper
-    const pinWrap = document.createElement('div');
-    pinWrap.className = 'pin-wrap';
-
-    // Insert wrapper before first section
-    section1.parentNode.insertBefore(pinWrap, section1);
-
-    // Move sections into wrapper
-    pinWrap.appendChild(section1);
-    pinWrap.appendChild(section2);
-
-    // Animation Logic
-    ScrollTrigger.matchMedia({
-        // Desktop
-        "(min-width: 769px)": function () {
-            // Ensure Section 2 is initially positioned below Section 1
-            gsap.set(section2, { y: '100%', opacity: 1, visibility: 'visible' });
-
-            // Remove CSS transitions that might conflict with GSAP scrub
-            gsap.set(section1.querySelector('.commercial-content'), { transition: 'none' });
-            gsap.set(section2.querySelector('.commercial-content'), { transition: 'none' });
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: pinWrap,
-                    start: "top top",
-                    end: "+=150%", // Adjusted scroll length
-                    pin: true,
-                    scrub: true, // Direct scrub, no smoothing for "just move" feel
-                    anticipatePin: 1
-                }
-            });
-
-            // "Curtain" Effect: Section 2 slides up over Section 1
-            // Simultaneously, Section 1 text moves up to exit
-
-            tl.to(section1.querySelector('.commercial-content'), {
-                y: '-100vh', // Move text up out of view
-                ease: "none"
-            }, 0)
-                .to(section2, {
-                    y: '0%', // Slide Section 2 up to cover S1
-                    ease: "none"
-                }, 0);
-
-            // PARALLAX EFFECT (Restored)
-            gsap.to(section1.querySelector('.commercial-image img'), {
-                y: -18,
-                scale: 1.04,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: pinWrap,
-                    start: "top top",
-                    end: "+=100%",
-                    scrub: true
-                }
-            });
-
-            gsap.fromTo(section2.querySelector('.commercial-image img'),
-                { y: 18, scale: 1.04 },
-                {
-                    y: -18,
-                    scale: 1.04,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: pinWrap,
-                        start: "top top+=100%",
-                        end: "bottom bottom",
-                        scrub: true
-                    }
-                }
-            );
-        },
-
-        // Mobile / Reduced Motion
-        "(max-width: 768px), (prefers-reduced-motion: reduce)": function () {
-            // Restore default layout if needed or let CSS handle it
-            // CSS handles opacity/visibility reset
-        }
-    });
-});
 
 /* -------------------------------------------------------------------------- */
 /* REQUEST ESTIMATE MODAL LOGIC                                               */
