@@ -32,7 +32,7 @@
         rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="styles.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -175,65 +175,58 @@
         </div>
     </section>
 
-    <div class="sticky-parent" id="services">
-        <section class="commercial-section">
-            <div class="container commercial-container">
-                <div class="commercial-image">
-                    <img src="./images/commercial-construction.jpg" alt="Modern Glass Building Under Construction">
-                </div>
-                <div class="commercial-content">
-                    <h2 class="section-title">Commercial Construction</h2>
-                    <p class="section-description">End-to-end commercial builds with strict cost control, regulatory
-                        compliance, and on-time based delivery.</p>
-                    <ul class="features-list">
-                        <li class="feature-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            <span>RCC & shell works</span>
-                        </li>
-                        <li class="feature-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            <span>BOQ Management</span>
-                        </li>
-                        <li class="feature-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            <span>MEP coordination</span>
-                        </li>
-                        <li class="feature-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            <span>Approvals</span>
-                        </li>
-                    </ul>
-                    <br>
-                    <button class="btn btn-split btn-commercial btn-animate-gap">
-                        <span class="btn-text">Request Construction Estimate</span>
-                        <span class="btn-icon">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </span>
-                    </button>
-                </div>
+    <section class="commercial-section" id="services">
+        <div class="container commercial-container">
+            <div class="commercial-image">
+                <img src="./images/commercial-construction.jpg" alt="Modern Glass Building Under Construction">
             </div>
-        </section>
-    </div>
+            <div class="commercial-content">
+                <h2 class="section-title">Commercial Construction</h2>
+                <p class="section-description">End-to-end commercial builds with strict cost control, regulatory
+                    compliance, and on-time based delivery.</p>
+                <ul class="features-list">
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>RCC & shell works</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>BOQ Management</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>MEP coordination</span>
+                    </li>
+                    <li class="feature-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 13l4 4L19 7" stroke="#E60024" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <span>Approvals</span>
+                    </li>
+                </ul>
+                <br>
+                <button class="btn btn-split btn-commercial btn-animate-gap">
+                    <span class="btn-text">Request Construction Estimate</span>
+                    <span class="btn-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
 
     <!-- Commercial Interiors Section -->
     <section class="commercial-section reversed">
@@ -920,18 +913,16 @@
     </section>
 
 
-    <!-- Founder Message Redesign (Migrated) -->
+    <!-- Founder Message Section -->
     <section class="founder-section-migrated">
         <img src="./images/founderbg.jpg" alt="Founder background" class="founder-bg-img">
 
         <div class="founder-overlay">
-            <!-- <h2 class="founder-title-top">FOUNDER</h2>
-            <h3 class="founder-title-bottom">MESSAGE</h3> -->
-
             <button class="founder-play-btn" id="founderPlayBtn" onclick="openFounderModal()">
                 <svg width="54" height="54" viewBox="0 0 24 24" fill="white" stroke-linecap="round"
                     stroke-linejoin="round" class="founder-play-icon">
-                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    <!-- Adjusted triangle to be perfectly centered and filled -->
+                    <polygon points="8,5 20,12 8,19" fill="white"></polygon>
                 </svg>
             </button>
 

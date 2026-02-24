@@ -967,41 +967,58 @@ h6 {
     }
 }
 
-/* Commercial Section Scroll Pinning (Desktop Only) */
-@media (min-width: 769px) {
-    .sticky-parent {
-        height: 220vh;
-        /* Sufficient height for scroll pause */
-        position: relative;
-        z-index: 5;
-        background: #fff;
-    }
 
-    .sticky-parent:nth-of-type(even) {
-        background: var(--light-gray);
-    }
 
-    .sticky-parent .commercial-section {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        z-index: 10;
-        background: inherit;
-    }
+.pin-wrap {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background-color: var(--white);
+}
+
+.pin-wrap .commercial-section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    will-change: transform;
+    z-index: 1;
+}
+
+.pin-wrap .commercial-section:first-child {
+    z-index: 1;
+}
+
+.pin-wrap .commercial-section:nth-child(2) {
+    z-index: 2;
+}
+
+.commercial-image img {
+    transform-origin: center center;
+    will-change: transform;
 }
 
 @media (max-width: 768px) {
-    .sticky-parent {
+    .pin-wrap {
         height: auto;
+        display: block;
     }
 
-    .sticky-parent .commercial-section {
+    .pin-wrap .commercial-section {
         position: relative;
         height: auto;
+        opacity: 1 !important;
+        visibility: visible !important;
         padding: 60px 0;
     }
 }
@@ -1009,11 +1026,9 @@ h6 {
 .commercial-section {
     background: #FFFFFF;
     padding: 120px 0;
-    /* Increased from 5rem (80px) for better spacing */
     position: relative;
     overflow: hidden;
     z-index: 15;
-    /* Ensure non-sticky versions still stack correctly */
 }
 
 .commercial-section.reversed {
@@ -1027,10 +1042,8 @@ h6 {
     grid-template-columns: 1fr 1fr;
     gap: 0;
     align-items: stretch;
-    /* Stretch to full height */
     width: 100%;
     height: 100%;
-    /* Force full height */
     max-width: none;
     padding: 0;
 }
@@ -1041,7 +1054,6 @@ h6 {
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    /* Ensure it covers viewport */
 }
 
 .commercial-image img {
@@ -1058,12 +1070,10 @@ h6 {
 
 .commercial-content {
     padding: 120px 100px;
-    /* Increased padding */
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 800px;
-    /* Prevent text from stretching too wide */
 }
 
 .section-title {
@@ -2479,24 +2489,7 @@ h6 {
 }
 
 /* Founder Message */
-.commercial-section {
-    padding: var(--section-spacing) var(--container-padding);
-    background-color: var(--white);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 80px;
-    position: relative;
-}
 
-@media (max-width: 1024px) {
-    .commercial-section {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-        padding: 60px var(--container-padding);
-    }
-}
 
 .founder-section {
     padding: var(--section-spacing) 0;
@@ -3166,7 +3159,7 @@ h6 {
 .founder-section-migrated {
     position: relative;
     width: 100%;
-    height: auto;
+    height: 800px;
     background-color: #000;
     overflow: hidden;
 }
@@ -3189,10 +3182,10 @@ h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    /* Center content vertically by default */
+    justify-content: flex-end;
     text-align: center;
-    padding: 2rem 1.5rem;
+    padding: 0 1.5rem 3rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 50%);
 }
 
 .founder-title-top {
