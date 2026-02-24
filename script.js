@@ -54,7 +54,7 @@
     });
 })();
 
-function animateCounter(element, target, duration = 2500) {
+function animateCounter(element, target, duration = 2000) {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
@@ -598,3 +598,93 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+/* -------------------------------------------------------------------------- */
+/* COMMERCIAL SECTION GSAP ANIMATIONS                                          */
+/* -------------------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
+        console.warn('GSAP or ScrollTrigger not found');
+        return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const sections = document.querySelectorAll('.commercial-section');
+    if (sections.length < 2) return;
+
+    const section1 = sections[0];
+    const section2 = sections[1];
+
+    // Create a container for pinning
+    const pinWrap = document.createElement('div');
+    pinWrap.className = 'pin-wrap';
+    section1.parentNode.insertBefore(pinWrap, section1);
+    pinWrap.appendChild(section1);
+    pinWrap.appendChild(section2);
+
+    ScrollTrigger.matchMedia({
+        // Desktop pinning and transition
+        "(min-width: 769px)": function () {
+            // Initial states
+            gsap.set(section2, {
+                y: '100%',
+                opacity: 1,
+                visibility: 'visible'
+            });
+
+            // Disable standard transitions during scroll
+            gsap.set(section1.querySelector('.commercial-content'), { transition: 'none' });
+            gsap.set(section2.querySelector('.commercial-content'), { transition: 'none' });
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: pinWrap,
+                    start: "top top",
+                    end: "+=150%",
+                    pin: true,
+                    scrub: true,
+                    anticipatePin: 1
+                }
+            });
+
+            // Content transition
+            tl.to(section1.querySelector('.commercial-content'), {
+                y: '-100vh',
+                ease: "none"
+            }, 0)
+                .to(section2, {
+                    y: '0%',
+                    ease: "none"
+                }, 0);
+
+            // Parallel image parallax
+            gsap.to(section1.querySelector('.commercial-image img'), {
+                y: -18,
+                scale: 1.04,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: pinWrap,
+                    start: "top top",
+                    end: "+=100%",
+                    scrub: true
+                }
+            });
+
+            gsap.fromTo(section2.querySelector('.commercial-image img'),
+                { y: 18, scale: 1.04 },
+                {
+                    y: -18,
+                    scale: 1.04,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: pinWrap,
+                        start: "top top+=100%",
+                        end: "bottom bottom",
+                        scrub: true
+                    }
+                }
+            );
+        }
+    });
+});
