@@ -862,6 +862,10 @@ h6 {
     background-color: #FFFFFF;
     padding: 140px var(--container-padding);
     /* Increased spacing above and below */
+    contain: layout;
+    /* Stabilizes the section layout */
+    min-height: 400px;
+    /* Prevents section collapse during load */
 }
 
 .stats-grid {
@@ -941,8 +945,9 @@ h6 {
     font-variant-numeric: tabular-nums;
     /* Prevents shaking by making all digits same width */
     display: inline-block;
-    min-width: 1.2ch;
-    /* Ensure space for the digits */
+    min-width: 3ch;
+    /* Reserve space for up to 3 digits */
+    text-align: left;
 }
 
 .stat-label {

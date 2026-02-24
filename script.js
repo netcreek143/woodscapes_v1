@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.classList.add('active');
             }
         });
-    });
+    }, 100);
 });
 
 window.addEventListener('scroll', () => {
@@ -623,68 +623,70 @@ document.addEventListener('DOMContentLoaded', () => {
     pinWrap.appendChild(section1);
     pinWrap.appendChild(section2);
 
-    ScrollTrigger.matchMedia({
-        // Desktop pinning and transition
-        "(min-width: 769px)": function () {
-            // Initial states
-            gsap.set(section2, {
-                y: '100%',
-                opacity: 1,
-                visibility: 'visible'
-            });
+    // Delay slightly to prevent initial render "shake" or layout thrashing
+    setTimeout(() => {
+        ScrollTrigger.matchMedia({
+            // Desktop pinning and transition
+            "(min-width: 769px)": function () {
+                // Initial states
+                gsap.set(section2, {
+                    y: '100%',
+                    opacity: 1,
+                    visibility: 'visible'
+                });
 
-            // Disable standard transitions during scroll
-            gsap.set(section1.querySelector('.commercial-content'), { transition: 'none' });
-            gsap.set(section2.querySelector('.commercial-content'), { transition: 'none' });
+                // Disable standard transitions during scroll
+                gsap.set(section1.querySelector('.commercial-content'), { transition: 'none' });
+                gsap.set(section2.querySelector('.commercial-content'), { transition: 'none' });
 
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: pinWrap,
-                    start: "top top",
-                    end: "+=150%",
-                    pin: true,
-                    scrub: true,
-                    anticipatePin: 1
-                }
-            });
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: pinWrap,
+                        start: "top top",
+                        end: "+=150%",
+                        pin: true,
+                        scrub: true,
+                        anticipatePin: 1
+                    }
+                });
 
-            // Content transition
-            tl.to(section1.querySelector('.commercial-content'), {
-                y: '-100vh',
-                ease: "none"
-            }, 0)
-                .to(section2, {
-                    y: '0%',
+                // Content transition
+                tl.to(section1.querySelector('.commercial-content'), {
+                    y: '-100vh',
                     ease: "none"
-                }, 0);
+                }, 0)
+                    .to(section2, {
+                        y: '0%',
+                        ease: "none"
+                    }, 0);
 
-            // Parallel image parallax
-            gsap.to(section1.querySelector('.commercial-image img'), {
-                y: -18,
-                scale: 1.04,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: pinWrap,
-                    start: "top top",
-                    end: "+=100%",
-                    scrub: true
-                }
-            });
-
-            gsap.fromTo(section2.querySelector('.commercial-image img'),
-                { y: 18, scale: 1.04 },
-                {
+                // Parallel image parallax
+                gsap.to(section1.querySelector('.commercial-image img'), {
                     y: -18,
                     scale: 1.04,
                     ease: "none",
                     scrollTrigger: {
                         trigger: pinWrap,
-                        start: "top top+=100%",
-                        end: "bottom bottom",
+                        start: "top top",
+                        end: "+=100%",
                         scrub: true
                     }
-                }
-            );
-        }
+                });
+
+                gsap.fromTo(section2.querySelector('.commercial-image img'),
+                    { y: 18, scale: 1.04 },
+                    {
+                        y: -18,
+                        scale: 1.04,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: pinWrap,
+                            start: "top top+=100%",
+                            end: "bottom bottom",
+                            scrub: true
+                        }
+                    }
+                );
+            }
+        });
     });
-});
