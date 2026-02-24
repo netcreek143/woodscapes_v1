@@ -1321,77 +1321,91 @@
     <footer class="footer-migrated">
         <div class="container">
             <div class="footer-grid">
-                <!-- Brand -->
+                <!-- Column 1: Brand & Socials -->
                 <div class="footer-brand">
                     <a href="#" class="footer-logo">
                         <img src="./images/woodscapelogo.png" alt="Woodscape Logo" class="footer-logo-img">
                     </a>
+
+                    <!-- Social Icons (Desktop: between logo and description) -->
                     <div class="footer-socials">
-                        <a href="#" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                        <a href="#" class="footer-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg></a>
-                        <a href="#" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path
-                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-                                </path>
-                            </svg></a>
-                        <a href="#" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                                    d="M4 4l11.733 16h4.267l-11.733 -16z M4 20l6.768 -6.768 M12.456 11.544l7.544 -7.544" />
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path
                                     d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
                                 </path>
                                 <rect x="2" y="9" width="4" height="12"></rect>
                                 <circle cx="4" cy="4" r="2"></circle>
-                            </svg></a>
-                        <a href="#" class="footer-social-link"><svg width="16" height="16" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
+                            </svg>
+                        </a>
+                        <a href="#" class="footer-social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg></a>
+                            </svg>
+                        </a>
                     </div>
-                    <p style="margin-top: 1.5rem; font-size: 1rem; color: #ffffff; line-height: 1.6;">
+
+                    <p class="footer-description">
                         Engineering-led interior and fit-out solutions designed for performance, safety, and long-term
                         value. We partner with businesses to deliver spaces that are efficient, compliant, and built to
                         last.
                     </p>
                 </div>
 
-                <!-- Quick Links -->
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Commercial Construction</a></li>
-                        <li><a href="#">Commercial Interiors</a></li>
-                        <li><a href="#">Success Stories</a></li>
-                        <li><a href="#">Delivery Process</a></li>
-                        <li><a href="#">Industries Served</a></li>
-                        <li><a href="#">Why Woodscape</a></li>
-                    </ul>
+                <!-- Column 2 & 3: Quick Links (Grouped for mobile accordion) -->
+                <div class="footer-col footer-links-group">
+                    <input type="checkbox" id="footerLinksToggle" class="footer-toggle-input">
+                    <label for="footerLinksToggle" class="footer-h4">
+                        Quick Links
+                        <svg class="footer-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </label>
+                    <div class="footer-accordion-content">
+                        <div class="footer-links-col-1">
+                            <ul class="footer-links">
+                                <li><a href="#">Commercial Construction</a></li>
+                                <li><a href="#">Commercial Interiors</a></li>
+                                <li><a href="#">Success Stories</a></li>
+                                <li><a href="#">Delivery Process</a></li>
+                                <li><a href="#">Industries Served</a></li>
+                                <li><a href="#">Why Woodscape</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-links-col-2">
+                            <ul class="footer-links">
+                                <li><a href="#">Case Study</a></li>
+                                <li><a href="#">Founder Message</a></li>
+                                <li><a href="#">Client Stories</a></li>
+                                <li><a href="#">Estimation Form</a></li>
+                                <li><a href="#">Process Submission</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- More Links -->
-                <div class="footer-col">
-                    <br><br>
-                    <ul class="footer-links">
-                        <li><a href="#">Case Study</a></li>
-                        <li><a href="#">Founder Message</a></li>
-                        <li><a href="#">Client Stories</a></li>
-                        <li><a href="#">Estimation Form</a></li>
-                        <li><a href="#">Process Submission</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div class="footer-col">
-                    <h4>Get in Touch</h4>
+                <!-- Column 4: Contact -->
+                <div class="footer-col footer-contact-col">
+                    <h4 class="footer-h4-static">Get in Touch</h4>
                     <div class="footer-contact-item">
                         <span class="footer-contact-label">Email :</span>
                         <a href="mailto:admin@woodscape.com" class="footer-contact-val">admin@woodscape.com</a>
@@ -1402,17 +1416,16 @@
                     </div>
                     <div class="footer-contact-item">
                         <span class="footer-contact-label">Location:</span>
-                        <span style="color: white; font-size: 1.15rem;">15,62nd street, Ashok
-                            Nagar,<br>Chennai-600083</span>
+                        <span class="footer-contact-val">15,62nd street, Ashok Nagar, Chennai-600083</span>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>© 2026 Woodscape. All rights reserved.</p>
-                <div style="display: flex; gap: 1.5rem; margin-top: 1rem;">
-                    <a href="#" style="text-decoration: none; color: #4B5563;">Privacy Policy</a>
-                    <a href="#" style="text-decoration: none; color: #4B5563;">Terms & Conditions</a>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
                 </div>
             </div>
         </div>

@@ -1235,33 +1235,60 @@ h6 {
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        /* Tighter gap */
-        padding: 0;
+        gap: 12px;
+        /* Slightly tighter as per reference style */
+        padding: 0 15px;
+        /* Add some breathing room on sides of grid */
     }
 
     .stat-card-wrapper {
-        --cut: 30px !important;
-        /* Reduced cut as requested */
+        background-color: transparent !important;
+        /* Remove dark grey background */
+        border: 1px solid #E5E7EB;
+        /* Subtle border like in image */
+        padding: 0;
+        /* No wrapper padding */
+        --cut: 40px !important;
+        box-shadow: none !important;
+    }
+
+    .stat-card-wrapper:hover {
+        background: transparent !important;
+        animation: none !important;
+        filter: none !important;
     }
 
     .stat-card {
-        padding: 20px 10px;
-        align-items: center;
-        text-align: center;
-        --cut: 29.9px !important;
-        /* Reduced cut */
+        padding: 24px 20px;
+        /* Adjusted padding for better look */
+        align-items: flex-start;
+        /* Left aligned content like image */
+        text-align: left;
+        background-color: #ffffff;
+        --cut: 39.9px !important;
+        width: 100%;
+        height: 100%;
     }
 
     .stat-number {
-        font-size: clamp(32px, 8vw, 42px);
+        font-size: clamp(36px, 10vw, 44px);
+        /* Slightly larger for emphasis */
+        margin-bottom: 4px;
+        font-weight: 600;
+        color: #000000;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+        color: #1a1a1a;
+        font-weight: 500;
     }
 
     .stat-icon {
-        height: 50px;
-        width: 50px;
+        height: 48px;
+        width: 48px;
         margin-top: 0;
-        margin-bottom: 12px;
+        margin-bottom: 20px;
     }
 
     .commercial-container {
@@ -1274,7 +1301,8 @@ h6 {
     }
 
     .commercial-content {
-        padding: 40px 0;
+        padding: 40px 24px;
+        /* Added 24px horizontal padding for text zone */
         text-align: left;
         align-items: flex-start;
     }
@@ -1299,17 +1327,33 @@ h6 {
     }
 
     .hero-container {
-        padding-top: 100px;
+        padding-top: 60px;
+        /* Reduced from 100px to decrease gap with navbar */
         gap: 2rem;
     }
 
     .hero-title {
-        text-align: center;
+        text-align: left;
+        /* Changed from center */
     }
 
     .hero-description {
-        text-align: center;
+        text-align: left;
+        /* Changed from center */
         font-size: 1.1rem;
+    }
+
+    .hero-content {
+        align-items: flex-start;
+        /* Ensure children align left */
+    }
+
+    .hero-content .btn {
+        width: 60% !important;
+        /* Approx 60% of screen */
+        max-width: 60% !important;
+        justify-content: flex-start !important;
+        padding-left: 20px !important;
     }
 
     .hero-form-card {
@@ -1318,7 +1362,12 @@ h6 {
     }
 
     .form-title {
-        font-size: 2rem;
+        font-size: 2.25rem;
+        /* Increased from 2rem */
+        font-weight: 700;
+        /* Increased weight */
+        text-align: left;
+        /* Left align */
     }
 
     .btn-submit {
@@ -1351,7 +1400,17 @@ h6 {
         margin: 0;
         overflow-x: auto !important;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
+        /* Reduced from 20px to pull scrollbar closer */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE 10+ */
+    }
+
+    .stories-carousel-wrapper::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari/Webkit */
     }
 
     .stories-carousel {
@@ -1371,7 +1430,8 @@ h6 {
 
     .stories-scrollbar-track {
         display: flex !important;
-        margin: 10px 20px;
+        margin: 0px 20px 20px 20px;
+        /* Removed top margin */
     }
 
     /* Delivery Process */
@@ -1462,27 +1522,82 @@ h6 {
         justify-content: space-between;
     }
 
-    /* Footer */
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    /* CTA Footer Section - Rich Mobile Customization */
+    .cta-footer-section {
+        padding: 5rem 20px;
+        background: radial-gradient(circle at top right, #4c1d95, #1e3a8a, #0f172a) !important;
+        text-align: center !important;
     }
 
-    .footer-brand {
-        text-align: left;
+    .cta-overlay {
+        display: none;
+        /* Let the gradient speak */
     }
 
-    .footer-socials {
-        justify-content: flex-start;
+    .cta-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .btn,
-    .cta-btn,
-    .case-cta-btn {
+    .cta-title {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 3rem !important;
+        font-weight: 700 !important;
+        margin-bottom: 24px !important;
+        text-align: center !important;
+    }
+
+    .cta-desc {
+        font-size: 1.15rem !important;
+        line-height: 1.5 !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        margin-bottom: 40px !important;
+        text-align: center !important;
+    }
+
+    .cta-buttons {
+        flex-direction: column !important;
+        gap: 16px !important;
         width: 100% !important;
         max-width: 100% !important;
-        justify-content: space-between !important;
+    }
+
+    .cta-btn {
+        width: 100% !important;
+        min-width: auto !important;
+        flex: none !important;
+        /* PREVENT stretching into boxes */
+        padding: 12px 24px !important;
+        /* Slightly more than 10px for readability */
+        background-color: #000000 !important;
         display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        border-radius: 0 !important;
+        font-size: 1.15rem !important;
+        font-weight: 600 !important;
+        min-height: 56px;
+        /* A bit taller than 48px for better premium feel */
+    }
+
+    .cta-btn-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .cta-btn-left svg {
+        width: 24px !important;
+        height: 24px !important;
+        color: #ffffff !important;
+    }
+
+    .cta-btn-arrow {
+        font-size: 1.5rem !important;
+        color: #ffffff !important;
+        font-weight: 700 !important;
     }
 
     /* FAQ Adjustments */
@@ -3902,70 +4017,77 @@ h6 {
 }
 
 /* --- 7. Footer Migrated --- */
+/* --- 7. Footer Migrated --- */
 .footer-migrated {
     background-color: #0e1423;
     color: #fefefe;
-    padding: 120px 0;
+    padding: 100px 0 60px;
     font-size: 1.15rem;
 }
 
 .footer-grid {
     display: grid;
-    gap: 3rem;
-    padding-bottom: 3rem;
+    gap: 2rem;
+    padding-bottom: 4rem;
     margin-bottom: 2rem;
+    grid-template-columns: 1fr;
+    /* Mobile default */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@media (min-width: 768px) {
-    .footer-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+.footer-brand {
+    display: flex;
+    flex-direction: column;
 }
-
-.footer-brand h1 {
-    color: white;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    display: none;
-    /* Hide old text logo just in case */
-}
-
-
 
 .footer-socials {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .footer-social-link {
-    width: 2rem;
-    height: 2rem;
+    width: 32px;
+    height: 32px;
     background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #000000;
     transition: all 0.2s;
+    border-radius: 4px;
+}
+
+.footer-social-link svg {
+    width: 16px;
+    height: 16px;
 }
 
 .footer-social-link:hover {
     background-color: var(--primary-red);
-    color: rgb(0, 0, 0);
 }
 
+.footer-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 350px;
+}
+
+.footer-h4,
+.footer-h4-static,
 .footer-col h4 {
     color: white;
     font-family: 'Inter', sans-serif;
-    /* Switched to sans-serif */
-    font-size: 1.75rem;
-    /* Adjusted size */
+    font-size: 1.6rem;
     font-weight: 600;
-    /* Semi-bold look */
     margin-bottom: 2.5rem;
-    /* More space below heading */
+}
+
+.footer-links-group {
+    display: contents;
+    /* Propagate children to main grid on desktop */
 }
 
 .footer-links {
@@ -3975,14 +4097,14 @@ h6 {
 }
 
 .footer-links li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
 }
 
 .footer-links a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 400;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     transition: color 0.2s;
 }
 
@@ -3991,21 +4113,21 @@ h6 {
 }
 
 .footer-contact-item {
-    margin-bottom: 1rem;
+    margin-bottom: 1.75rem;
 }
 
 .footer-contact-label {
     display: block;
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #ffffff;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
 .footer-contact-val {
     color: white;
     text-decoration: none;
-    font-size: 1.23rem;
+    font-size: 1.15rem;
     font-weight: 400;
 }
 
@@ -4013,19 +4135,158 @@ h6 {
     color: var(--primary-red);
 }
 
+.footer-toggle-input,
+.footer-chevron {
+    display: none;
+}
+
+/* --- Desktop Specific Header Alignment --- */
+@media (min-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 4rem;
+    }
+
+    .footer-accordion-content {
+        display: contents;
+    }
+
+    .footer-links-group .footer-h4 {
+        grid-column: 2;
+        grid-row: 1;
+        display: block;
+    }
+
+    .footer-links-col-1 {
+        grid-column: 2;
+        grid-row: 1;
+        padding-top: 5rem;
+    }
+
+    .footer-links-col-2 {
+        grid-column: 3;
+        grid-row: 1;
+        padding-top: 5rem;
+    }
+}
+
+/* --- Mobile Specific Refinements --- */
+@media (max-width: 991px) {
+    .footer-migrated {
+        padding: 60px 20px;
+    }
+
+    .footer-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-logo {
+        order: 1;
+    }
+
+    .footer-description {
+        order: 2;
+        margin-top: 20px;
+    }
+
+    .footer-links-group {
+        order: 3;
+        display: block;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 24px 0;
+    }
+
+    .footer-contact-col {
+        order: 4;
+    }
+
+    .footer-socials {
+        order: 5;
+        margin: 20px 0 0;
+    }
+
+    .footer-h4 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0 !important;
+        cursor: pointer;
+    }
+
+    .footer-chevron {
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .footer-toggle-input:checked~.footer-accordion-content {
+        max-height: 500px;
+        margin-top: 20px;
+    }
+
+    .footer-toggle-input:checked~.footer-h4 .footer-chevron {
+        transform: rotate(180deg);
+    }
+
+    .footer-social-link {
+        width: 44px;
+        height: 44px;
+    }
+
+    .footer-social-link svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 .footer-bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.2rem;
-    color: #4B5563;
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.4);
+    padding-top: 40px;
+    gap: 20px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .footer-bottom {
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
+
+    .footer-bottom-links {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+    }
+}
+
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-bottom-links a:hover {
+    color: var(--primary-red);
 }
 
 /* Navigation Request Estimate Button */
