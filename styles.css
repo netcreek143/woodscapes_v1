@@ -889,9 +889,11 @@ h6 {
     /* Border thickness */
     --cut: 60px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
-    transition: all 0.4s ease;
+    transition: background 0.4s ease, filter 0.4s ease;
     width: 100%;
     margin: 0;
+    transform: translateZ(0);
+    /* Hardware acceleration to stabilize rendering */
 }
 
 .stat-card-wrapper:hover {
