@@ -910,6 +910,8 @@ h6 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
     --cut: 59.9px;
     /* Slightly smaller to fit inside wrapper */
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
@@ -939,7 +941,7 @@ h6 {
 
 .stat-label {
     font-family: var(--subheading-font);
-    font-size: var(--subheading-size);
+    font-size: 1.23rem;
     font-weight: var(--subheading-weight);
     color: #000000;
     text-transform: uppercase;
@@ -3890,7 +3892,7 @@ h6 {
 
 /* --- 7. Footer Migrated --- */
 .footer-migrated {
-    background-color: #03091e;
+    background-color: #0e1423;
     color: #fefefe;
     padding: 120px 0;
     font-size: 1.15rem;

@@ -54,7 +54,7 @@
     });
 })();
 
-function animateCounter(element, target, duration = 2000) {
+function animateCounter(element, target, duration = 2500) {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
