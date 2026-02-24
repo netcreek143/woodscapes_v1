@@ -32,6 +32,7 @@
         rel="stylesheet">
 
     <!-- CSS -->
+    <link rel="preload" as="image" href="images/commercial-construction.jpg">
     <link rel="stylesheet" href="styles.min.css">
     <link rel="stylesheet" href="project-details.min.css">
 </head>
@@ -145,13 +146,13 @@
     <section class="pd-gallery-section">
         <div class="pd-gallery-grid">
             <div class="pd-gallery-item">
-                <img src="images/successstories1.jpg" alt="Project View 1">
+                <img loading="lazy" src="images/successstories1.jpg" alt="Project View 1">
             </div>
             <div class="pd-gallery-item">
-                <img src="images/successstories2.jpg" alt="Project View 2">
+                <img loading="lazy" src="images/successstories2.jpg" alt="Project View 2">
             </div>
             <div class="pd-gallery-item">
-                <img src="images/successstories3.jpg" alt="Project View 3">
+                <img loading="lazy" src="images/successstories3.jpg" alt="Project View 3">
             </div>
         </div>
 
@@ -170,7 +171,7 @@
     <!-- SECTION 3: QUICK ESTIMATE FORM -->
     <section class="pd-form-section">
         <div class="pd-form-bg">
-            <img src="images/commercial-interior.jpg" alt="Form Background">
+            <img loading="lazy" src="images/commercial-interior.jpg" alt="Form Background">
             <div class="pd-form-overlay"></div>
         </div>
 
@@ -429,8 +430,8 @@
         </div>
     </footer>
 
-    <script src="script.min.js"></script>
-    <script src="project-details.min.js"></script>
+    <script src="script.min.js" defer></script>
+    <script src="project-details.min.js" defer></script>
 </body>
 
 </html>

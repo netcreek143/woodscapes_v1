@@ -30,9 +30,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="./images/bgherosection1.jpg">
+    <link rel="stylesheet" href="styles.min.css">
 </head>
 
 <body>
@@ -139,7 +138,7 @@
             <div class="stat-card-wrapper">
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <img src="images/years.png" alt="Years of Experience" class="stat-img">
+                        <img loading="lazy" src="images/years.png" alt="Years of Experience" class="stat-img">
                     </div>
                     <div class="stat-number" data-target="50">0+</div>
                     <div class="stat-label">Years</div>
@@ -148,7 +147,7 @@
             <div class="stat-card-wrapper">
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <img src="images/Projects.png" alt="Projects Completed" class="stat-img">
+                        <img loading="lazy" src="images/Projects.png" alt="Projects Completed" class="stat-img">
                     </div>
                     <div class="stat-number" data-target="100">0+</div>
                     <div class="stat-label">Projects</div>
@@ -157,7 +156,7 @@
             <div class="stat-card-wrapper">
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <img src="images/otd.png" alt="On-Time Delivery" class="stat-img">
+                        <img loading="lazy" src="images/otd.png" alt="On-Time Delivery" class="stat-img">
                     </div>
                     <div class="stat-number" data-target="99">0%</div>
                     <div class="stat-label">On-Time Delivery</div>
@@ -166,7 +165,7 @@
             <div class="stat-card-wrapper">
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <img src="images/hse.png" alt="HSE Compliant" class="stat-img">
+                        <img loading="lazy" src="images/hse.png" alt="HSE Compliant" class="stat-img">
                     </div>
                     <div class="stat-number stat-text">HSE</div>
                     <div class="stat-label">Compliant</div>
@@ -178,7 +177,8 @@
     <section class="commercial-section" id="services">
         <div class="container commercial-container">
             <div class="commercial-image">
-                <img src="./images/commercial-construction.jpg" alt="Modern Glass Building Under Construction">
+                <img loading="lazy" src="./images/commercial-construction.jpg"
+                    alt="Modern Glass Building Under Construction">
             </div>
             <div class="commercial-content">
                 <h2 class="section-title">Commercial Construction</h2>
@@ -233,8 +233,8 @@
         <div class="container commercial-container">
             <div class="commercial-image">
                 <!-- Placeholder image for now, user can swap this easily -->
-                <img src="./images/commercial-interior.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
-                    alt="Modern Commercial Interior">
+                <img loading="lazy" src="./images/commercial-interior.jpg"
+                    onerror="this.src='./images/featuresectionimg.jpg'" alt="Modern Commercial Interior">
             </div>
             <div class="commercial-content">
                 <h2 class="section-title">Commercial Interiors</h2>
@@ -323,8 +323,8 @@
                 <!-- Card 1 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories1.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
-                            alt="ABC Infrastructure">
+                        <img loading="lazy" src="./images/successstories1.jpg"
+                            onerror="this.src='./images/featuresectionimg.jpg'" alt="ABC Infrastructure">
                     </div>
                     <div class="story-content">
                         <h3 class="story-title">ABC Infrastructure</h3>
@@ -353,8 +353,8 @@
                 <!-- Card 2 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories2.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
-                            alt="YB Retail Group">
+                        <img loading="lazy" src="./images/successstories2.jpg"
+                            onerror="this.src='./images/featuresectionimg.jpg'" alt="YB Retail Group">
                     </div>
                     <div class="story-content">
                         <h3 class="story-title">YB Retail Group</h3>
@@ -382,8 +382,8 @@
                 <!-- Card 3 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories3.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
-                            alt="LMN Tech Solutions">
+                        <img loading="lazy" src="./images/successstories3.jpg"
+                            onerror="this.src='./images/featuresectionimg.jpg'" alt="LMN Tech Solutions">
                     </div>
                     <div class="story-content">
                         <h3 class="story-title">LMN Tech Solutions</h3>
@@ -411,8 +411,8 @@
                 <!-- Card 4 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories1.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
-                            alt="Greenfield Hospitality">
+                        <img loading="lazy" src="./images/successstories1.jpg"
+                            onerror="this.src='./images/featuresectionimg.jpg'" alt="Greenfield Hospitality">
                     </div>
                     <div class="story-content">
                         <h3 class="story-title">Greenfield Hospitality</h3>
@@ -440,8 +440,8 @@
                 <!-- Card 5 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories2.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
-                            alt="MedCore Healthcare">
+                        <img loading="lazy" src="./images/successstories2.jpg"
+                            onerror="this.src='./images/featuresectionimg.jpg'" alt="MedCore Healthcare">
                     </div>
                     <div class="story-content">
                         <h3 class="story-title">MedCore Healthcare</h3>
@@ -470,8 +470,8 @@
                 <!-- Card 6 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories3.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
-                            alt="PinePeak Institutions">
+                        <img loading="lazy" src="./images/successstories3.jpg"
+                            onerror="this.src='./images/featuresectionimg.jpg'" alt="PinePeak Institutions">
                     </div>
                     <div class="story-content">
                         <h3 class="story-title">PinePeak Institutions</h3>
@@ -499,8 +499,8 @@
                 <!-- Card 7 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories1.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
-                            alt="SkyHigh Corporate">
+                        <img loading="lazy" src="./images/successstories1.jpg"
+                            onerror="this.src='./images/featuresectionimg.jpg'" alt="SkyHigh Corporate">
                     </div>
                     <div class="story-content">
                         <h3 class="story-title">SkyHigh Corporate</h3>
@@ -528,8 +528,8 @@
                 <!-- Card 8 -->
                 <article class="story-card reveal-card">
                     <div class="story-img-wrapper">
-                        <img src="./images/successstories2.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
-                            alt="NovaBuild Retail">
+                        <img loading="lazy" src="./images/successstories2.jpg"
+                            onerror="this.src='./images/featuresectionimg.jpg'" alt="NovaBuild Retail">
                     </div>
                     <div class="story-content">
                         <h3 class="story-title">NovaBuild Retail</h3>
@@ -585,8 +585,9 @@
             <div class="process-wrapper">
                 <!-- Left: Image -->
                 <div class="process-image-col">
-                    <img src="./images/deliverypro.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
-                        alt="Delivery Process Interior" class="process-feature-img">
+                    <img loading="lazy" src="./images/deliverypro.jpg"
+                        onerror="this.src='./images/featuresectionimg.jpg'" alt="Delivery Process Interior"
+                        class="process-feature-img">
                 </div>
 
                 <!-- Right: Steps -->
@@ -644,7 +645,7 @@
                 <!-- 1. Corporate Offices -->
                 <div class="industry-card-new">
                     <div class="ind-icon-red">
-                        <img src="./images/is_corp.png" alt="Corporate Offices Icon">
+                        <img loading="lazy" src="./images/is_corp.png" alt="Corporate Offices Icon">
                     </div>
                     <h3 class="ind-title-new">Corporate Offices</h3>
                     <p class="ind-desc-new">Optimizing office environments for productivity and collaboration.</p>
@@ -653,7 +654,7 @@
                 <!-- 2. Retail -->
                 <div class="industry-card-new">
                     <div class="ind-icon-red">
-                        <img src="./images/is_retail.png" alt="Retail Icon">
+                        <img loading="lazy" src="./images/is_retail.png" alt="Retail Icon">
                     </div>
                     <h3 class="ind-title-new">Retail</h3>
                     <p class="ind-desc-new">Enhancing customer engagement and seamless shopping experiences.</p>
@@ -662,7 +663,7 @@
                 <!-- 3. Restaurants -->
                 <div class="industry-card-new">
                     <div class="ind-icon-red">
-                        <img src="./images/is_rest.png" alt="Restaurants Icon">
+                        <img loading="lazy" src="./images/is_rest.png" alt="Restaurants Icon">
                     </div>
                     <h3 class="ind-title-new">Restaurants</h3>
                     <p class="ind-desc-new">Improving operational efficiency to elevate dining satisfaction.</p>
@@ -671,7 +672,7 @@
                 <!-- 4. Hospitality -->
                 <div class="industry-card-new">
                     <div class="ind-icon-red">
-                        <img src="./images/is_hosp.png" alt="Hospitality Icon">
+                        <img loading="lazy" src="./images/is_hosp.png" alt="Hospitality Icon">
                     </div>
                     <h3 class="ind-title-new">Hospitality</h3>
                     <p class="ind-desc-new">Creating welcoming spaces that exceed guest expectations.</p>
@@ -680,7 +681,7 @@
                 <!-- 5. Healthcare -->
                 <div class="industry-card-new">
                     <div class="ind-icon-red">
-                        <img src="./images/is_health.png" alt="Healthcare Icon">
+                        <img loading="lazy" src="./images/is_health.png" alt="Healthcare Icon">
                     </div>
                     <h3 class="ind-title-new">Healthcare</h3>
                     <p class="ind-desc-new">Supporting patient care with innovative facility solutions.</p>
@@ -689,7 +690,7 @@
                 <!-- 6. Institutions -->
                 <div class="industry-card-new">
                     <div class="ind-icon-red">
-                        <img src="./images/is_insti.png" alt="Institutions Icon">
+                        <img loading="lazy" src="./images/is_insti.png" alt="Institutions Icon">
                     </div>
                     <h3 class="ind-title-new">Institutions</h3>
                     <p class="ind-desc-new">Delivering tailored services for educational and public sectors.</p>
@@ -700,7 +701,7 @@
 
     <!-- Static Banner -->
     <div class="static-banner-wrap">
-        <img src="./images/staticbanner.jpg" alt="Woodscape Banner" class="static-banner-img">
+        <img loading="lazy" src="./images/staticbanner.jpg" alt="Woodscape Banner" class="static-banner-img">
     </div>
 
     <!-- Why Woodscape Section -->
@@ -723,7 +724,7 @@
                 <div class="why-card-wrap reveal-card">
                     <div class="why-card">
                         <div class="why-icon-wrapper">
-                            <img src="./images/ww1.png" alt="Engineering Planning Icon">
+                            <img loading="lazy" src="./images/ww1.png" alt="Engineering Planning Icon">
                         </div>
                         <h3 class="why-card-title">Engineering-First Planning</h3>
                         <p class="why-card-desc">Every project begins with technical accuracy and detailed execution
@@ -735,7 +736,8 @@
                 <div class="why-card-wrap reveal-card">
                     <div class="why-card">
                         <div class="why-icon-wrapper">
-                            <img src="./images/ww2.png" alt="Transparent Costing Icon" class="why-card-icon">
+                            <img loading="lazy" src="./images/ww2.png" alt="Transparent Costing Icon"
+                                class="why-card-icon">
                         </div>
                         <h3 class="why-card-title">Transparent Costing</h3>
                         <p class="why-card-desc">Clear pricing with no hidden charges, ensuring complete financial
@@ -748,7 +750,8 @@
                 <div class="why-card-wrap reveal-card">
                     <div class="why-card">
                         <div class="why-icon-wrapper">
-                            <img src="./images/ww3.png" alt="Single PM Ownership Icon" class="why-card-icon">
+                            <img loading="lazy" src="./images/ww3.png" alt="Single PM Ownership Icon"
+                                class="why-card-icon">
                         </div>
                         <h3 class="why-card-title">Single PM Ownership</h3>
                         <p class="why-card-desc">One dedicated project manager from start to finish for seamless
@@ -760,7 +763,8 @@
                 <div class="why-card-wrap reveal-card">
                     <div class="why-card">
                         <div class="why-icon-wrapper">
-                            <img src="./images/ww4.png" alt="Safety Compliance Icon" class="why-card-icon">
+                            <img loading="lazy" src="./images/ww4.png" alt="Safety Compliance Icon"
+                                class="why-card-icon">
                         </div>
                         <h3 class="why-card-title">Safety Compliance</h3>
                         <p class="why-card-desc">Strict adherence to HSE protocols ensures zero safety incidents on
@@ -773,7 +777,8 @@
                 <div class="why-card-wrap reveal-card">
                     <div class="why-card">
                         <div class="why-icon-wrapper">
-                            <img src="./images/ww1.png" alt="On-Time Delivery Icon" class="why-card-icon">
+                            <img loading="lazy" src="./images/ww1.png" alt="On-Time Delivery Icon"
+                                class="why-card-icon">
                         </div>
                         <h3 class="why-card-title">On-Time Delivery</h3>
                         <p class="why-card-desc">Milestone-driven timelines keep every project on schedule with zero
@@ -786,7 +791,8 @@
                 <div class="why-card-wrap reveal-card">
                     <div class="why-card">
                         <div class="why-icon-wrapper">
-                            <img src="./images/ww2.png" alt="Client-First Approach Icon" class="why-card-icon">
+                            <img loading="lazy" src="./images/ww2.png" alt="Client-First Approach Icon"
+                                class="why-card-icon">
                         </div>
                         <h3 class="why-card-title">Client-First Approach</h3>
                         <p class="why-card-desc">Every decision is guided by client goals, feedback, and long-term
@@ -817,7 +823,7 @@
                 <!-- Challenge -->
                 <div class="case-stat-item">
                     <div class="stat-icon-red-lg">
-                        <img src="./images/cs_challenge.png" alt="Challenge Icon"
+                        <img loading="lazy" src="./images/cs_challenge.png" alt="Challenge Icon"
                             style="width: 60px; height: 60px; object-fit: contain;">
                     </div>
                     <h3 class="stat-title-lg">Challenge</h3>
@@ -828,7 +834,7 @@
                 <!-- Solution -->
                 <div class="case-stat-item">
                     <div class="stat-icon-red-lg">
-                        <img src="./images/cs_solution.png" alt="Solution Icon"
+                        <img loading="lazy" src="./images/cs_solution.png" alt="Solution Icon"
                             style="width: 60px; height: 60px; object-fit: contain;">
                     </div>
                     <h3 class="stat-title-lg">Solution</h3>
@@ -839,7 +845,7 @@
                 <!-- Outcome -->
                 <div class="case-stat-item">
                     <div class="stat-icon-red-lg">
-                        <img src="./images/cs_outcome.png" alt="Outcome Icon"
+                        <img loading="lazy" src="./images/cs_outcome.png" alt="Outcome Icon"
                             style="width: 60px; height: 60px; object-fit: contain;">
                     </div>
                     <h3 class="stat-title-lg">Outcome</h3>
@@ -853,11 +859,13 @@
                 <!-- Row 1: Before / After images -->
                 <div class="case-img-panel">
                     <span class="case-img-label">Before</span>
-                    <img src="./images/fcs_before.jpg" onerror="this.src='./images/featuresectionimg.jpg'" alt="Before">
+                    <img loading="lazy" src="./images/fcs_before.jpg"
+                        onerror="this.src='./images/featuresectionimg.jpg'" alt="Before">
                 </div>
                 <div class="case-img-panel">
                     <span class="case-img-label">After</span>
-                    <img src="./images/fcs_after.jpg" onerror="this.src='./images/featuresectionimg.jpg'" alt="After">
+                    <img loading="lazy" src="./images/fcs_after.jpg" onerror="this.src='./images/featuresectionimg.jpg'"
+                        alt="After">
                 </div>
 
                 <!-- Row 2 Left: Client Experience testimonial -->
@@ -865,7 +873,7 @@
                     <div class="case-testimonial-card">
                         <!-- HTML background image with overlay -->
                         <div class="case-test-bg-overlay"></div>
-                        <img src="./images/clientexp_bg.png" class="case-test-bg-img" alt="Background">
+                        <img loading="lazy" src="./images/clientexp_bg.png" class="case-test-bg-img" alt="Background">
 
                         <h3 class="testimonial-red-title">Client Experience</h3>
                         <p class="testimonial-body">Woodscape delivered exactly what they promised. Communication was
@@ -909,7 +917,7 @@
 
     <!-- Founder Message Section -->
     <section class="founder-section-migrated">
-        <img src="./images/founderbg.jpg" alt="Founder background" class="founder-bg-img">
+        <img loading="lazy" src="./images/founderbg.jpg" alt="Founder background" class="founder-bg-img">
 
         <div class="founder-overlay">
             <button class="founder-play-btn" id="founderPlayBtn" onclick="openFounderModal()">
@@ -1410,7 +1418,9 @@
         </div>
     </footer>
 
-    <script src="script.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="script.min.js" defer></script>
 
     <style>
         /* Founder Video Modal */
