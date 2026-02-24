@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Auto Scroll ---
     let autoScrollInterval;
-    const scrollStep = 410; // Match card width + gap
+    const scrollStep = track.firstElementChild ? track.firstElementChild.offsetWidth + 24 : 410; // Match card width + gap
 
     function startAutoScroll() {
         autoScrollInterval = setInterval(() => {

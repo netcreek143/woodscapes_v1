@@ -3052,7 +3052,7 @@ h6 {
 .why-carousel-wrapper {
     width: 100%;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -3106,8 +3106,8 @@ h6 {
 
 /* Why Cards */
 .why-card-wrap {
-    /* Show exactly 3 cards, accounting for 2 gaps of 24px */
-    flex: 0 0 calc((100vw - max(48px, calc((100vw - 1280px) + 48px)) - 48px) / 3);
+    /* Fit ~2.4 cards on desktop to make them larger */
+    flex: 0 0 calc((100vw - max(48px, calc((100vw - 1280px) + 48px)) - 48px) / 2.35);
     aspect-ratio: 1 / 1;
     --cut: 90px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
@@ -3125,6 +3125,8 @@ h6 {
     padding: 2.5rem 2rem;
     box-sizing: border-box;
     transition: background 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .why-card-wrap:hover .why-card {
@@ -3132,13 +3134,19 @@ h6 {
 }
 
 .why-icon-wrapper {
-    margin-bottom: 1.5rem;
-    width: 4rem;
-    height: 4rem;
+    margin-bottom: 2rem;
+    width: 7rem;
+    height: 7rem;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--primary-red);
+}
+
+.why-icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .why-card-title {
@@ -3147,6 +3155,7 @@ h6 {
     font-weight: 500;
     color: #111827;
     margin-bottom: 0.75rem;
+    margin-top: auto;
 }
 
 .why-card-desc {
