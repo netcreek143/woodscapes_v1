@@ -90,27 +90,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // Gallery Navigation (Simple Counter)
     // ==========================================
-    const nextProjectBtn = document.querySelector('.pd-next-project-btn');
+    const nextBtn = document.querySelector('.pd-g-next');
     const counterDisplay = document.querySelector('.pd-gallery-counter');
     let currentProjectIndex = 1;
     const totalProjects = 7;
 
-    if (nextProjectBtn && counterDisplay) {
-        nextProjectBtn.addEventListener('click', () => {
-            // Increment logic
+    if (nextBtn && counterDisplay) {
+        nextBtn.addEventListener('click', () => {
             currentProjectIndex++;
             if (currentProjectIndex > totalProjects) {
                 currentProjectIndex = 1;
             }
-
-            // Update display
             counterDisplay.textContent = `${currentProjectIndex} / ${totalProjects}`;
-
-            // Visual feedback
-            nextProjectBtn.style.transform = 'translateX(5px)';
-            setTimeout(() => {
-                nextProjectBtn.style.transform = 'translateX(0)';
-            }, 200);
         });
     }
 });

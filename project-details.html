@@ -42,29 +42,26 @@
     <section class="pd-hero">
         <div class="pd-hero-bg">
             <img src="images/commercial-construction.jpg" alt="Project Hero Building" class="pd-hero-img">
-            <div class="pd-hero-overlay"></div>
+            <div class="pd-hero-top-overlay"></div>
+            <div class="pd-hero-bottom-overlay"></div>
         </div>
 
-        <nav class="navbar">
-            <div class="container nav-container">
-                <a href="index.html" class="logo">
-                    <img src="images/woodscapelogo.png" alt="Woodscape Engineering Logo" class="logo-img">
+        <nav class="pd-nav">
+            <div class="pd-container pd-nav-container">
+                <a href="index.html" class="pd-logo">
+                    <img src="images/woodscapelogo.png" alt="Woodscape Logo">
                 </a>
 
-                <div class="nav-right-content" style="display: flex; align-items: center; gap: 30px;">
-                    <a href="index.html" class="btn btn-nav-estimate btn-back-home">
-                        <span class="btn-icon">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
+                <div class="pd-nav-right">
+                    <a href="index.html" class="btn-pd-black">
+                        <span class="btn-pd-text">Back to Home</span>
+                        <span class="btn-pd-icon">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                                <path d="M19 12H5M12 19l-7-7 7-7" />
                             </svg>
                         </span>
-                        <span class="btn-text">Back to Home</span>
                     </a>
-                    <span class="page-counter"
-                        style="color: white; font-family: var(--font-serif); font-size: 18px; opacity: 0.8;">1 /
-                        6</span>
+                    <span class="pd-page-counter">Quick View : 1/6</span>
                 </div>
             </div>
         </nav>
@@ -82,89 +79,122 @@
                     <p class="pd-project-sub">Delivering precision engineering and high-performance commercial spaces
                         globally.</p>
 
-                    <div class="pd-meta-block">
-                        <span class="pd-meta-label">INDUSTRY</span>
-                        <span class="pd-meta-value">Real Estate</span>
-                    </div>
+                    <div class="pd-meta-grid">
+                        <div class="pd-meta-block">
+                            <span class="pd-meta-label">INDUSTRY</span>
+                            <span class="pd-meta-value">Real Estate</span>
+                        </div>
 
-                    <div class="pd-meta-block">
-                        <span class="pd-meta-label">LOCATION</span>
-                        <span class="pd-meta-value">Central Texas</span>
-                    </div>
+                        <div class="pd-meta-block">
+                            <span class="pd-meta-label">LOCATION</span>
+                            <span class="pd-meta-value">Central Texas</span>
+                        </div>
 
-                    <div class="pd-meta-block">
-                        <span class="pd-meta-label">TIMELINE</span>
-                        <span class="pd-meta-value">Jan 2024 – Jun 2024</span>
-                    </div>
+                        <div class="pd-meta-block">
+                            <span class="pd-meta-label">TIMELINE</span>
+                            <span class="pd-meta-value">Jan 2024 – Jun 2024</span>
+                        </div>
 
-                    <div class="pd-meta-block">
-                        <span class="pd-meta-label">PROJECT SIZE</span>
-                        <span class="pd-meta-value">20,000 Sq.ft</span>
+                        <div class="pd-meta-block">
+                            <span class="pd-meta-label">PROJECT SIZE</span>
+                            <span class="pd-meta-value">20,000 Sq.ft</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Right Column: Overview + CTA -->
                 <div class="pd-desc-right">
                     <h3 class="pd-overview-heading">Project Overview</h3>
-                    <p class="pd-overview-text">
-                        This commercial development represents a cutting-edge approach to sustainable infrastructure.
-                        By integrating advanced engineering principles with modern design aesthetics, we delivered a
-                        space that maximizes operational efficiency while providing a premium experience for occupants.
-                        From the initial shell works to the final interior fit-outs, every detail was executed with
-                        precision
-                        to meet the highest standards of safety and quality.
-                    </p>
+                    <div class="pd-overview-content">
+                        <p>
+                            This commercial development represents a cutting-edge approach to sustainable
+                            infrastructure.
+                            By integrating advanced engineering principles with modern design aesthetics, we delivered a
+                            space that maximizes operational efficiency while providing a premium experience for
+                            occupants.
+                        </p>
+                        <p>
+                            From the initial shell works to the final interior fit-outs, every detail was executed with
+                            precision to meet the highest standards of safety and quality. Our team ensured that all
+                            regulatory milestones were surpassed.
+                        </p>
+                    </div>
 
-                    <button class="btn btn-split btn-commercial btn-animate-gap">
-                        <span class="btn-text">Request Estimate</span>
-                        <span class="btn-icon">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                                <path d="M4 10H16M16 10L11 5M16 10L11 15" />
-                            </svg>
-                        </span>
-                    </button>
+                    <div class="pd-desc-actions">
+                        <a href="#" class="btn-pd-black">
+                            <span class="btn-pd-text">Request Estimate</span>
+                            <span class="btn-pd-icon">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white"
+                                    stroke-width="3">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </span>
+                        </a>
+
+                        <!-- Side Navigation Arrows -->
+                        <div class="pd-side-nav">
+                            <button class="pd-nav-arrow pd-prev">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+                            <button class="pd-nav-arrow pd-next">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Side Navigation Arrows -->
-            <div class="pd-side-nav">
-                <button class="pd-nav-arrow pd-prev">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 12H5M12 19l-7-7 7-7" />
-                    </svg>
-                </button>
-                <button class="pd-nav-arrow pd-next">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </button>
             </div>
         </div>
     </section>
 
     <!-- SECTION 2: IMAGE GALLERY STRIP -->
     <section class="pd-gallery-section">
-        <div class="pd-gallery-grid">
-            <div class="pd-gallery-item">
-                <img loading="lazy" src="images/successstories1.jpg" alt="Project View 1">
+        <div class="pd-container">
+            <div class="pd-gallery-grid">
+                <div class="pd-gallery-item">
+                    <img loading="lazy" src="images/successstories1.jpg" alt="Project View 1">
+                </div>
+                <div class="pd-gallery-item">
+                    <img loading="lazy" src="images/successstories2.jpg" alt="Project View 2">
+                </div>
+                <div class="pd-gallery-item">
+                    <img loading="lazy" src="images/successstories3.jpg" alt="Project View 3">
+                </div>
             </div>
-            <div class="pd-gallery-item">
-                <img loading="lazy" src="images/successstories2.jpg" alt="Project View 2">
-            </div>
-            <div class="pd-gallery-item">
-                <img loading="lazy" src="images/successstories3.jpg" alt="Project View 3">
-            </div>
-        </div>
 
-        <div class="pd-gallery-controls">
-            <button class="pd-next-project-btn">
-                <span class="pd-np-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2">
-                        <path d="M19 12H5M12 19l-7-7 7-7" />
-                    </svg></span>
-                NEXT PROJECTS <span class="pd-arrow">→</span>
-            </button>
-            <div class="pd-gallery-counter">1 / 7</div>
+            <div class="pd-gallery-footer">
+                <div class="pd-gallery-progress-wrap">
+                    <div class="pd-gallery-progress-bar">
+                        <div class="pd-gallery-progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="pd-gallery-controls">
+                    <div class="pd-gallery-arrows">
+                        <button class="pd-g-arrow pd-g-prev">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M19 12H5M12 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <button class="pd-g-arrow pd-g-next">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="pd-gallery-meta">
+                        <span class="pd-next-label">NEXT PROJECTS <span class="pd-arrow-thin">→</span></span>
+                        <span class="pd-gallery-counter">1 / 7</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -182,13 +212,23 @@
 
             <form class="pd-estimate-form" id="estimateForm">
                 <div class="pd-form-grid">
-                    <!-- Left Column -->
+                    <!-- Row 1 -->
                     <div class="pd-input-group">
                         <input type="text" placeholder="Name" required>
                     </div>
                     <div class="pd-input-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="pd-input-group">
                         <input type="text" placeholder="Company Name" required>
                     </div>
+                    <div class="pd-input-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+
+                    <!-- Row 3 -->
                     <div class="pd-input-group">
                         <select required>
                             <option value="" disabled selected>Service needed</option>
@@ -197,6 +237,11 @@
                         </select>
                     </div>
                     <div class="pd-input-group">
+                        <input type="text" placeholder="Project Location" required>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div class="pd-input-group">
                         <select required>
                             <option value="" disabled selected>Budget Range</option>
                             <option value="low">$10k - $50k</option>
@@ -204,30 +249,21 @@
                             <option value="high">$200k+</option>
                         </select>
                     </div>
-
-                    <!-- Right Column -->
-                    <div class="pd-input-group">
-                        <input type="tel" placeholder="Phone Number" required>
-                    </div>
-                    <div class="pd-input-group">
-                        <input type="email" placeholder="Email" required>
-                    </div>
                     <div class="pd-input-group">
                         <input type="text" placeholder="Project Sq.ft" required>
                     </div>
-                    <div class="pd-input-group">
-                        <input type="text" placeholder="Project Location" required>
-                    </div>
                 </div>
 
-                <button type="submit" class="btn btn-split btn-submit btn-animate-gap btn-animate-submit">
-                    <span class="btn-text">Request Estimate</span>
-                    <span class="btn-icon">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2">
-                            <path d="M4 10H16M16 10L11 5M16 10L11 15" />
-                        </svg>
-                    </span>
-                </button>
+                <div class="pd-footer-actions">
+                    <button type="submit" class="btn-pd-red">
+                        <span class="btn-pd-text">Request Estimate</span>
+                        <span class="btn-pd-icon-black">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
             </form>
         </div>
     </section>
@@ -236,7 +272,8 @@
     <section class="pd-section pd-faq-section">
         <div class="pd-container">
             <h2 class="pd-faq-title">Frequently Asked Questions</h2>
-            <p class="pd-faq-subtitle">Everything you need to know about our process and delivery.</p>
+            <p class="pd-faq-subtitle">Woodscape Engineering provides world-class commercial construction and
+                design projects with precision.</p>
 
             <div class="pd-accordion">
                 <!-- Item 1 -->
@@ -351,30 +388,27 @@
             <p class="pd-cta-sub">Ready to start your project? Connect with our team today.</p>
 
             <div class="pd-cta-buttons">
-                <a href="#" class="btn btn-split btn-commercial btn-animate-gap" style="height: auto; padding: 0;">
-                    <span class="btn-text">Connect to an Expert</span>
-                    <span class="btn-icon">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
+                <a href="#" class="btn-pd-black">
+                    <span class="btn-pd-text">Connect to an Expert</span>
+                    <span class="btn-pd-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </span>
                 </a>
-                <a href="#" class="btn btn-split btn-commercial btn-animate-gap" style="height: auto; padding: 0;">
-                    <span class="btn-text">Reach us via Whatsapp</span>
-                    <span class="btn-icon">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
+                <a href="#" class="btn-pd-black">
+                    <span class="btn-pd-text">Reach us via Whatsapp</span>
+                    <span class="btn-pd-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </span>
                 </a>
-                <a href="#" class="btn btn-split btn-commercial btn-animate-gap" style="height: auto; padding: 0;">
-                    <span class="btn-text">Get an estimate</span>
-                    <span class="btn-icon">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
+                <a href="#" class="btn-pd-black">
+                    <span class="btn-pd-text">Get an estimate</span>
+                    <span class="btn-pd-icon">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </span>
                 </a>
@@ -392,10 +426,10 @@
                     <p class="pd-footer-desc">End-to-end commercial builds with strict cost control, regulatory
                         compliance, and on-time based delivery.</p>
                     <div class="pd-socials">
-                        <!-- Social Icons Placeholder -->
-                        <div class="pd-social-icon"></div>
-                        <div class="pd-social-icon"></div>
-                        <div class="pd-social-icon"></div>
+                        <a href="#" class="pd-social-link"><img src="images/instagram.svg" alt="IG"></a>
+                        <a href="#" class="pd-social-link"><img src="images/linkedin.svg" alt="LI"></a>
+                        <a href="#" class="pd-social-link"><img src="images/facebook.svg" alt="FB"></a>
+                        <a href="#" class="pd-social-link"><img src="images/twitter.svg" alt="TW"></a>
                     </div>
                 </div>
 
