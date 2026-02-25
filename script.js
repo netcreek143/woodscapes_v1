@@ -210,11 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
     let slideInterval;
 
-    console.log('Slides found:', slides.length);
-    console.log('Indicators found:', indicators.length);
-
     function showSlide(index) {
-        console.log('Showing slide:', index);
         slides.forEach(slide => slide.classList.remove('active'));
         indicators.forEach(indicator => indicator.classList.remove('active'));
 
@@ -239,7 +235,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => {
-            console.log('Indicator clicked:', index);
             showSlide(index);
             resetAutoPlay();
         });
@@ -305,7 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const formData = new FormData(modalForm);
             alert('Thank you for your consultation request! We will contact you shortly.');
-            console.log('Estimate Request:', Object.fromEntries(formData));
             modalForm.reset();
             closeModal();
         });
