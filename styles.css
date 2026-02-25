@@ -3777,6 +3777,12 @@ h6 {
     }
 }
 
+@media (min-width: 992px) {
+    .estimate-submit-wrap {
+        margin-top: 1.5rem;
+    }
+}
+
 
 
 /* --- 5. FAQ --- */
