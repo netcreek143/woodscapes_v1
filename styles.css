@@ -154,10 +154,12 @@ h6 {
     height: 120px;
     width: auto;
     transition: all 0.3s ease;
+    transform: translateY(5px);
 }
 
 .navbar.scrolled .logo-img {
     height: 90px;
+    transform: translateY(0);
 }
 
 .nav-wrapper {
