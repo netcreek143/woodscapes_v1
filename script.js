@@ -151,16 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const activeSlide = hero.querySelector('.hero-slide.active');
-        if (activeSlide) {
-            activeSlide.style.backgroundPositionY = scrolled * 0.5 + 'px';
-        }
-    }
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.hero-slide');
