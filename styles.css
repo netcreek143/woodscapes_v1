@@ -1267,7 +1267,7 @@ h6 {
         gap: 3rem;
     }
 
-    .hero-content {
+    .hero-content.active {
         max-width: 100%;
         align-items: center;
         display: flex;
@@ -1390,7 +1390,7 @@ h6 {
         font-size: 1.1rem;
     }
 
-    .hero-content {
+    .hero-content.active {
         align-items: flex-start;
         /* Ensure children align left */
     }
@@ -1732,7 +1732,7 @@ h6 {
         align-items: flex-start !important;
     }
 
-    .hero-content,
+    .hero-content.active,
     .estimate-container,
     .faq-container,
     .cta-footer-section {
