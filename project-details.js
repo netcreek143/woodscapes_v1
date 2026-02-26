@@ -340,10 +340,17 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: 'YB Retail Group engaged Woodscape Engineering to deliver a fast-track retail fit-out across multiple zones, requiring simultaneous coordination of civil, MEP, and interior works within a live mall environment with strict noise and access schedules.',
             p2: 'Through precise phasing and proactive site management, we achieved a 35% improvement in customer engagement-ready spaces, on-time handover in all zones, and full compliance with mall authority specifications \u2014 setting a new delivery benchmark for YB Retail.',
             gallery: [
-                './images/successstories2.jpg',
-                './images/successstories1.jpg',
-                './images/successstories3.jpg',
-                './images/featuresectionimg.jpg'
+                './images/pj2-1.jpg',
+                './images/pj2-2.jpg',
+                './images/pj2-3.jpg',
+                './images/pj2-4.jpg',
+                './images/pj2-5.jpg',
+                './images/pj2-6.jpg',
+                './images/pj2-7.jpg',
+                './images/pj2-8.jpg',
+                './images/pj2-9.jpg',
+                './images/pj2-10.jpg',
+                './images/pj2-11.jpg'
             ]
         },
         {
@@ -358,10 +365,17 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: 'LMN Tech Solutions required a mission-critical infrastructure upgrade to support expanded server operations and office capacity. Woodscape Engineering led the structural and MEP execution across the Dallas campus, working within tight operational windows to avoid business disruption.',
             p2: 'By deploying a dedicated shutdown-methodology for sensitive zones and a parallel phasing strategy for low-impact areas, we reduced total system downtime by 50% against initial estimates and delivered the project two weeks ahead of schedule with full commissioning sign-off.',
             gallery: [
-                './images/successstories3.jpg',
-                './images/successstories1.jpg',
-                './images/successstories2.jpg',
-                './images/featuresectionimg.jpg'
+                './images/pj3-1.jpg',
+                './images/pj3-2.jpg',
+                './images/pj3-3.jpg',
+                './images/pj3-4.jpg',
+                './images/pj3-5.jpg',
+                './images/pj3-6.jpg',
+                './images/pj3-7.jpg',
+                './images/pj3-8.jpg',
+                './images/pj3-9.jpg',
+                './images/pj3-10.jpg',
+                './images/pj3-11.jpg'
             ]
         },
         {
@@ -376,10 +390,20 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: 'Greenfield Hospitality commissioned Woodscape Engineering to lead a comprehensive renovation of a 200-key hotel property in downtown Houston. The scope covered room refurbishment, lobby redesign, back-of-house reconfiguration, and full MEP replacement \u2014 all while the property remained partially operational.',
             p2: 'Leveraging a floor-by-floor sequencing strategy, we maintained 60% room availability throughout construction, ultimately completing the project 15% under the approved budget through rigorous value engineering and supplier optimisation \u2014 delivering a fully branded, guest-ready asset ahead of the peak season.',
             gallery: [
-                './images/successstories1.jpg',
-                './images/successstories2.jpg',
-                './images/successstories3.jpg',
-                './images/featuresectionimg.jpg'
+                './images/pj4-1.jpg',
+                './images/pj4-2.jpg',
+                './images/pj4-3.jpg',
+                './images/pj4-4.jpg',
+                './images/pj4-5.jpg',
+                './images/pj4-6.jpg',
+                './images/pj4-7.jpg',
+                './images/pj4-8.jpg',
+                './images/pj4-9.jpg',
+                './images/pj4-10.jpg',
+                './images/pj4-11.jpg',
+                './images/pj4-12.jpg',
+                './images/pj4-13.jpg'
+
             ]
         },
         {

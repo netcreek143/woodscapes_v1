@@ -1282,11 +1282,12 @@ h4 {
 
 .gallery-counter {
     font-family: 'Outfit', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     color: #666;
     letter-spacing: 1px;
     min-width: 60px;
-    text-align: right;
+    text-align: left;
+    margin-bottom: 15px;
 }
 
 /* ==========================================
@@ -1367,13 +1368,13 @@ h4 {
 
 .lightbox-counter {
     position: absolute;
-    bottom: 40px;
+    top: 50px;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
     font-family: 'Outfit', sans-serif;
     letter-spacing: 2px;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 @media (max-width: 1024px) {
