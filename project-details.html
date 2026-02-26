@@ -148,6 +148,37 @@
         </div>
     </section>
 
+    <!-- SECTION: PROJECT GALLERY -->
+    <section class="pd-gallery-section section-padding">
+        <div class="container">
+            <div class="gallery-header">
+                <span class="section-label-red">Visual Showcase</span>
+                <h2 class="display-title">Project Gallery</h2>
+            </div>
+
+            <div class="pd-gallery-container">
+                <div class="pd-gallery-slider" id="pd-gallery-slider">
+                    <!-- Images will be injected here by JS -->
+                </div>
+
+                <div class="pd-gallery-nav">
+                    <button class="gallery-nav-btn prev" id="galleryPrevBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M5 12L12 19M5 12L12 5" />
+                        </svg>
+                    </button>
+                    <button class="gallery-nav-btn next" id="galleryNextBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SECTION 2: SUCCESS STORIES CAROUSEL -->
 
     <section id="projects" class="success-stories section-padding">
@@ -740,6 +771,29 @@
             </div>
         </div>
     </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="pdLightbox" class="pd-lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+
+        <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
+        </button>
+
+        <div class="lightbox-content">
+            <img id="lightboxImg" src="" alt="Gallery Image">
+        </div>
+
+        <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+            </svg>
+        </button>
+
+        <div class="lightbox-counter" id="lightboxCounter">1 / 1</div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
