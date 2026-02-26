@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('.pd-g-next');
     const counterDisplay = document.querySelector('.pd-gallery-counter');
     let currentProjectIndex = 1;
-    const totalProjects = 7;
+    const totalProjects = 5;
 
     if (nextBtn && counterDisplay) {
         nextBtn.addEventListener('click', () => {
@@ -314,10 +314,18 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: 'ABC Infrastructure partnered with Woodscape Engineering to execute a large-scale commercial development designed for long-term asset performance and tenant-ready delivery. The project demanded a rigorous approach to structural integrity, MEP coordination, and façade integration.',
             p2: 'The scope included full structural execution, MEP coordination, façade integration, and compliance-led construction management. The objective was clear \u2014 deliver a cost-optimised commercial asset without compromising quality, safety, or timeline predictability.',
             gallery: [
-                './images/successstories1.jpg',
-                './images/successstories2.jpg',
-                './images/successstories3.jpg',
-                './images/featuresectionimg.jpg'
+                './images/pj1-1.jpg',
+                './images/pj1-2.jpg',
+                './images/pj1-3.jpg',
+                './images/pj1-4.jpg',
+                './images/pj1-5.jpg',
+                './images/pj1-6.jpg',
+                './images/pj1-7.jpg',
+                './images/pj1-8.jpg',
+                './images/pj1-9.jpg',
+                './images/pj1-10.jpg',
+                './images/pj1-11.jpg',
+                './images/pj1-12.jpg'
             ]
         },
         {
@@ -391,65 +399,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 './images/successstories3.jpg',
                 './images/featuresectionimg.jpg'
             ]
-        },
-        {
-            id: 6,
-            img: './images/successstories3.jpg',
-            name: 'PinePeak Institutions \u2013 Campus Expansion',
-            sub: 'Delivering a multi-building educational campus expansion ahead of schedule through phased construction excellence in Fort Worth, TX.',
-            industry: 'Education',
-            location: 'Fort Worth, TX',
-            timeline: 'Aug 2024 \u2013 Dec 2024',
-            size: '41,000 Sq.ft',
-            p1: 'PinePeak Institutions appointed Woodscape Engineering to manage the phased expansion of their primary campus, encompassing a new academic block, administrative centre, and outdoor infrastructure upgrade. Execution had to align with the academic calendar to ensure zero disruption to ongoing classes.',
-            p2: 'By deploying an accelerated construction programme with night-shift resources during critical path activities, Woodscape delivered the entire campus expansion 3 weeks ahead of schedule \u2014 enabling PinePeak to enrol additional students for the upcoming academic term ahead of projections.',
-            gallery: [
-                './images/successstories3.jpg',
-                './images/successstories1.jpg',
-                './images/successstories2.jpg',
-                './images/featuresectionimg.jpg'
-            ]
-        },
-        {
-            id: 7,
-            img: './images/successstories1.jpg',
-            name: 'SkyHigh Corporate \u2013 Office Fit-Out',
-            sub: 'Creating a productivity-optimised corporate workspace through precision interior fit-out and smart building integration in Austin, TX.',
-            industry: 'Corporate',
-            location: 'Austin, TX',
-            timeline: 'Sep 2023 \u2013 Feb 2024',
-            size: '11,600 Sq.ft',
-            p1: 'SkyHigh Corporate engaged Woodscape Engineering to transform a raw shell space into a fully fitted, brand-aligned headquarters. The project required integration of collaborative workspaces, private executive suites, server room construction, and a bespoke reception environment \u2014 all coordinated around live business operations in adjacent floors.',
-            p2: 'The completed fit-out delivered a 28% improvement in staff productivity metrics within the first quarter of occupation, attributed to optimised spatial planning, enhanced natural light integration, and acoustic treatment throughout. The project was completed on time and within budget across all phases.',
-            gallery: [
-                './images/successstories1.jpg',
-                './images/successstories2.jpg',
-                './images/successstories3.jpg',
-                './images/featuresectionimg.jpg'
-            ]
-        },
-        {
-            id: 8,
-            img: './images/successstories2.jpg',
-            name: 'NovaBuild Retail \u2013 Flagship Store Rollout',
-            sub: 'Executing a high-spec national flagship store rollout with 100% on-time delivery and consistent brand standards across El Paso, TX.',
-            industry: 'Retail',
-            location: 'El Paso, TX',
-            timeline: 'Nov 2023 \u2013 Apr 2024',
-            size: '9,400 Sq.ft',
-            p1: 'NovaBuild Retail contracted Woodscape Engineering to deliver their flagship store concept \u2014 a premium retail environment with bespoke joinery, integrated display lighting, and a curated customer journey layout. The brief demanded strict brand compliance, fast-track execution, and coordination with the client\u2019s national visual merchandising team.',
-            p2: 'Through a dedicated project management structure and pre-fabrication of key joinery elements off-site, Woodscape achieved 100% on-time delivery across all project phases. The completed flagship became the brand\u2019s highest-performing store in the region within the first month of trading, validating the investment in premium fit-out standards.',
-            gallery: [
-                './images/successstories2.jpg',
-                './images/successstories1.jpg',
-                './images/successstories3.jpg',
-                './images/featuresectionimg.jpg'
-            ]
         }
     ];
     var params = new URLSearchParams(window.location.search);
     var cardId = parseInt(params.get('card'), 10);
-    if (!cardId || cardId < 1 || cardId > 8) cardId = 1;
+    if (!cardId || cardId < 1 || cardId > 5) cardId = 1;
     var proj = PROJECTS[cardId - 1];
     function setText(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; }
     var heroImg = document.getElementById('pd-hero-img');
@@ -462,12 +416,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setText('pd-meta-size', proj.size);
     setText('pd-overview-p1', proj.p1);
     setText('pd-overview-p2', proj.p2);
-    setText('pd-page-counter', cardId + '/8');
+    setText('pd-page-counter', cardId + '/5');
     document.title = proj.name + ' | Woodscape Engineering';
     var activeCard = document.querySelector('[data-card-id="' + cardId + '"]');
     if (activeCard) activeCard.style.display = 'none';
-    var prevId = cardId === 1 ? 8 : cardId - 1;
-    var nextId = cardId === 8 ? 1 : cardId + 1;
+    var prevId = cardId === 1 ? 5 : cardId - 1;
+    var nextId = cardId === 5 ? 1 : cardId + 1;
     var prevBtn = document.querySelector('.pd-nav-arrow.pd-prev');
     var nextBtn2 = document.querySelector('.pd-nav-arrow.pd-next');
     if (prevBtn) prevBtn.addEventListener('click', function () { window.location.href = 'project-details.html?card=' + prevId; });

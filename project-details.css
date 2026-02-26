@@ -1256,7 +1256,8 @@ h4 {
 }
 
 .gallery-nav-btn:hover {
-    opacity: 0.6;
+    border-color: #111;
+    background: #ffffff;
 }
 
 .next-projects-btn {
@@ -1264,7 +1265,7 @@ h4 {
     align-items: center;
     gap: 12px;
     background: #fff;
-    border: 1px solid #ddd;
+    border: none;
     padding: 12px 24px;
     cursor: pointer;
     font-size: 13px;
@@ -1276,7 +1277,7 @@ h4 {
 
 .next-projects-btn:hover {
     border-color: #111;
-    background: #f9f9f9;
+    background: #ffffff;
 }
 
 .gallery-counter {
