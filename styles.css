@@ -2126,11 +2126,6 @@ h6 {
 }
 
 @media (max-width: 1024px) {
-    .stories-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
 
 
     .why-card-wrap {
