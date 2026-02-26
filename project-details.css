@@ -19,9 +19,21 @@
     --container-padding: 80px;
     --container-max-width: 1440px;
 
+    /* Desktop Overrides (Enforce 120px Margins) */
+    @media (min-width: 1025px) {
+        :root {
+            --container-padding: 120px !important;
+            --pad-left: 120px !important;
+            --pad-right: 120px !important;
+            --container-max-width: 100% !important;
+        }
+    }
+
     /* Typography */
-    --heading-font: 'Playfair Display', serif;
-    --body-font: 'Inter', sans-serif;
+    --heading-font: 'Playfair Display',
+    serif;
+    --body-font: 'Inter',
+    sans-serif;
 }
 
 /* Global Reset for this page specific elements */
@@ -1168,11 +1180,13 @@ h4 {
 .btn-pd-black:hover .btn-pd-icon svg {
     transform: rotate(0deg) translateX(2px);
 }
+
 /* ==========================================
    PROJECT GALLERY SECTION (REFINED)
    ========================================== */
 .pd-gallery-section {
-    background-color: #ffffff; /* White bg as per image */
+    background-color: #ffffff;
+    /* White bg as per image */
     color: #111;
     overflow: hidden;
     padding: 80px 0;
@@ -1318,14 +1332,14 @@ h4 {
     max-width: 100%;
     max-height: 90vh;
     object-fit: contain;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .lightbox-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     border: none;
     border-radius: 50%;
     width: 64px;
@@ -1339,18 +1353,23 @@ h4 {
 }
 
 .lightbox-nav:hover {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
 }
 
-.lightbox-nav.prev { left: 40px; }
-.lightbox-nav.next { right: 40px; }
+.lightbox-nav.prev {
+    left: 40px;
+}
+
+.lightbox-nav.next {
+    right: 40px;
+}
 
 .lightbox-counter {
     position: absolute;
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-family: 'Outfit', sans-serif;
     letter-spacing: 2px;
     font-size: 12px;
@@ -1366,13 +1385,21 @@ h4 {
     .pd-gallery-item {
         flex: 0 0 85%;
     }
+
     .pd-gallery-footer {
         justify-content: center;
     }
+
     .lightbox-nav {
         width: 48px;
         height: 48px;
     }
-    .lightbox-nav.prev { left: 10px; }
-    .lightbox-nav.next { right: 10px; }
+
+    .lightbox-nav.prev {
+        left: 10px;
+    }
+
+    .lightbox-nav.next {
+        right: 10px;
+    }
 }
