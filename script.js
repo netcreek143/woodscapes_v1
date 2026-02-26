@@ -209,12 +209,12 @@ document.addEventListener('DOMContentLoaded', () => {
 /* REQUEST ESTIMATE MODAL LOGIC                                               */
 /* -------------------------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
-    const estimateBtn = document.getElementById('requestEstimateBtn');
+    const estimateBtns = document.querySelectorAll('.open-estimate-modal');
     const modalOverlay = document.getElementById('estimateModal');
     const modalForm = document.getElementById('modalEstimateForm');
 
     // Safety check
-    if (!estimateBtn || !modalOverlay) return;
+    if (!modalOverlay) return;
 
     // Open Modal
     function openModal() {
@@ -232,10 +232,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = ''; // Restore scroll
     }
 
-    // Trigger
-    estimateBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        openModal();
+    // Triggers
+    estimateBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal();
+        });
     });
 
     // Close on Overlay Click
