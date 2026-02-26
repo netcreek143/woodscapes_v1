@@ -642,7 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Add active class to new images
                 beforeImages[currentIndex].classList.add('active');
                 afterImages[currentIndex].classList.add('active');
-            }, 2000); // 2 seconds delay as requested
+            }, 4000); // 4 seconds delay for a more subtle transition
         }
     }
 
