@@ -22,7 +22,7 @@ video {
 :root {
     /* Brand Colors */
     --primary-red: #E60024;
-    --primary-red-hover: #C8001F;
+    --primary-red-hover: #E60024;
     --primary-dark: #0A0A0A;
     /* Deep Black for refined look */
 
@@ -193,7 +193,6 @@ h6 {
 .nav-link.active {
     color: var(--primary-red);
     opacity: 1;
-    font-weight: 600;
 }
 
 .nav-link::after {
@@ -797,7 +796,7 @@ h6 {
     min-height: auto;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     width: 540px;
     /* Exact size adjustment */
@@ -805,7 +804,7 @@ h6 {
     margin: -40px 0 0 0;
     display: flex;
     flex-direction: column;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     /* Subtle rounding */
     animation: fadeInRight 1s ease-out 0.3s backwards;
 }
@@ -4153,7 +4152,7 @@ h6 {
     /* Removed border */
     border-radius: 0;
     /* Square corners */
-    transition: background-color 0.2s, transform 0.2s;
+    transition: background-color 0.25s ease, transform 0.25s ease, color 0.25s ease;
     text-decoration: none;
     min-width: 320px;
     /* Ensure enough width for content */
@@ -4173,11 +4172,22 @@ h6 {
     font-size: 1.25rem;
     font-weight: 800;
     margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.cta-btn-arrow svg {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .cta-btn:hover {
-    background-color: #1a1a1a;
-    transform: translateY(-2px);
+    background-color: var(--primary-red) !important;
+    color: #fff !important;
+    transform: translateY(-3px);
+}
+
+.cta-btn:hover .cta-btn-arrow svg {
+    transform: rotate(45deg);
 }
 
 /* --- 7. Footer Migrated --- */
