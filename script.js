@@ -430,28 +430,6 @@ document.addEventListener('DOMContentLoaded', () => {
             wrapper.scrollLeft = ratio * (wrapper.scrollWidth - wrapper.clientWidth);
         });
 
-        // --- Auto Scroll ---
-        let autoScrollInterval;
-        const scrollStep = 450; // Approximated card width + gap
-
-        function startAutoScroll() {
-            autoScrollInterval = setInterval(() => {
-                const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
-                if (wrapper.scrollLeft >= maxScroll - 10) {
-                    wrapper.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    wrapper.scrollBy({ left: scrollStep, behavior: 'smooth' });
-                }
-            }, 3000);
-        }
-
-        function stopAutoScroll() {
-            clearInterval(autoScrollInterval);
-        }
-
-        wrapper.addEventListener('mouseenter', stopAutoScroll);
-        wrapper.addEventListener('mouseleave', startAutoScroll);
-        startAutoScroll();
     }
 
     // --- Mute Toggle Logic ---
