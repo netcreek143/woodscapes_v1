@@ -336,9 +336,9 @@ document.addEventListener('DOMContentLoaded', () => {
             industry: 'Precision Manufacturing / Industrial Infrastructure',
             location: 'Chennai',
             timeline: '11 Months',
-            size: '14,500 Sq.ft1,500 Sq.ft',
-            p1: 'Tsugami Precision engaged Woodscape Engineering to deliver a fast-track industrial facility, requiring simultaneous coordination of civil and interior works within a strict execution schedule.',
-            p2: 'Through precise phasing and proactive site management, we achieved a high-quality handover on time, setting a new delivery benchmark for industrial infrastructure.',
+            size: '14,500 Sq.ft + 1,500 Sq.ft',
+            p1: 'Tsugami Precision is a large-scale industrial manufacturing facility developed with complete structural construction and interior execution. Spanning 30,000 sq.ft, the project was delivered within a 10-month timeline, demonstrating coordinated planning and disciplined execution.',
+            p2: ' In addition, a dedicated 1,500 sq.ft interior fit-out was completed within 1 month, focusing on precision detailing and functional refinement aligned with operational requirements.',
             gallery: [
                 './images/pj2-1.jpg',
                 './images/pj2-2.jpg',
@@ -361,9 +361,9 @@ document.addEventListener('DOMContentLoaded', () => {
             industry: 'Food & Beverage / Retail Interior',
             location: 'Chennai',
             timeline: '1 Month',
-            size: '2,500 Sq.ft',
-            p1: 'French Loaf required a high-quality retail fit-out completed within an extremely tight 1-month window. Woodscape Engineering led the interior execution, focusing on brand consistency and functional layout.',
-            p2: 'By deploying a dedicated parallel phasing strategy, we delivered the showroom ahead of schedule, ensuring the brand could open its doors to customers as planned.',
+            size: '900 Sq.ft',
+            p1: 'French Loaf is a compact 900 sq.ft bakery development completed within a strict 1-month schedule, covering both construction and interior execution. The project required fast-track coordination, space optimization, and refined finishing to create an inviting retail environment.',
+            p2: 'From civil modifications to interior fit-outs and detailing, the execution emphasized functional layout planning, customer circulation flow, and durable material application suitable for a food retail setup. The result is a clean, efficient, and aesthetically engaging bakery space delivered within timeline discipline.',
             gallery: [
                 './images/pj3-1.jpg',
                 './images/pj3-2.jpg',
@@ -385,10 +385,10 @@ document.addEventListener('DOMContentLoaded', () => {
             sub: 'Rapid healthcare infrastructure execution with a focus on hygiene standards and medical compliance in Chennai.',
             industry: 'Healthcare Infrastructure',
             location: 'Chennai',
-            timeline: '15 days',
-            size: '5,000 Sq.ft',
-            p1: 'New Life Hospital commissioned Woodscape Engineering to lead a rapid renovation of its outpatient facility. The scope covered flooring, wall finishes, and medical-grade electrical upgrades — completed within a record 15-day timeline.',
-            p2: 'Leveraging a 24/7 crew rotation strategy, we completed the facility with zero compromises on quality, ensuring the hospital could resume services immediately.',
+            timeline: '15 Days (Emergency COVID Ward – Urgent Execution)',
+            size: '1,800 Sq.ft',
+            p1: 'New Life Hospital involved the rapid creation of a 1,800 sq.ft emergency ward dedicated to COVID patient treatment. Executed within just 15 days, the project required fast-track construction planning, strict safety protocol adherence, and coordinated interior fit-out to meet healthcare operational standards.',
+            p2: 'The execution focused on efficient space utilization, medical-grade finishes, proper ventilation planning, and compliance with healthcare infrastructure requirements. Delivered within a highly compressed timeline, the project demonstrates Woodscape’s capability to execute urgent and critical infrastructure solutions with precision and reliability.',
             gallery: [
                 './images/pj4-1.jpg',
                 './images/pj4-2.jpg',
@@ -404,29 +404,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 './images/pj4-12.jpg',
                 './images/pj4-13.jpg'
             ]
-        },
-        {
-            id: 5,
-            img: './images/successstories5.jpg',
-            name: 'MedCore Healthcare',
-            sub: 'Constructing a state-of-the-art medical facility to the highest healthcare compliance standards with zero safety incidents in San Antonio, TX.',
-            industry: 'Healthcare',
-            location: 'San Antonio, TX',
-            timeline: 'Jul 2024 – Nov 2024',
-            size: '25,800 Sq.ft',
-            p1: 'MedCore Healthcare selected Woodscape Engineering to deliver a greenfield medical facility combining diagnostic imaging suites, outpatient consultation spaces, and administrative offices. The project demanded stringent infection control protocols, specialist MEP for medical gas systems, and regulatory compliance at every stage.',
-            p2: 'Through an integrated safety management system and daily compliance audits, we achieved project completion with zero safety incidents recorded. The facility passed all health authority inspections on the first submission and was handed over fully operational, enabling MedCore to begin patient admissions on the projected opening date.',
-            gallery: [
-                './images/successstories5.jpg',
-                './images/successstories1.jpg',
-                './images/successstories3.jpg',
-                './images/featuresectionimg.jpg'
-            ]
         }
     ];
     var params = new URLSearchParams(window.location.search);
     var cardId = parseInt(params.get('card'), 10);
-    if (!cardId || cardId < 1 || cardId > 5) cardId = 1;
+    if (!cardId || cardId < 1 || cardId > 4) cardId = 1;
     var proj = PROJECTS[cardId - 1];
     function setText(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; }
     var heroImg = document.getElementById('pd-hero-img');
@@ -439,12 +421,12 @@ document.addEventListener('DOMContentLoaded', () => {
     setText('pd-meta-size', proj.size);
     setText('pd-overview-p1', proj.p1);
     setText('pd-overview-p2', proj.p2);
-    setText('pd-page-counter', cardId + '/5');
+    setText('pd-page-counter', cardId + '/4');
     document.title = proj.name + ' | Woodscape Engineering';
     var activeCard = document.querySelector('[data-card-id="' + cardId + '"]');
     if (activeCard) activeCard.style.display = 'none';
-    var prevId = cardId === 1 ? 5 : cardId - 1;
-    var nextId = cardId === 5 ? 1 : cardId + 1;
+    var prevId = cardId === 1 ? 4 : cardId - 1;
+    var nextId = cardId === 4 ? 1 : cardId + 1;
     var prevBtn = document.querySelector('.pd-nav-arrow.pd-prev');
     var nextBtn2 = document.querySelector('.pd-nav-arrow.pd-next');
     if (prevBtn) prevBtn.addEventListener('click', function () { window.location.href = 'project-details.html?card=' + prevId; });
