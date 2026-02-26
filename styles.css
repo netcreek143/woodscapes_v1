@@ -512,6 +512,11 @@ h6 {
     width: 100%;
     margin: 0;
     padding: 0;
+    display: none;
+}
+
+.hero-content.active {
+    display: block;
 }
 
 .hero-title {
@@ -525,6 +530,9 @@ h6 {
     margin-bottom: 24px;
     padding-top: 0;
     /* Clean up previous padding */
+}
+
+.hero-content.active .hero-title {
     animation: fadeInUp 1s ease-out;
 }
 
@@ -537,7 +545,14 @@ h6 {
     margin-bottom: 2rem;
     opacity: 0.95;
     max-width: 550px;
+}
+
+.hero-content.active .hero-description {
     animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.hero-content.active .btn-view-projects {
+    animation: fadeInUp 1s ease-out 0.4s backwards;
 }
 
 /* Button System */
@@ -4240,6 +4255,7 @@ h6 {
 
 .footer-social-link:hover {
     background-color: var(--primary-red);
+    color: #ffffff;
 }
 
 .footer-description {
@@ -4285,6 +4301,7 @@ h6 {
 
 .footer-links a:hover {
     color: var(--primary-red);
+
 }
 
 .footer-contact-item {

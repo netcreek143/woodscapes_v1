@@ -161,9 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function showSlide(index) {
         slides.forEach(slide => slide.classList.remove('active'));
         indicators.forEach(indicator => indicator.classList.remove('active'));
+        const contents = document.querySelectorAll('.hero-content');
+        contents.forEach(content => content.classList.remove('active'));
 
         slides[index].classList.add('active');
         indicators[index].classList.add('active');
+        if (contents[index]) contents[index].classList.add('active');
         currentSlide = index;
     }
 
