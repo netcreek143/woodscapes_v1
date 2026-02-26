@@ -2557,8 +2557,18 @@ h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: opacity 0.8s ease-in-out, transform 0.5s ease;
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.case-img-panel img.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .case-img-panel:hover img {

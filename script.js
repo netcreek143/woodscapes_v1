@@ -638,3 +638,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, 100);
 });
+
+/* -------------------------------------------------------------------------- */
+/* BEFORE/AFTER IMAGE SLIDER (FEATURED CASE STUDY)                             */
+/* -------------------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    const beforePanel = document.querySelector('.before-slider');
+    const afterPanel = document.querySelector('.after-slider');
+
+    if (beforePanel && afterPanel) {
+        const beforeImages = beforePanel.querySelectorAll('img');
+        const afterImages = afterPanel.querySelectorAll('img');
+        let currentIndex = 0;
+        const totalImages = beforeImages.length;
+
+        if (totalImages > 1) {
+            setInterval(() => {
+                // Remove active class from current images
+                beforeImages[currentIndex].classList.remove('active');
+                afterImages[currentIndex].classList.remove('active');
+
+                // Increment index
+                currentIndex = (currentIndex + 1) % totalImages;
+
+                // Add active class to new images
+                beforeImages[currentIndex].classList.add('active');
+                afterImages[currentIndex].classList.add('active');
+            }, 2000); // 2 seconds delay as requested
+        }
+    }
+});
