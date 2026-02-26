@@ -207,10 +207,11 @@ h4 {
 }
 
 .pd-project-sub {
-    font-size: 17px;
+    font-family: var(--body-font);
+    font-size: 18px;
     color: var(--pd-text-muted);
     margin-bottom: 48px;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .pd-meta-grid {
@@ -220,28 +221,34 @@ h4 {
 
 .pd-meta-label {
     display: block;
-    font-size: 12px;
+    font-family: var(--body-font);
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.15em;
     color: var(--pd-text-light);
     margin-bottom: 6px;
+    text-transform: uppercase;
 }
 
 .pd-meta-value {
     display: block;
-    font-size: 20px;
+    font-family: var(--body-font);
+    font-size: 22px;
     font-weight: 700;
     color: var(--pd-black);
 }
 
 .pd-overview-heading {
-    font-size: 32px;
-    font-weight: 400;
+    font-family: var(--body-font);
+    font-size: 34px;
+    font-weight: 700;
     margin-bottom: 24px;
+    color: var(--pd-black);
 }
 
 .pd-overview-content p {
-    font-size: 17px;
+    font-family: var(--body-font);
+    font-size: 18px;
     color: var(--pd-text-muted);
     line-height: 1.7;
     margin-bottom: 20px;
@@ -1003,54 +1010,6 @@ h4 {
     text-overflow: ellipsis;
 }
 
-/* Subtitle */
-.pd-project-sub {
-    font-size: 13.5px;
-    color: #555;
-    line-height: 1.55;
-    margin-bottom: 32px;
-}
-
-/* Meta blocks */
-.pd-meta-block {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    margin-bottom: 20px;
-}
-
-.pd-meta-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    color: #999;
-    text-transform: uppercase;
-}
-
-.pd-meta-value {
-    font-family: 'Inter', sans-serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: #111;
-}
-
-/* Overview */
-.pd-overview-heading {
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 18px;
-}
-
-.pd-overview-content p {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    color: #444;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
 
 /* Strict 50/50 two-column layout */
 .pd-desc-halves {
@@ -1089,21 +1048,21 @@ h4 {
     }
 
     .pd-meta-label {
-        font-size: 9px !important;
+        font-size: 10px !important;
         letter-spacing: 0.12em;
     }
 
     .pd-meta-value {
-        font-size: 16px !important;
+        font-size: 18px !important;
     }
 
     .pd-overview-heading {
-        font-size: 18px !important;
+        font-size: 22px !important;
         margin-bottom: 14px;
     }
 
     .pd-overview-content p {
-        font-size: 14px !important;
+        font-size: 16px !important;
     }
 
     .btn-pd-black {
