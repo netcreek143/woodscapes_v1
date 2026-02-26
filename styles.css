@@ -108,6 +108,10 @@ h6 {
     width: 100%;
 }
 
+.header-full-width {
+    max-width: 100% !important;
+}
+
 /* Navbar & Header */
 .navbar {
     position: fixed;
@@ -1797,7 +1801,8 @@ h6 {
 
 .stories-header-center {
     flex: 1 1 auto;
-    max-width: 680px;
+    max-width: 600px;
+    /* Adjusted to target 4-line wrap for description */
 }
 
 .stories-header-right {
