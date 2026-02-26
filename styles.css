@@ -154,7 +154,7 @@ h6 {
     height: 120px;
     width: auto;
     transition: all 0.3s ease;
-    transform: translateY(5px);
+    transform: translateY(15px);
 }
 
 .navbar.scrolled .logo-img {
