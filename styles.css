@@ -415,7 +415,7 @@ h6 {
 
 .slider-indicators {
     position: absolute;
-    bottom: 2rem;
+    bottom: 5rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -444,7 +444,7 @@ h6 {
 
 .slider-nav {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
     z-index: 10;
     background: rgba(0, 0, 0, 0.5);
@@ -820,7 +820,7 @@ h6 {
     width: 540px;
     /* Exact size adjustment */
     flex-shrink: 0;
-    margin: -40px 0 0 0;
+    margin: -90px 0 0 0;
     display: flex;
     flex-direction: column;
     /* border-radius: 4px; */
@@ -830,7 +830,7 @@ h6 {
 
 .form-title {
     font-family: var(--subheading-font);
-    font-size: 1.45rem;
+    font-size: 2rem;
     /* Increased from 1.23rem */
     text-align: left;
     /* Changed from center */
@@ -1815,7 +1815,7 @@ h6 {
 
 .stories-header-center {
     flex: 1 1 auto;
-    max-width: 600px;
+    max-width: 800px;
     /* Adjusted to target 4-line wrap for description */
 }
 
@@ -2670,6 +2670,32 @@ h6 {
     position: relative;
 }
 
+.testimonial-slider-container {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+    margin-bottom: 20px;
+}
+
+.testimonial-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
 .testimonial-body {
     font-size: 1.19rem;
     color: #4B5563;
@@ -2678,6 +2704,7 @@ h6 {
     max-width: 680px;
     z-index: 1;
     position: relative;
+    font-style: italic;
 }
 
 .testimonial-author-name {
@@ -2694,8 +2721,9 @@ h6 {
     display: flex;
     gap: 8px;
     align-items: center;
-    z-index: 1;
+    z-index: 5;
     position: relative;
+    margin-top: auto;
 }
 
 .tdot {
@@ -2704,11 +2732,13 @@ h6 {
     border-radius: 50%;
     background: #D1D5DB;
     display: inline-block;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
 }
 
 .tdot.active {
     background: var(--primary-red);
+    transform: scale(1.2);
 }
 
 /* Large decorative quote mark */
@@ -4992,7 +5022,7 @@ h6 {
 
     .heading-line1,
     .heading-line2 {
-        font-size: 28px;
+        font-size: 1.23rem;
     }
 
     .modal-form {
@@ -5086,6 +5116,10 @@ h6 {
     .faq-q-text {
         font-size: 1.15rem !important;
         line-height: 1.4 !important;
+    }
+
+    .btn-nav-estimate .btn-text {
+        font-size: 0.95rem !important;
     }
 
     .faq-a-text {

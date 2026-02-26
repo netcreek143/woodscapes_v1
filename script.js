@@ -688,3 +688,58 @@ function initCustomDropdown(dropdown) {
         dropdown.classList.remove('open');
     });
 }
+
+/* -------------------------------------------------------------------------- */
+/* TESTIMONIAL SLIDER (Client Experience)                                      */
+/* -------------------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const testimonialDots = document.querySelectorAll('.tdot');
+    let currentTestimonial = 0;
+    let testimonialInterval;
+
+    function showTestimonial(index) {
+        // Remove active class from all
+        testimonialSlides.forEach(slide => slide.classList.remove('active'));
+        testimonialDots.forEach(dot => dot.classList.remove('active'));
+
+        // Add to targeted
+        testimonialSlides[index].classList.add('active');
+        testimonialDots[index].classList.add('active');
+        currentTestimonial = index;
+    }
+
+    function nextTestimonial() {
+        let next = (currentTestimonial + 1) % testimonialSlides.length;
+        showTestimonial(next);
+    }
+
+    function startTestimonialTimer() {
+        stopTestimonialTimer();
+        testimonialInterval = setInterval(nextTestimonial, 5000); // Change every 5 seconds
+    }
+
+    function stopTestimonialTimer() {
+        if (testimonialInterval) clearInterval(testimonialInterval);
+    }
+
+    // Initialize
+    if (testimonialSlides.length > 0) {
+        startTestimonialTimer();
+
+        // Dot Click logic
+        testimonialDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showTestimonial(index);
+                startTestimonialTimer(); // Reset timer on manual click
+            });
+        });
+
+        // Optional: Pause on hover
+        const container = document.querySelector('.case-testimonial-card');
+        if (container) {
+            container.addEventListener('mouseenter', stopTestimonialTimer);
+            container.addEventListener('mouseleave', startTestimonialTimer);
+        }
+    }
+});
