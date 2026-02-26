@@ -1104,21 +1104,28 @@
                     <input type="email" placeholder="Email" class="estimate-input">
                 </div>
                 <div class="estimate-form-row">
-                    <select class="estimate-select" required>
-                        <option value="" disabled selected hidden>Service</option>
-                        <option>Commercial Construction</option>
-                        <option>Commercial Interior</option>
-                    </select>
+                    <div class="custom-dropdown" id="dropdownService">
+                        <div class="dropdown-selected placeholder">Service</div>
+                        <div class="dropdown-options">
+                            <div class="dropdown-option" data-value="Commercial Construction">Commercial Construction
+                            </div>
+                            <div class="dropdown-option" data-value="Commercial Interior">Commercial Interior</div>
+                        </div>
+                        <input type="hidden" name="service" required>
+                    </div>
                     <input type="text" placeholder="Sq.ft" class="estimate-input">
                 </div>
                 <div class="estimate-form-row">
-                    <select class="estimate-select" required>
-                        <option value="" disabled selected hidden>Budget</option>
-                        <option>₹ 1 to 2 Cr</option>
-                        <option>₹ 2 to 3 Cr</option>
-                        <option>₹ 3 to 4 Cr</option>
-                        <option>₹ 4 Cr + </option>
-                    </select>
+                    <div class="custom-dropdown" id="dropdownBudget">
+                        <div class="dropdown-selected placeholder">Budget</div>
+                        <div class="dropdown-options">
+                            <div class="dropdown-option" data-value="₹ 1 to 2 Cr">₹ 1 to 2 Cr</div>
+                            <div class="dropdown-option" data-value="₹ 2 to 3 Cr">₹ 2 to 3 Cr</div>
+                            <div class="dropdown-option" data-value="₹ 3 to 4 Cr">₹ 3 to 4 Cr</div>
+                            <div class="dropdown-option" data-value="₹ 4 Cr +">₹ 4 Cr +</div>
+                        </div>
+                        <input type="hidden" name="budget" required>
+                    </div>
                     <input type="text" placeholder="Project Location" class="estimate-input">
                 </div>
 
