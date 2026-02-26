@@ -151,29 +151,32 @@
     <!-- SECTION: PROJECT GALLERY -->
     <section class="pd-gallery-section section-padding">
         <div class="container">
-            <div class="gallery-header">
-                <span class="section-label-red">Visual Showcase</span>
-                <h2 class="display-title">Project Gallery</h2>
-            </div>
-
             <div class="pd-gallery-container">
                 <div class="pd-gallery-slider" id="pd-gallery-slider">
                     <!-- Images will be injected here by JS -->
                 </div>
 
-                <div class="pd-gallery-nav">
-                    <button class="gallery-nav-btn prev" id="galleryPrevBtn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M19 12H5M5 12L12 19M5 12L12 5" />
-                        </svg>
-                    </button>
-                    <button class="gallery-nav-btn next" id="galleryNextBtn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M5 12H19M19 12L12 5M19 12L12 19" />
-                        </svg>
-                    </button>
+                <div class="pd-gallery-footer">
+                    <div class="pd-gallery-nav">
+                        <button class="gallery-nav-btn prev" id="galleryPrevBtn" aria-label="Previous">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M19 12H5M5 12L12 19M5 12L12 5" />
+                            </svg>
+                        </button>
+
+                        <button class="next-projects-btn" id="galleryNextBtn">
+                            <span>NEXT PROJECTS</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" />
+                            </svg>
+                        </button>
+
+                        <div class="gallery-counter">
+                            <span id="galleryCurrent">1</span> / <span id="galleryTotal">7</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
