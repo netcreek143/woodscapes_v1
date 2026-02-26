@@ -1,10 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
     /* Brand Colors */
@@ -41,25 +54,25 @@
     /* Center Aligned Container */
     --container-max-width: 1360px;
 
+    /* Desktop Overrides (Enforce 120px Margins) */
+    @media (min-width: 1025px) {
+        --container-padding: 120px;
+        --pad-left: 120px;
+        --pad-right: 120px;
+        --container-max-width: 100%;
+    }
+
     /* Standardized Typography */
-    --heading-font: 'Playfair Display', serif;
-    --subheading-font: 'Inter', sans-serif;
+    --heading-font: 'Playfair Display',
+    serif;
+    --subheading-font: 'Inter',
+    sans-serif;
 
     /* Fluid Heading Sizes */
     --heading-size: clamp(32px, 8vw, 82px);
     --heading-weight: 300;
     --subheading-size: clamp(12px, 2vw, 14px);
     --subheading-weight: 700;
-}
-
-/* Desktop Overrides (Enforce 120px Margins) */
-@media (min-width: 1025px) {
-    :root {
-        --container-padding: 120px;
-        --pad-left: 120px;
-        --pad-right: 120px;
-        --container-max-width: 100%;
-    }
 }
 
 body {
