@@ -2740,6 +2740,7 @@ h6 {
     z-index: 5;
     position: relative;
     margin-top: auto;
+    transform: translateY(-3px);
 }
 
 .tdot {
