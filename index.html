@@ -923,7 +923,10 @@
 
     <!-- Founder Message Section -->
     <section id="founder" class="founder-section-migrated">
-        <img loading="lazy" src="./images/founderbg.jpg" alt="Founder background" class="founder-bg-img">
+        <picture>
+            <source media="(max-width: 768px)" srcset="./images/foundermobtext.png">
+            <img loading="lazy" src="./images/founderbg.jpg" alt="Founder background" class="founder-bg-img">
+        </picture>
 
         <div class="founder-overlay">
             <button class="founder-play-btn" id="founderPlayBtn" onclick="openFounderModal()">
