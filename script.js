@@ -564,14 +564,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showNavbar() {
         if (!navbar) return;
+        navbar.style.transition = 'none';
         navbar.style.setProperty('transform', 'translateY(0)', 'important');
-        navbar.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
     }
 
     function hideNavbar() {
         if (!navbar || window.innerWidth > 768) return;
+        navbar.style.transition = 'none';
         navbar.style.setProperty('transform', 'translateY(-101%)', 'important');
-        navbar.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
     }
 
     window.addEventListener('scroll', () => {
