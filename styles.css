@@ -5552,9 +5552,15 @@ h6 {
     }
 
     .hero-content {
+        display: none !important;
+        /* Hide inactive content */
+    }
+
+    .hero-content.active {
         position: relative !important;
         margin: 0 !important;
         display: flex !important;
+        /* Show active content */
         flex-direction: column !important;
         gap: 20px !important;
         /* Even line gaps between title, description, and button */
