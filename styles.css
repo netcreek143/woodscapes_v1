@@ -1614,7 +1614,7 @@ h6 {
 
     .case-testimonial-card,
     .case-cta-card {
-        padding: 20px 15px !important;
+        padding: 30px !important;
         align-items: flex-start !important;
         text-align: left !important;
     }
@@ -1642,10 +1642,11 @@ h6 {
     }
 
     .case-cta-btn.btn-animate-gap {
-        padding: 0 1rem !important;
+        padding: 0 !important;
         height: 50px !important;
         width: fit-content !important;
         align-self: flex-start !important;
+        margin-left: 0 !important;
     }
 
     /* Estimate Form */
@@ -2874,11 +2875,22 @@ h6 {
     .testimonial-red-title,
     .case-cta-title {
         margin-top: 0 !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .testimonial-body,
+    .testimonial-author-name,
+    .testimonial-dot-row {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
     }
 
     .case-cta-desc {
         margin-bottom: 24px !important;
         /* Tighter gap to button */
+        padding-left: 0 !important;
+        margin-left: 0 !important;
     }
 
     .case-cta-btn {
@@ -2889,10 +2901,14 @@ h6 {
         transform: none !important;
         display: flex !important;
         justify-content: flex-start !important;
+        width: fit-content !important;
+        max-width: 100% !important;
     }
 
     .case-cta-btn .btn-text {
         padding-left: 0 !important;
+        margin-left: 0 !important;
+        justify-content: flex-start !important;
     }
 }
 
