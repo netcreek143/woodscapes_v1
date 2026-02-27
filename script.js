@@ -558,36 +558,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    // --- Scroll Direction Logic ---
+    // --- Scroll Direction Logic (scroll-linked, not threshold-based) ---
     let lastScrollTop = 0;
-    const navbar = document.querySelector('.navbar');
-
-    function showNavbar() {
-        if (!navbar) return;
-        navbar.style.transition = 'none';
-        navbar.style.setProperty('transform', 'translateY(0)', 'important');
-    }
-
-    function hideNavbar() {
-        if (!navbar || window.innerWidth > 768) return;
-        navbar.style.transition = 'none';
-        navbar.style.setProperty('transform', 'translateY(-101%)', 'important');
-    }
+    let navbarOffset = 0; // 0 = fully visible, -navbarHeight = fully hidden
 
     window.addEventListener('scroll', () => {
-        let st = window.pageYOffset || document.documentElement.scrollTop;
-        if (window.innerWidth <= 768) {
-            if (st > lastScrollTop && st > 80) { // 80 is roughly navbar height
-                // Downscroll
-                hideNavbar();
-            } else {
-                // Upscroll or at top
-                showNavbar();
-            }
-        } else {
-            showNavbar(); // ensure always visible on desktop
+        const st = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (window.innerWidth > 768) {
+            // Always visible on desktop
+            if (navbar) navbar.style.setProperty('transform', 'translateY(0)', 'important');
+            lastScrollTop = st;
+            return;
         }
-        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+
+        if (navbar) {
+            const navbarHeight = navbar.offsetHeight;
+            const delta = st - lastScrollTop; // positive = scrolling down, negative = scrolling up
+
+            // Clamp offset between -navbarHeight (hidden) and 0 (visible)
+            navbarOffset = Math.min(0, Math.max(-navbarHeight, navbarOffset - delta));
+
+            navbar.style.transition = 'none';
+            navbar.style.setProperty('transform', `translateY(${navbarOffset}px)`, 'important');
+        }
+
+        lastScrollTop = st <= 0 ? 0 : st;
     }, { passive: true });
     // --- Mute Toggle Logic ---
     // --- Individual Smart Mute Logic ---
