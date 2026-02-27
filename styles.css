@@ -2858,8 +2858,20 @@ h6 {
     }
 
     .case-testimonial-card {
-        padding: 15px !important;
-        /* Reduced padding for mobile */
+        padding: 30px !important;
+    }
+
+    .case-cta-card {
+        padding: 30px !important;
+    }
+
+    .case-cta-btn {
+        margin: 0 !important;
+        padding: 0 !important;
+        align-self: flex-start !important;
+        transform: none !important;
+        display: flex !important;
+        justify-content: flex-start !important;
     }
 }
 
