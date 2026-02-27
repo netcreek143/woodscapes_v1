@@ -5290,25 +5290,50 @@ h6 {
     }
 
     .stat-card {
-        padding: 2.5rem 1rem !important;
+        padding: 20px !important;
+        /* Equal padding inside the card */
         background-color: #ffffff !important;
         --cut: 34.9px !important;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
         border-radius: 0 !important;
-        min-height: 180px;
-        justify-content: center;
+        aspect-ratio: 1 / 1 !important;
+        /* Force a perfect square */
+        min-height: auto !important;
+        /* Remove min-height override */
+        height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+        /* Even spacing between icon, number, and label */
+    }
+
+    .stat-icon {
+        width: 64px !important;
+        /* Larger icon */
+        height: 64px !important;
+        margin: 0 !important;
+        /* Let gap handle spacing */
+    }
+
+    .stat-icon svg {
+        width: 100% !important;
+        height: 100% !important;
     }
 
     .stat-number {
-        font-size: 2.5rem !important;
-        /* Slightly smaller for mobile */
+        font-size: 2.8rem !important;
         font-weight: 700 !important;
+        margin: 0 !important;
+        line-height: 1 !important;
     }
 
     .stat-label {
         font-size: 1rem !important;
-        /* Slightly smaller for mobile */
         font-weight: 600 !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
     }
 
     /* 4. Success Stories - Left align titles and add spacing below */
