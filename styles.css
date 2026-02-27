@@ -5298,26 +5298,7 @@ h6 {
         cursor: default !important;
     }
 
-    /* R2-4. Fix industry card borders for 2-column mobile grid */
-    .industry-card-new:nth-child(2n+1) {
-        border-left: 1px solid #e5e7ebdf !important;
-        border-right: 1px solid #e5e7ebdf !important;
-        border-bottom: 1px solid #e5e7ebdf !important;
-    }
-
-    .industry-card-new:nth-child(2n) {
-        border-right: 1px solid #e5e7ebdf !important;
-        border-left: 1px solid #e5e7ebdf !important;
-        border-bottom: 1px solid #e5e7ebdf !important;
-    }
-
-    .ind-title-new {
-        font-size: 1.4rem !important;
-    }
-
-    .ind-desc-new {
-        font-size: 0.95rem !important;
-    }
+    /* Reverted Industries Served past styling as requested */
 
     /* R2-5. Increase why woodscape description font size */
     .why-desc {
