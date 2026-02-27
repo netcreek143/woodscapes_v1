@@ -5283,45 +5283,19 @@ h6 {
         margin: 0 auto !important;
     }
 
-    /* 6. Delivery Process - Image first, Reduce size/weight, Remove hover */
-    .process-item {
-        flex-direction: column !important;
-        /* Image first flow */
-        align-items: center !important;
-        text-align: center !important;
-        padding: 15px !important;
-        cursor: default !important;
-    }
-
-    .proc-img-box {
-        margin-bottom: 15px !important;
-        margin-right: 0 !important;
-    }
-
-    .proc-content {
-        padding-left: 0 !important;
-    }
-
-    .proc-title {
-        font-weight: 400 !important;
-        /* Reduced weight */
-        font-size: 1.2rem !important;
-        /* Reduced size */
-    }
-
-    .proc-desc {
-        font-size: 0.9rem !important;
-        line-height: 1.4 !important;
-    }
-
-    .process-item:hover {
-        transform: none !important;
-        background: transparent !important;
-    }
-
+    /* R2-1. Delivery process: remove hover effect, always red badge + white number */
     .process-item:hover .proc-title {
         font-weight: 400 !important;
-        font-size: 1.2rem !important;
+        font-size: 1.34rem;
+    }
+
+    .proc-badge {
+        background: var(--primary-red) !important;
+        color: #fff !important;
+    }
+
+    .process-item {
+        cursor: default !important;
     }
 
     /* R2-4. Fix industry card borders for 2-column mobile grid */
