@@ -5298,8 +5298,12 @@ h6 {
         margin-bottom: 5px !important;
     }
 
+    .stories-header-left .section-label-red {
+        font-size: 1.3rem !important;
+    }
+
     .stories-header-left .display-title {
-        font-size: 2.2rem !important;
+        font-size: 2.6rem !important;
         font-weight: 400 !important;
     }
 
