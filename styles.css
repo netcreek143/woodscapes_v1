@@ -5250,11 +5250,12 @@ h6 {
     }
 
     .btn-view-projects {
-        padding: 8px 18px !important;
         height: fit-content !important;
         width: fit-content !important;
         margin-left: 0 !important;
         /* Force left alignment */
+        padding: 0 !important;
+        /* Remove inherited outer padding causing inset */
     }
 
     /* 3. Stat Cards - Equal Spacing on all sides */
