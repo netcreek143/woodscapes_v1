@@ -5204,10 +5204,12 @@ h6 {
     /* 3. Stat Cards - Reduce padding and make it fill section */
     .stats-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 8px !important;
-        /* Reduced gap */
-        padding: 0 6px !important;
-        /* Reduced side padding to fill more */
+        gap: 2px !important;
+        /* Minimal gap for filled look */
+        padding: 0 !important;
+        /* Remove container padding */
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .stat-card-wrapper {
@@ -5265,6 +5267,12 @@ h6 {
         text-align: left !important;
         font-size: 2.2rem !important;
         font-weight: 400 !important;
+        width: 100% !important;
+    }
+
+    .client-stories-header {
+        text-align: left !important;
+        width: 100% !important;
     }
 
     /* 6. Hide left/right nav buttons in success stories on mobile */
@@ -5298,7 +5306,23 @@ h6 {
         cursor: default !important;
     }
 
-    /* Reverted Industries Served past styling as requested */
+    /* Re-apply robust border logic for 2-column mobile grid */
+    .industry-card-new {
+        border: 1px solid #e5e7ebdf !important;
+        /* Reset: border on all sides */
+        margin-bottom: -1px !important;
+        /* Collapse vertical borders */
+        margin-right: -1px !important;
+        /* Collapse horizontal borders */
+    }
+
+    .industry-card-new:nth-child(2n+1) {
+        border-left: 1px solid #e5e7ebdf !important;
+    }
+
+    .industry-card-new:nth-child(2n) {
+        border-right: 1px solid #e5e7ebdf !important;
+    }
 
     /* R2-5. Increase why woodscape description font size */
     .why-desc {
