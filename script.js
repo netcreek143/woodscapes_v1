@@ -538,18 +538,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const sections = document.querySelectorAll('.commercial-section');
+    const servicesWrapper = document.getElementById('services');
+    if (!servicesWrapper) return;
+
+    const sections = servicesWrapper.querySelectorAll('.commercial-section');
     if (sections.length < 2) return;
 
     const section1 = sections[0];
     const section2 = sections[1];
 
-    // Create a container for pinning
-    const pinWrap = document.createElement('div');
-    pinWrap.className = 'pin-wrap';
-    section1.parentNode.insertBefore(pinWrap, section1);
-    pinWrap.appendChild(section1);
-    pinWrap.appendChild(section2);
+    // Use the existing servicesWrapper instead of creating a new pin-wrap
+    const pinWrap = servicesWrapper;
+    pinWrap.classList.add('pin-wrap');
 
     // Delay slightly to prevent initial render "shake" or layout thrashing
     setTimeout(() => {
