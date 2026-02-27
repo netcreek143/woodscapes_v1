@@ -5305,9 +5305,13 @@ h6 {
     }
 
     /* R2-1. Delivery process: remove hover effect, always red badge + white number */
-    .process-item:hover .proc-title {
+    .process-item:hover .proc-title,
+    .process-item:hover .proc-badge {
         font-weight: 400 !important;
-        font-size: 1.34rem;
+        background: var(--primary-red) !important;
+        color: #fff !important;
+        animation: none !important;
+        transform: none !important;
     }
 
     .proc-badge {
