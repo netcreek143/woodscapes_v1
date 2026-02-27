@@ -1366,9 +1366,9 @@ h6 {
     .commercial-image {
         min-height: 250px;
         order: -1;
-        margin-left: -15px !important;
-        margin-right: -15px !important;
-        width: calc(100% + 30px) !important;
+        margin-left: -20px !important;
+        margin-right: -20px !important;
+        width: calc(100% + 40px) !important;
         max-width: none !important;
         border-radius: 0 !important;
     }
@@ -1378,8 +1378,8 @@ h6 {
     }
 
     .commercial-content {
-        padding: 40px 24px;
-        /* Added 24px horizontal padding for text zone */
+        padding: 40px 0 !important;
+        /* Align text exactly with the 20px container edge */
         text-align: left;
         align-items: flex-start;
     }
