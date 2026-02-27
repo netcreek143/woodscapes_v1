@@ -3457,8 +3457,8 @@ h6 {
     /* Fit 4 cards on desktop */
     flex: 0 0 calc((100vw - var(--pad-left) - var(--pad-right) - (3 * 24px)) / 4);
     width: calc((100vw - var(--pad-left) - var(--pad-right) - (3 * 24px)) / 4);
-    aspect-ratio: 1 / 1.1;
-    /* Adjusted for cleaner height with less width */
+    /* Let content determine height instead of rigid aspect-ratio */
+    min-height: 0;
     --cut: 60px;
     /* Reduced cut for smaller cards */
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
@@ -3466,6 +3466,7 @@ h6 {
     padding: 0;
     box-sizing: border-box;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
 .why-card {
@@ -4768,11 +4769,12 @@ h6 {
     width: 100%;
     max-width: 1180px;
     width: 80vw;
-    height: 65vh;
+    min-height: 65vh;
+    height: auto;
     position: relative;
     box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
     border: none;
-    overflow: hidden;
+    overflow: visible;
     /* Diagonal cut at bottom right */
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 80px), calc(100% - 80px) 100%, 0 100%);
     /* Initial Transform State */
@@ -4866,7 +4868,7 @@ h6 {
 
 /* 4) Form Grid */
 .modal-form {
-    margin-top: 55px;
+    margin-top: clamp(25px, 4vw, 55px);
     flex-grow: 1;
     /* Pushes content down space permitting */
     display: flex;
@@ -4877,7 +4879,7 @@ h6 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: clamp(40px, 6vw, 80px);
-    row-gap: 40px;
+    row-gap: clamp(24px, 3vw, 40px);
 }
 
 /* Input Styles - Underline only */
@@ -4924,7 +4926,7 @@ h6 {
 
 /* 5) Buttons specific to Modal — joined split button */
 .modal-actions {
-    margin-top: 45px;
+    margin-top: clamp(20px, 3vw, 45px);
     display: inline-flex;
     align-items: stretch;
     gap: 0;
