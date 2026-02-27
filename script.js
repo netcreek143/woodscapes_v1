@@ -547,6 +547,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    // --- Scroll Landing Logic ---
+    let lastScrollTop = 0;
+    let navbarTimeout;
+    const navbar = document.querySelector('.navbar');
+
+    function showNavbar() {
+        if (!navbar) return;
+        navbar.style.transform = 'translateY(0)';
+        navbar.style.transition = 'transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+    }
+
+    function hideNavbar() {
+        if (!navbar || window.innerWidth > 768) return;
+        navbar.style.transform = 'translateY(-101%)';
+    }
+
+    function resetNavbarTimer() {
+        if (window.innerWidth > 768) {
+            showNavbar();
+            return;
+        }
+        showNavbar();
+        clearTimeout(navbarTimeout);
+        navbarTimeout = setTimeout(hideNavbar, 3000); // Hide after 3 seconds of inactivity
+    }
+
+    if (window.innerWidth <= 768) {
+        navbarTimeout = setTimeout(hideNavbar, 3000);
+    }
+
+    window.addEventListener('scroll', () => {
+        resetNavbarTimer();
+    }, { passive: true });
+
+    // Ensure navbar shows when clicking burger or interacting
+    document.addEventListener('mousemove', () => {
+        if (window.innerWidth <= 768) resetNavbarTimer();
+    });
+
+    document.addEventListener('touchstart', () => {
+        if (window.innerWidth <= 768) resetNavbarTimer();
+    });
     // --- Mute Toggle Logic ---
     // --- Individual Smart Mute Logic ---
     const muteButtons = document.querySelectorAll('.client-video-mute-btn');
