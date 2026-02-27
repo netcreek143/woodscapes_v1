@@ -5256,14 +5256,14 @@ h6 {
 
     /* 3. Stat Cards - Equal Spacing on all sides */
     .stats-section {
-        padding: 15px !important;
+        padding: 10px !important;
         /* Equal top, right, bottom, left padding */
         overflow: hidden;
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 15px !important;
+        gap: 10px !important;
         /* Matches the outer padding for a perfect grid */
         padding: 0 !important;
         /* Removed inner padding so outer handles borders */
@@ -5489,7 +5489,7 @@ h6 {
     }
 
     .container {
-        padding: 0 15px !important;
+        padding: 0 10px !important;
     }
 
     /* Extra Fixes */
@@ -5543,8 +5543,8 @@ h6 {
         position: relative !important;
         display: flex !important;
         flex-direction: column !important;
-        padding: 30px 20px !important;
-        /* Equal padding top/bottom and left/right */
+        padding: 30px 10px !important;
+        /* 10px padding left/right */
         gap: 30px !important;
         /* Even gap between text section and form */
         height: auto !important;
