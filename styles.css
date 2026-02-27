@@ -1657,9 +1657,10 @@ h6 {
     }
 
     .case-cta-btn .btn-text,
+    .case-cta-btn.btn-animate-gap .btn-text,
     .hero-content .btn .btn-text {
-        padding: 0 15px !important;
-        /* inner gap between text and button border */
+        padding: 0 20px !important;
+        /* inner breathing room between text and border */
     }
 
     .estimate-form-grid {
