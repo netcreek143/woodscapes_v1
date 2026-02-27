@@ -5253,6 +5253,8 @@ h6 {
         padding: 8px 18px !important;
         height: fit-content !important;
         width: fit-content !important;
+        margin-left: 0 !important;
+        /* Force left alignment */
     }
 
     /* 3. Stat Cards - Equal Spacing on all sides */
