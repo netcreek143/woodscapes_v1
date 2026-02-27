@@ -5173,7 +5173,7 @@ h6 {
     /* 2. Reduce hero title size and view-projects button font */
     .hero-title {
         font-size: 2.4rem !important;
-        font-weight: 700 !important;
+        font-weight: 400 !important;
         line-height: 1.1 !important;
         letter-spacing: -1px !important;
     }
@@ -5189,13 +5189,14 @@ h6 {
 
     .btn-view-projects {
         padding: 12px 24px !important;
+        width: fit-content;
     }
 
     /* 3. Replicate the exact border with notched shape from image */
     .stats-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 16px !important;
-        padding: 0 20px !important;
+        /* padding: 0 20px !important; */
     }
 
     .stat-card-wrapper {
@@ -5230,7 +5231,7 @@ h6 {
     /* 4. Increase commercial construction/interiors title size & weight */
     .commercial-section .section-title {
         font-size: 2.4rem !important;
-        font-weight: 700 !important;
+        font-weight: 400 !important;
     }
 
     /* 5. Left-align project highlights label and success stories title */
@@ -5241,13 +5242,12 @@ h6 {
     .stories-header-left .section-label-red {
         text-align: left !important;
         font-weight: 600 !important;
-        letter-spacing: 0.3em !important;
     }
 
     .stories-header-left .display-title {
         text-align: left !important;
         font-size: 2.5rem !important;
-        font-weight: 700 !important;
+        font-weight: 400 !important;
     }
 
     /* 6. Hide left/right nav buttons in success stories on mobile */
@@ -5257,22 +5257,22 @@ h6 {
 
     /* 8. Reduce delivery process title size */
     .display-title-serif {
-        font-size: 2.4rem !important;
-        font-weight: 700 !important;
+        font-size: 2.43rem !important;
+        font-weight: 400 !important;
     }
 
     /* ── Round 2 Mobile Refinements ─────────────────────────────────── */
 
     /* R2-1. Delivery process: remove hover effect, always red badge + white number */
     .process-item:hover .proc-title {
-        font-weight: 600 !important;
+        font-weight: 400 !important;
         font-size: 1.4rem !important;
     }
 
-    .process-item:hover .proc-badge {
+    /* .process-item:hover .proc-badge {
         background: var(--primary-red) !important;
         color: #fff !important;
-    }
+    } */
 
     .proc-badge {
         background: var(--primary-red) !important;
@@ -5296,6 +5296,7 @@ h6 {
     /* R2-3. Increase industries served title */
     .industries-section .display-title-serif {
         font-size: 2.5rem !important;
+        font-weight: 400;
     }
 
     /* R2-4. Fix industry card borders for 2-column mobile grid */
@@ -5326,59 +5327,27 @@ h6 {
 
     /* Featured Case Study Visual Refinements */
     .featured-case-section .display-title-serif {
-        font-size: 2.2rem !important;
+        font-size: 2.34rem !important;
         margin-bottom: 30px !important;
     }
 
     .case-stat-item {
         padding: 24px !important;
-        --cut: 40px !important;
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
-        background: #fdfdfd !important;
-        border: 1px solid #eee !important;
+        background: #ffffff !important;
         margin-bottom: 20px;
     }
 
     .stat-title-lg {
         font-size: 1.5rem !important;
-        font-weight: 700 !important;
+        font-weight: 400 !important;
     }
 
-    /* Quick Estimate Form - Dark Theme for Mobile */
-    .estimate-section {
-        background: #0A0A0A !important;
-        padding: 60px 20px !important;
-    }
-
-    .estimate-title {
-        color: #FFFFFF !important;
-        font-size: 2.2rem !important;
-        line-height: 1.1 !important;
-        margin-bottom: 16px !important;
-    }
-
-    .estimate-desc {
-        color: #9CA3AF !important;
-        font-size: 1rem !important;
-        margin-bottom: 40px !important;
-    }
-
-    .estimate-input,
-    .estimate-select {
-        background-color: #1F2937 !important;
-        color: #FFFFFF !important;
-        border: 1px solid #374151 !important;
-        border-radius: 8px !important;
-    }
-
-    .estimate-input::placeholder {
-        color: #6B7280 !important;
-    }
 
     /* Footer Social Links - Reposition after locations */
     .footer-content {
         display: flex;
         flex-direction: column;
+        margin-top: 10px !important;
     }
 
     .footer-col-brand {
@@ -5391,12 +5360,11 @@ h6 {
 
     .footer-contact-col {
         order: 3;
-        margin-bottom: 15px !important;
     }
 
     .footer-socials {
         order: 4;
-        justify-content: flex-start !important;
-        margin-top: 10px !important;
+
+        margin-bottom: 5px !important;
     }
 }
