@@ -5323,7 +5323,11 @@ h6 {
         margin-right: 0 !important;
     }
 
-    /* R2-1. Delivery process: remove hover effect, always red badge + white number */
+    /* R2-1. Delivery process title size, remove hover effect, always red badge + white number */
+    .process-section .display-title-serif {
+        font-size: 2.8rem !important;
+    }
+
     .process-item:hover .proc-title,
     .process-item:hover .proc-badge {
 
