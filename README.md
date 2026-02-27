@@ -2,7 +2,7 @@
 
 **Premium Commercial Interiors & Construction landing site for Woodscape Engineering.**
 
-Live production website for Woodscape Engineering, a commercial interior design and construction firm based in India. The site is a fully hand-crafted, static HTML/CSS/JS website — no frameworks, no build tools. Designed for maximum performance, deployed on Netlify.
+Live production website for Woodscape Engineering, a commercial interior design and construction firm based in India. The site is a fully hand-crafted, static HTML/CSS/JS website — no frameworks, no build tools. Designed for maximum performance.
 
 ---
 
@@ -182,10 +182,6 @@ All 8 client story videos are compressed using **FFmpeg H.264 CRF 30, 720p, AAC 
 
 ---
 
-## 🚀 Deployment (Netlify)
-
-### Auto Deploy
-Push to `main` branch → Netlify auto-deploys.
 
 ### Manual Deploy
 Drag and drop the `woodscape_Dsignxt/` folder into the Netlify dashboard.
@@ -259,4 +255,4 @@ cd woodscapes_v1/woodscape_Dsignxt
 
 ---
 
-*Built by DsignXt | Woodscape Engineering Website © 2025*
+*Built by DsignXt | Woodscape Engineering Website © 2026*
