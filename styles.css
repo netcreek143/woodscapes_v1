@@ -5201,37 +5201,39 @@ h6 {
         width: fit-content !important;
     }
 
-    /* 3. Stat Cards - Reduce padding and make it fill section */
+    /* 3. Stat Cards - Remove padding and fill session */
+    .stats-section {
+        padding: 0 !important;
+        overflow: hidden;
+    }
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 2px !important;
-        /* Minimal gap for filled look */
+        gap: 0 !important;
+        /* No gaps */
         padding: 0 !important;
-        /* Remove container padding */
+        /* No padding */
         width: 100% !important;
         max-width: 100% !important;
     }
 
     .stat-card-wrapper {
-        background-color: #dedcdcf3 !important;
-        padding: 1px !important;
-        /* Reduced padding */
-        --cut: 30px !important;
-        /* Slightly smaller cut for mobile */
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
-        border: none !important;
-        border-radius: 0 !important;
+        background-color: #f1f1f1 !important;
+        padding: 0 !important;
+        --cut: 0px !important;
+        /* Remove cut to fill corners if needed, or keeping it but ensuring it fills */
+        clip-path: none !important;
+        border: 0.5px solid #e5e7eb !important;
     }
 
     .stat-card {
-        padding: 10px 8px !important;
-        /* Reduced padding */
+        padding: 2.5rem 1rem !important;
+        /* Increase vertical size */
         background-color: #ffffff !important;
-        --cut: 29.9px !important;
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
+        clip-path: none !important;
         border-radius: 0 !important;
-        min-height: 120px;
-        /* Reduced min-height */
+        min-height: 180px;
+        /* Larger size */
         justify-content: center;
     }
 
