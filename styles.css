@@ -3711,7 +3711,7 @@ h6 {
 
     .founder-label {
         order: 3;
-        font-size: 0.65rem;
+        font-size: 1rem;
         letter-spacing: 0.2em;
         /* Explicitly override massive desktop spacing */
         white-space: nowrap;
@@ -5296,13 +5296,13 @@ h6 {
     }
 
     .stat-number {
-        font-size: 1.8rem !important;
+        font-size: 2.5rem !important;
         /* Slightly smaller for mobile */
         font-weight: 700 !important;
     }
 
     .stat-label {
-        font-size: 0.75rem !important;
+        font-size: 1rem !important;
         /* Slightly smaller for mobile */
         font-weight: 600 !important;
     }
@@ -5503,5 +5503,57 @@ h6 {
 
     .estimate-title {
         font-size: 2.6rem !important;
+    }
+
+    /* 15. Mobile Hero Layout Restructure */
+    .hero {
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        min-height: auto !important;
+        padding-top: 75px !important;
+        background-color: #000 !important;
+    }
+
+    .hero-slider {
+        position: relative !important;
+        width: 100% !important;
+        height: 50vh !important;
+        min-height: 350px !important;
+        background-color: #000 !important;
+    }
+
+    .hero-slide {
+        background-image: url('./images/mobherobanner.jpg') !important;
+        background-size: contain !important;
+        background-position: center top !important;
+        background-repeat: no-repeat !important;
+        background-color: transparent !important;
+    }
+
+    .hero-overlay {
+        display: none !important;
+    }
+
+    .hero-container {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding-top: 1rem !important;
+        padding-bottom: 2.5rem !important;
+        gap: 2rem !important;
+        height: auto !important;
+        background-color: #000 !important;
+    }
+
+    .hero-content {
+        position: relative !important;
+        margin: 0 !important;
+    }
+
+    .hero-form-card {
+        position: relative !important;
+        margin: 0 !important;
+        /* Retains its translucent glass background */
     }
 }
