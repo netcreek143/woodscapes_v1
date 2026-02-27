@@ -1603,20 +1603,26 @@ h6 {
     }
 
     .case-img-panel,
-    .case-testimonial-card,
-    .case-cta-card,
     .case-testimonial-wrap,
     .case-cta-wrap {
-        height: 320px !important;
         --cut: 45px !important;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
     }
 
+    .case-img-panel {
+        height: 320px !important;
+    }
+
     .case-testimonial-card,
     .case-cta-card {
+        height: auto !important;
+        min-height: 320px !important;
+        --cut: 45px !important;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
         padding: 30px !important;
         align-items: flex-start !important;
         text-align: left !important;
+        justify-content: flex-start !important;
     }
 
     .testimonial-red-title,
