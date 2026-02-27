@@ -254,6 +254,11 @@ h6 {
         flex: 1;
         text-align: center;
         padding: 12px 15px;
+        white-space: nowrap !important;
+        font-size: 1.1rem !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .btn-split .btn-icon {
@@ -5307,10 +5312,7 @@ h6 {
     /* R2-1. Delivery process: remove hover effect, always red badge + white number */
     .process-item:hover .proc-title,
     .process-item:hover .proc-badge {
-        font-weight: 400 !important;
-        background: var(--primary-red) !important;
-        color: #fff !important;
-        animation: none !important;
+
         transform: none !important;
     }
 
