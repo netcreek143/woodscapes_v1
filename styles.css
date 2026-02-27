@@ -5196,7 +5196,8 @@ h6 {
     }
 
     .btn-view-projects {
-        padding: 12px 24px !important;
+        padding: 8px 18px !important;
+        height: fit-content !important;
         width: fit-content !important;
     }
 
@@ -5205,7 +5206,7 @@ h6 {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 8px !important;
         /* Reduced gap */
-        padding: 0 10px !important;
+        padding: 0 6px !important;
         /* Reduced side padding to fill more */
     }
 
@@ -5246,7 +5247,7 @@ h6 {
 
     /* 4. Success Stories - Centered titles and reduced padding */
     .client-stories-section {
-        padding: 40px 0 !important;
+        padding: 5px 0 !important;
         /* Reduced padding */
     }
 
@@ -5267,9 +5268,9 @@ h6 {
         font-weight: 400 !important;
     }
 
-    .client-stories-header {
-        margin-bottom: 2rem !important;
-        text-align: center !important;
+    /* 6. Hide left/right nav buttons in success stories on mobile */
+    .stories-header-right {
+        display: none !important;
     }
 
     .client-stories-title {
@@ -5323,45 +5324,31 @@ h6 {
         font-size: 1.2rem !important;
     }
 
-    /* 8. Industries Served - Fix missing borders */
-    .industry-card-new {
-        border: 1px solid #E5E7EB !important;
-        /* Reset all borders */
-    }
-
+    /* R2-4. Fix industry card borders for 2-column mobile grid */
     .industry-card-new:nth-child(2n+1) {
-        border-left: 1px solid #E5E7EB !important;
-        border-right: 1px solid #E5E7EB !important;
-        border-bottom: 1px solid #E5E7EB !important;
+        border-left: 1px solid #e5e7ebdf !important;
+        border-right: 1px solid #e5e7ebdf !important;
+        border-bottom: 1px solid #e5e7ebdf !important;
     }
 
     .industry-card-new:nth-child(2n) {
-        border-right: 1px solid #E5E7EB !important;
-        border-left: 1px solid #E5E7EB !important;
-        border-bottom: 1px solid #E5E7EB !important;
+        border-right: 1px solid #e5e7ebdf !important;
+        border-left: 1px solid #e5e7ebdf !important;
+        border-bottom: 1px solid #e5e7ebdf !important;
     }
 
-    /* 9. Why Woodscape - 1 card per view, Restore scrollbar */
-    .why-scrollbar-track {
-        display: block !important;
-        /* Ensure visible */
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    .why-card-new {
-        width: calc(100vw - 40px) !important;
-        /* Fits one card in view */
-        flex-shrink: 0;
-    }
-
-    .why-card-new .card-inner {
-        padding: 24px !important;
-        height: auto !important;
-    }
-
-    .why-title {
+    .ind-title-new {
         font-size: 1.4rem !important;
+    }
+
+    .ind-desc-new {
+        font-size: 0.95rem !important;
+    }
+
+    /* R2-5. Increase why woodscape description font size */
+    .why-desc {
+        font-size: 1.15rem !important;
+
     }
 
     /* 10. Featured Case Study - Smaller cards (2 per screen) */
@@ -5369,14 +5356,10 @@ h6 {
         gap: 15px !important;
     }
 
-    .case-img-panel,
-    .case-testimonial-card,
-    .case-cta-card,
-    .case-testimonial-wrap,
-    .case-cta-wrap {
-        height: 350px !important;
-        /* Reduced size */
-        --cut: 40px !important;
+    /* Featured Case Study Visual Refinements */
+    .featured-case-section .display-title-serif {
+        font-size: 2.34rem !important;
+        margin-bottom: 30px !important;
     }
 
     .case-testimonial-card,
