@@ -5266,11 +5266,12 @@ h6 {
         overflow: hidden;
     }
 
-    .stats-grid {
+    .container.stats-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 20px !important;
         /* Matches the outer padding for a perfect grid */
         padding: 0 !important;
+        /* This now correctly overrides .container */
         /* Removed inner padding so outer handles borders */
         width: 100% !important;
         max-width: 100% !important;
