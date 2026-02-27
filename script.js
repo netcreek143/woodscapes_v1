@@ -4,7 +4,8 @@
 (function () {
     const sections = [
         { id: 'home', href: '#home' },
-        { id: 'services', href: '#services' },
+        { id: 'commercial-construction', href: '#commercial-construction' },
+        { id: 'commercial-interiors', href: '#commercial-interiors' },
         { id: 'projects', href: '#projects' },
         { id: 'industries', href: '#industries' },
         { id: 'why-woodscape', href: '#why-woodscape' },
@@ -100,7 +101,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = document.querySelector(href);
             if (target) {
                 const navHeight = navbar ? navbar.offsetHeight : 80;
-                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - (navHeight - 20);
+                let targetPosition = target.getBoundingClientRect().top + window.pageYOffset - (navHeight - 20);
+
+                // Special handling for Commercial Sections within pinning
+                if (href === '#commercial-interiors') {
+                    const servicesWrapper = document.getElementById('services');
+                    if (servicesWrapper) {
+                        // We scroll to services plus the pinning distance (150% of viewport height)
+                        // to ensure we reach the second section.
+                        const pinningDistance = window.innerHeight * 1.5;
+                        targetPosition = (servicesWrapper.getBoundingClientRect().top + window.pageYOffset) + pinningDistance - (navHeight - 20);
+                    }
+                } else if (href === '#commercial-construction') {
+                    const servicesWrapper = document.getElementById('services');
+                    if (servicesWrapper) {
+                        targetPosition = (servicesWrapper.getBoundingClientRect().top + window.pageYOffset) - (navHeight - 20);
+                    }
+                }
 
                 window.scrollTo({
                     top: targetPosition,
