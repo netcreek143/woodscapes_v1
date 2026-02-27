@@ -1435,7 +1435,8 @@ h6 {
     }
 
     .hero-content .btn .btn-text {
-        padding-left: 0 !important;
+        padding: 0 15px !important;
+        /* restore inner breathing room, keep button flush-left */
     }
 
     .hero-form-card {
@@ -1655,7 +1656,12 @@ h6 {
         margin-left: 0 !important;
     }
 
-    /* Estimate Form */
+    .case-cta-btn .btn-text,
+    .hero-content .btn .btn-text {
+        padding: 0 15px !important;
+        /* inner gap between text and button border */
+    }
+
     .estimate-form-grid {
         gap: 20px !important;
     }
