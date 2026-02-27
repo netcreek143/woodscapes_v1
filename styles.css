@@ -5218,12 +5218,18 @@ h6 {
     }
 
     .stat-card-wrapper {
-        background-color: #f1f1f1 !important;
-        padding: 0.5px !important;
+        background-color: #f1f1f1eb !important;
+        padding: 1.5px !important;
         --cut: 35px !important;
         /* Re-added cut */
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
         border: none !important;
+    }
+
+    .stat-card-wrapper:hover {
+        background: #f1f1f1eb !important;
+        animation: none !important;
+        filter: none !important;
     }
 
     .stat-card {
