@@ -5343,6 +5343,11 @@ h6 {
         cursor: default !important;
     }
 
+    /* Industries Served title size adjustment */
+    .industries-section .display-title-serif {
+        font-size: 2.8rem !important;
+    }
+
     /* Re-apply robust border logic for 2-column mobile grid */
     .industries-grid-redesign {
         gap: 0 !important;
