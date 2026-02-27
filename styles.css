@@ -5252,10 +5252,14 @@ h6 {
     .btn-view-projects {
         height: fit-content !important;
         width: fit-content !important;
-        margin-left: 0 !important;
+        margin: 0 !important;
         /* Force left alignment */
         padding: 0 !important;
         /* Remove inherited outer padding causing inset */
+        align-self: flex-start !important;
+        transform: none !important;
+        display: flex !important;
+        justify-content: flex-start !important;
     }
 
     /* 3. Stat Cards - Equal Spacing on all sides */
