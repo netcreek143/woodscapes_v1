@@ -5254,18 +5254,19 @@ h6 {
         width: fit-content !important;
     }
 
-    /* 3. Stat Cards - Remove padding and fill session */
+    /* 3. Stat Cards - Equal Spacing on all sides */
     .stats-section {
-        padding: 5px !important;
+        padding: 15px !important;
+        /* Equal top, right, bottom, left padding */
         overflow: hidden;
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 5px !important;
-        /* Re-added gap as requested */
-        padding: 5px !important;
-        /* Small padding for the gap to show at edges */
+        gap: 15px !important;
+        /* Matches the outer padding for a perfect grid */
+        padding: 0 !important;
+        /* Removed inner padding so outer handles borders */
         width: 100% !important;
         max-width: 100% !important;
     }
