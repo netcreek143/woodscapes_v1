@@ -5384,4 +5384,8 @@ h6 {
     .why-desc {
         font-size: 1.05rem !important;
     }
+
+    .estimate-title {
+        font-size: 1.8rem !important;
+    }
 }
