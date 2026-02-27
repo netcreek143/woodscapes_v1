@@ -104,18 +104,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 let targetPosition = target.getBoundingClientRect().top + window.pageYOffset - (navHeight - 20);
 
                 // Special handling for Commercial Sections within pinning
-                if (href === '#commercial-interiors') {
+                if (href === '#commercial-interiors' || href === '#commercial-construction') {
                     const servicesWrapper = document.getElementById('services');
                     if (servicesWrapper) {
-                        // We scroll to services plus the pinning distance (150% of viewport height)
-                        // to ensure we reach the second section.
-                        const pinningDistance = window.innerHeight * 1.5;
-                        targetPosition = (servicesWrapper.getBoundingClientRect().top + window.pageYOffset) + pinningDistance - (navHeight - 20);
-                    }
-                } else if (href === '#commercial-construction') {
-                    const servicesWrapper = document.getElementById('services');
-                    if (servicesWrapper) {
-                        targetPosition = (servicesWrapper.getBoundingClientRect().top + window.pageYOffset) - (navHeight - 20);
+                        // For pinned elements, getBoundingClientRect().top + pageYOffset is unstable.
+                        // We find the spacer (which is stable) or calculate the absolute offset.
+                        const spacer = servicesWrapper.closest('.pin-spacer');
+                        const baseTop = spacer ?
+                            (spacer.getBoundingClientRect().top + window.pageYOffset) :
+                            (servicesWrapper.getBoundingClientRect().top + window.pageYOffset);
+
+                        if (href === '#commercial-interiors') {
+                            // We scroll to services plus the pinning distance (150% of viewport height)
+                            const pinningDistance = window.innerHeight * 1.5;
+                            targetPosition = baseTop + pinningDistance - (navHeight - 20);
+                        } else {
+                            // Construction is at the very beginning of the wrapper
+                            targetPosition = baseTop - (navHeight - 20);
+                        }
                     }
                 }
 
