@@ -5227,6 +5227,7 @@ h6 {
     /* R2-1. Delivery process: remove hover effect, always red badge + white number */
     .process-item:hover .proc-title {
         font-weight: 400 !important;
+        font-size: 1.34rem;
     }
 
     .process-item:hover .proc-badge {
@@ -5245,8 +5246,8 @@ h6 {
 
     /* R2-2. Reduce stat-card top/bottom padding on mobile */
     .stat-card {
-        padding-top: 16px !important;
-        padding-bottom: 16px !important;
+        padding-top: 6px !important;
+        padding-bottom: 6px !important;
     }
 
     .stats-grid {
