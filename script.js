@@ -238,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
+        if (!question) return; // guard against missing element
         question.addEventListener('click', () => {
             const isActive = item.classList.contains('active');
 
