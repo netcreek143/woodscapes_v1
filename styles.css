@@ -5405,6 +5405,13 @@ h6 {
         font-size: 2.8rem !important;
     }
 
+    /* Shift testimonial author name up slightly */
+    .testimonial-author-name {
+        margin-top: -10px !important;
+        margin-bottom: 20px !important;
+        /* Reduce original 32px bottom margin to balance */
+    }
+
     .process-item:hover .proc-title,
     .process-item:hover .proc-badge {
 
