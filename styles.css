@@ -5172,11 +5172,11 @@ h6 {
 
     /* 2. Reduce hero title size and view-projects button font */
     .hero-title {
-        font-size: 2rem !important;
+        font-size: 2.23rem !important;
     }
 
     .btn-view-projects .btn-text {
-        font-size: 0.85rem !important;
+        font-size: 1.23rem !important;
     }
 
     .btn-view-projects {
@@ -5186,7 +5186,6 @@ h6 {
     /* 3. Fix stat-card border – remove clip-path cut so border is a full rectangle */
     .stat-card-wrapper {
         clip-path: none !important;
-        border-radius: 12px;
     }
 
     .stat-card {
@@ -5196,8 +5195,8 @@ h6 {
 
     /* 4. Increase commercial construction/interiors title size & weight */
     .commercial-section .section-title {
-        font-size: 2rem !important;
-        font-weight: 700 !important;
+        font-size: 2.23rem !important;
+        font-weight: 400 !important;
     }
 
     /* 5. Left-align project highlights label and success stories title */
@@ -5220,6 +5219,68 @@ h6 {
 
     /* 8. Reduce delivery process title size */
     .display-title-serif {
-        font-size: 2.2rem !important;
+        font-size: 2.3rem !important;
+    }
+
+    /* ── Round 2 Mobile Refinements ─────────────────────────────────── */
+
+    /* R2-1. Delivery process: remove hover effect, always red badge + white number */
+    .process-item:hover .proc-title {
+        font-weight: 400 !important;
+    }
+
+    .process-item:hover .proc-badge {
+        background: var(--primary-red) !important;
+        color: #fff !important;
+    }
+
+    .proc-badge {
+        background: var(--primary-red) !important;
+        color: #fff !important;
+    }
+
+    .process-item {
+        cursor: default !important;
+    }
+
+    /* R2-2. Reduce stat-card top/bottom padding on mobile */
+    .stat-card {
+        padding-top: 16px !important;
+        padding-bottom: 16px !important;
+    }
+
+    .stats-grid {
+        gap: 10px !important;
+    }
+
+    /* R2-3. Increase industries served title */
+    .industries-section .display-title-serif {
+        font-size: 2.5rem !important;
+    }
+
+    /* R2-4. Fix industry card borders for 2-column mobile grid */
+    .industry-card-new:nth-child(2n+1) {
+        border-left: none !important;
+        border-right: 1px solid #E5E7EB !important;
+        border-bottom: 1px solid #E5E7EB !important;
+    }
+
+    .industry-card-new:nth-child(2n) {
+        border-right: none !important;
+        border-left: none !important;
+        border-bottom: 1px solid #E5E7EB !important;
+    }
+
+    .ind-title-new {
+        font-size: 1.4rem !important;
+    }
+
+    .ind-desc-new {
+        font-size: 0.95rem !important;
+    }
+
+    /* R2-5. Increase why woodscape description font size */
+    .why-desc {
+        font-size: 1.15rem !important;
     }
 }
