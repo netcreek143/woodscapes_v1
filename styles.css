@@ -5307,6 +5307,14 @@ h6 {
     }
 
     /* Re-apply robust border logic for 2-column mobile grid */
+    .industries-grid-redesign {
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
     .industry-card-new {
         border: 1px solid #e5e7ebdf !important;
         /* Reset: border on all sides */
