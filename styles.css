@@ -5543,9 +5543,10 @@ h6 {
         position: relative !important;
         display: flex !important;
         flex-direction: column !important;
-        padding-top: 1rem !important;
-        padding-bottom: 2.5rem !important;
-        gap: 2rem !important;
+        padding: 30px 20px !important;
+        /* Equal padding top/bottom and left/right */
+        gap: 30px !important;
+        /* Even gap between text section and form */
         height: auto !important;
         background-color: #000 !important;
     }
@@ -5553,11 +5554,33 @@ h6 {
     .hero-content {
         position: relative !important;
         margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        /* Even line gaps between title, description, and button */
+        align-items: flex-start !important;
+    }
+
+    .hero-title,
+    .hero-description {
+        margin: 0 !important;
+        /* Reset default margins so 'gap' creates even spacing */
+    }
+
+    .btn-view-projects {
+        margin-top: 5px !important;
+        /* Small extra push for the button */
     }
 
     .hero-form-card {
         position: relative !important;
         margin: 0 !important;
-        /* Retains its translucent glass background */
+        background: #262626 !important;
+        /* Solid background as requested */
+        backdrop-filter: none !important;
+        /* Remove blur effect */
+        -webkit-backdrop-filter: none !important;
+        box-shadow: none !important;
+        border: none !important;
     }
 }
