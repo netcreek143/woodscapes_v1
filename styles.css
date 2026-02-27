@@ -1426,12 +1426,16 @@ h6 {
     }
 
     .hero-content .btn {
-        width: 60% !important;
-        /* Approx 60% of screen */
-        max-width: 60% !important;
+        width: fit-content !important;
+        max-width: fit-content !important;
         justify-content: flex-start !important;
-        padding-left: 20px !important;
-        margin-left: -10px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: auto !important;
+    }
+
+    .hero-content .btn .btn-text {
+        padding-left: 0 !important;
     }
 
     .hero-form-card {
@@ -2872,6 +2876,10 @@ h6 {
         transform: none !important;
         display: flex !important;
         justify-content: flex-start !important;
+    }
+
+    .case-cta-btn .btn-text {
+        padding-left: 0 !important;
     }
 }
 
