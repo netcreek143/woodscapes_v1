@@ -5262,6 +5262,8 @@ h6 {
     .stories-header {
         align-items: flex-start !important;
         text-align: left !important;
+        gap: 10px !important;
+        margin-bottom: 15px !important;
     }
 
     .stories-header-left,
@@ -5278,6 +5280,7 @@ h6 {
         text-align: left !important;
         margin-left: 0 !important;
         margin-right: auto !important;
+        margin-bottom: 5px !important;
     }
 
     .stories-header-left .display-title {
