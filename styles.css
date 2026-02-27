@@ -5257,29 +5257,32 @@ h6 {
     /* 4. Success Stories - Left align titles and add spacing below */
     .client-stories-section {
         padding: 5px 0 50px !important;
-        /* Added 50px bottom padding for gap */
     }
 
-    .stories-header-left {
+    .stories-header {
+        align-items: flex-start !important;
         text-align: left !important;
     }
 
-    .stories-header-left .section-label-red {
+    .stories-header-left,
+    .stories-header-center {
         text-align: left !important;
-        display: block;
-        margin-bottom: 5px;
+        align-items: flex-start !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .stories-header-left .section-label-red,
+    .stories-header-left .display-title,
+    .section-desc-small {
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: auto !important;
     }
 
     .stories-header-left .display-title {
-        text-align: left !important;
         font-size: 2.2rem !important;
         font-weight: 400 !important;
-        width: 100% !important;
-    }
-
-    .client-stories-header {
-        text-align: left !important;
-        width: 100% !important;
     }
 
     /* 6. Hide left/right nav buttons in success stories on mobile */
