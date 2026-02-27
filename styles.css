@@ -946,7 +946,7 @@ h6 {
     justify-content: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
@@ -1235,7 +1235,7 @@ h6 {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-wrapper {
         position: fixed;
         top: 0;
@@ -2177,7 +2177,7 @@ h6 {
     background: #cc0000;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
 
 
     .why-card-wrap {
@@ -2336,7 +2336,7 @@ h6 {
     color: #9CA3AF;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .process-header-row {
         flex-direction: column;
         align-items: flex-start;
@@ -2438,7 +2438,7 @@ h6 {
     line-height: 1.6;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .industries-grid-redesign {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2864,7 +2864,7 @@ h6 {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .case-visuals-redesign {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
@@ -3205,7 +3205,7 @@ h6 {
     align-items: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .founder-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -3344,7 +3344,7 @@ h6 {
     color: #6B7280;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .founder-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -3431,7 +3431,7 @@ h6 {
     font-size: 0.875rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .footer-top-new {
         grid-template-columns: 1fr 1fr;
     }
@@ -3905,7 +3905,7 @@ h6 {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .client-video-card-wrap {
         /* Show 2 cards on tablet */
         width: calc((100vw - 120px - 20px) / 2);
@@ -5125,7 +5125,7 @@ h6 {
 /* -------------------------------------------------------------------------- */
 
 /* Tablet */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .modal-card {
         width: 90vw;
         height: auto;
