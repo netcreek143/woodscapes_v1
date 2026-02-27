@@ -559,6 +559,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Scroll Direction Logic (scroll-linked, not threshold-based) ---
+    const navbar = document.querySelector('.navbar');
     let lastScrollTop = 0;
     let navbarOffset = 0; // 0 = fully visible, -navbarHeight = fully hidden
 
