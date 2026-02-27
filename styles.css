@@ -5179,175 +5179,231 @@ h6 {
     }
 
     .hero-container {
-        padding-top: 40px !important;
+        padding-top: 20px !important;
+        /* Reduced padding between top and hero titles */
         gap: 1.5rem !important;
+    }
+
+    .hero-section {
+        padding-top: 60px !important;
+        /* Reduced base padding */
     }
 
     .btn-view-projects .btn-text {
         font-size: 1.1rem !important;
+        white-space: nowrap !important;
+        /* Ensure one line */
     }
 
     .btn-view-projects {
         padding: 12px 24px !important;
-        width: fit-content;
+        width: fit-content !important;
     }
 
-    /* 3. Replicate the exact border with notched shape from image */
+    /* 3. Stat Cards - Reduce padding and make it fill section */
     .stats-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 16px !important;
-        /* padding: 0 20px !important; */
+        gap: 8px !important;
+        /* Reduced gap */
+        padding: 0 10px !important;
+        /* Reduced side padding to fill more */
     }
 
     .stat-card-wrapper {
         background-color: #dedcdcf3 !important;
-        padding: 1.5px !important;
-        --cut: 40px !important;
+        padding: 1px !important;
+        /* Reduced padding */
+        --cut: 30px !important;
+        /* Slightly smaller cut for mobile */
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
         border: none !important;
         border-radius: 0 !important;
     }
 
     .stat-card {
-        padding: 20px 15px !important;
+        padding: 10px 8px !important;
+        /* Reduced padding */
         background-color: #ffffff !important;
-        --cut: 39.9px !important;
+        --cut: 29.9px !important;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
         border-radius: 0 !important;
-        min-height: 160px;
+        min-height: 120px;
+        /* Reduced min-height */
         justify-content: center;
     }
 
     .stat-number {
-        font-size: 2.2rem !important;
+        font-size: 1.8rem !important;
+        /* Slightly smaller for mobile */
         font-weight: 700 !important;
     }
 
     .stat-label {
-        font-size: 0.85rem !important;
+        font-size: 0.75rem !important;
+        /* Slightly smaller for mobile */
         font-weight: 600 !important;
     }
 
-    /* 4. Increase commercial construction/interiors title size & weight */
-    .commercial-section .section-title {
-        font-size: 2.4rem !important;
-        font-weight: 400 !important;
+    /* 4. Success Stories - Centered titles and reduced padding */
+    .client-stories-section {
+        padding: 40px 0 !important;
+        /* Reduced padding */
     }
 
-    /* 5. Left-align project highlights label and success stories title */
     .stories-header-left {
-        text-align: left !important;
+        text-align: center !important;
+        /* Centered */
     }
 
     .stories-header-left .section-label-red {
-        text-align: left !important;
-        font-weight: 600 !important;
+        text-align: center !important;
+        display: block;
+        margin-bottom: 5px;
     }
 
     .stories-header-left .display-title {
-        text-align: left !important;
+        text-align: center !important;
+        font-size: 2.2rem !important;
+        font-weight: 400 !important;
+    }
+
+    .client-stories-header {
+        margin-bottom: 2rem !important;
+        text-align: center !important;
+    }
+
+    .client-stories-title {
+        text-align: center !important;
         font-size: 2.5rem !important;
-        font-weight: 400 !important;
     }
 
-    /* 6. Hide left/right nav buttons in success stories on mobile */
-    .stories-header-right {
-        display: none !important;
+    .client-stories-desc {
+        text-align: center !important;
+        margin: 0 auto !important;
     }
 
-    /* 8. Reduce delivery process title size */
-    .display-title-serif {
-        font-size: 2.43rem !important;
-        font-weight: 400 !important;
-    }
-
-    /* ── Round 2 Mobile Refinements ─────────────────────────────────── */
-
-    /* R2-1. Delivery process: remove hover effect, always red badge + white number */
-    .process-item:hover .proc-title {
-        font-weight: 400 !important;
-        font-size: 1.4rem !important;
-    }
-
-    /* .process-item:hover .proc-badge {
-        background: var(--primary-red) !important;
-        color: #fff !important;
-    } */
-
-    .proc-badge {
-        background: var(--primary-red) !important;
-        color: #fff !important;
-    }
-
+    /* 6. Delivery Process - Image first, Reduce size/weight, Remove hover */
     .process-item {
+        flex-direction: column !important;
+        /* Image first flow */
+        align-items: center !important;
+        text-align: center !important;
+        padding: 15px !important;
         cursor: default !important;
     }
 
-    /* R2-2. Reduce stat-card top/bottom padding on mobile */
-    .stat-card {
-        padding-top: 6px !important;
-        padding-bottom: 6px !important;
+    .proc-img-box {
+        margin-bottom: 15px !important;
+        margin-right: 0 !important;
     }
 
-    .stats-grid {
-        gap: 10px !important;
+    .proc-content {
+        padding-left: 0 !important;
     }
 
-    /* R2-3. Increase industries served title */
-    .industries-section .display-title-serif {
-        font-size: 2.5rem !important;
-        font-weight: 400;
+    .proc-title {
+        font-weight: 400 !important;
+        /* Reduced weight */
+        font-size: 1.2rem !important;
+        /* Reduced size */
     }
 
-    /* R2-4. Fix industry card borders for 2-column mobile grid */
+    .proc-desc {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .process-item:hover {
+        transform: none !important;
+        background: transparent !important;
+    }
+
+    .process-item:hover .proc-title {
+        font-weight: 400 !important;
+        font-size: 1.2rem !important;
+    }
+
+    /* 8. Industries Served - Fix missing borders */
+    .industry-card-new {
+        border: 1px solid #E5E7EB !important;
+        /* Reset all borders */
+    }
+
     .industry-card-new:nth-child(2n+1) {
-        border-left: none !important;
+        border-left: 1px solid #E5E7EB !important;
         border-right: 1px solid #E5E7EB !important;
         border-bottom: 1px solid #E5E7EB !important;
     }
 
     .industry-card-new:nth-child(2n) {
-        border-right: none !important;
-        border-left: none !important;
+        border-right: 1px solid #E5E7EB !important;
+        border-left: 1px solid #E5E7EB !important;
         border-bottom: 1px solid #E5E7EB !important;
     }
 
-    .ind-title-new {
+    /* 9. Why Woodscape - 1 card per view, Restore scrollbar */
+    .why-scrollbar-track {
+        display: block !important;
+        /* Ensure visible */
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .why-card-new {
+        width: calc(100vw - 40px) !important;
+        /* Fits one card in view */
+        flex-shrink: 0;
+    }
+
+    .why-card-new .card-inner {
+        padding: 24px !important;
+        height: auto !important;
+    }
+
+    .why-title {
         font-size: 1.4rem !important;
     }
 
-    .ind-desc-new {
-        font-size: 0.95rem !important;
+    /* 10. Featured Case Study - Smaller cards (2 per screen) */
+    .case-visuals-redesign {
+        gap: 15px !important;
     }
 
-    /* R2-5. Increase why woodscape description font size */
-    .why-desc {
-        font-size: 1.15rem !important;
+    .case-img-panel,
+    .case-testimonial-card,
+    .case-cta-card,
+    .case-testimonial-wrap,
+    .case-cta-wrap {
+        height: 350px !important;
+        /* Reduced size */
+        --cut: 40px !important;
     }
 
-    /* Featured Case Study Visual Refinements */
-    .featured-case-section .display-title-serif {
-        font-size: 2.34rem !important;
-        margin-bottom: 30px !important;
+    .case-testimonial-card,
+    .case-cta-card {
+        padding: 25px 20px !important;
     }
 
-    .case-stat-item {
-        padding: 24px !important;
-        background: #ffffff !important;
-        margin-bottom: 20px;
+    /* 11. FAQ - Fix first item layout */
+    .faq-item:first-child .faq-answer {
+        overflow: visible !important;
     }
 
-    .stat-title-lg {
-        font-size: 1.5rem !important;
+    .faq-answer-inner {
+        padding-top: 10px !important;
+        line-height: 1.5 !important;
+    }
+
+    /* 12. Expert CTA - Weight 400 */
+    .expert-title {
         font-weight: 400 !important;
     }
 
-
-    /* Footer Social Links - Reposition after locations */
+    /* 13. Footer - Social Links at the bottom */
     .footer-content {
         display: flex;
         flex-direction: column;
-        margin-top: 10px !important;
+        gap: 20px;
     }
 
     .footer-col-brand {
@@ -5360,11 +5416,40 @@ h6 {
 
     .footer-contact-col {
         order: 3;
+        margin-bottom: 0 !important;
     }
 
     .footer-socials {
-        order: 4;
+        order: 5 !important;
+        /* Ensure absolute last */
+        margin-top: 20px !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 20px !important;
+    }
 
-        margin-bottom: 5px !important;
+    /* 14. Global Section Padding Reduction */
+    .section-padding {
+        padding: 40px 0 !important;
+    }
+
+    .mb-60 {
+        margin-bottom: 25px !important;
+    }
+
+    .container {
+        padding: 0 15px !important;
+    }
+
+    /* Extra Fixes */
+    .ind-title-new {
+        font-size: 1.3rem !important;
+    }
+
+    .ind-desc-new {
+        font-size: 0.85rem !important;
+    }
+
+    .why-desc {
+        font-size: 1.05rem !important;
     }
 }

@@ -447,9 +447,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Auto Scroll ---
     let autoScrollInterval;
-    const scrollStep = track.firstElementChild ? track.firstElementChild.offsetWidth + 24 : 410; // Match card width + gap
+    const scrollStep = track.firstElementChild ? track.firstElementChild.offsetWidth + 24 : 410;
 
     function startAutoScroll() {
+        if (window.innerWidth <= 768) return; // Explicit check
         autoScrollInterval = setInterval(() => {
             const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
             if (wrapper.scrollLeft >= maxScroll - 10) {
@@ -468,8 +469,17 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.addEventListener('mouseleave', () => {
         if (window.innerWidth > 768) startAutoScroll();
     });
-    // Only auto-scroll on desktop
-    if (window.innerWidth > 768) startAutoScroll();
+
+    // Handle initial start and resize
+    function initScroll() {
+        stopAutoScroll();
+        if (window.innerWidth > 768) {
+            startAutoScroll();
+        }
+    }
+
+    window.addEventListener('resize', initScroll);
+    initScroll();
 });
 
 /* -------------------------------------------------------------------------- */
