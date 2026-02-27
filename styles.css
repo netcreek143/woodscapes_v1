@@ -1589,7 +1589,7 @@ h6 {
     .case-testimonial-wrap,
     .case-cta-wrap {
         height: 320px !important;
-        --cut: 30px !important;
+        --cut: 45px !important;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
     }
 
@@ -5317,11 +5317,11 @@ h6 {
     }
 
     .industry-card-new:nth-child(2n+1) {
-        border-left: 1px solid #e5e7ebdf !important;
+        border-left: none !important;
     }
 
     .industry-card-new:nth-child(2n) {
-        border-right: 1px solid #e5e7ebdf !important;
+        border-right: none !important;
     }
 
     /* R2-5. Increase why woodscape description font size */
@@ -5403,6 +5403,9 @@ h6 {
     }
 
     /* Extra Fixes */
+    .ind-title-new {
+        font-size: 1.3rem !important;
+    }
 
 
     .why-desc {
