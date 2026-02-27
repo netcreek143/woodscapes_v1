@@ -48,9 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (isValid) {
-                // Show success toast
-                showToast('Estimate request sent successfully! We will contact you shortly.');
-                form.reset();
+                window.location.href = 'thank-you.html';
             }
         });
     }

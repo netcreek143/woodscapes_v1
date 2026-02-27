@@ -56,9 +56,9 @@ video {
 
     /* Desktop Overrides (Enforce 120px Margins) */
     @media (min-width: 1025px) {
-        --container-padding: 120px;
-        --pad-left: 120px;
-        --pad-right: 120px;
+        --container-padding: clamp(40px, 8vw, 120px);
+        --pad-left: clamp(40px, 8vw, 120px);
+        --pad-right: clamp(40px, 8vw, 120px);
         --container-max-width: 100%;
     }
 
@@ -155,28 +155,28 @@ h6 {
 }
 
 .logo-img {
-    height: 120px;
+    height: clamp(60px, 8vw, 120px);
     width: auto;
     transition: all 0.3s ease;
     transform: translateY(15px);
 }
 
 .navbar.scrolled .logo-img {
-    height: 90px;
+    height: clamp(45px, 6vw, 90px);
     transform: translateY(0);
 }
 
 .nav-wrapper {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: clamp(15px, 2vw, 30px);
     margin-left: auto;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: clamp(12px, 2vw, 30px);
     align-items: center;
     margin: 0;
     padding: 0;
@@ -186,7 +186,7 @@ h6 {
 .nav-link {
     color: var(--white);
     text-decoration: none;
-    font-size: 1.28rem;
+    font-size: clamp(1rem, 1.3vw, 1.28rem);
     font-weight: 400;
     transition: color 0.3s ease;
     position: relative;
@@ -811,13 +811,14 @@ h6 {
 .hero-form-card {
     background: rgba(11, 22, 34, 0.45);
     /* Translucent dark navy */
-    padding: 60px 50px;
+    padding: clamp(30px, 4vw, 60px) clamp(20px, 4vw, 50px);
     min-height: auto;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     /* border: 1px solid rgba(255, 255, 255, 0.1); */
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    width: 540px;
+    width: 100%;
+    max-width: 540px;
     /* Exact size adjustment */
     flex-shrink: 0;
     margin: -90px 0 0 0;
@@ -933,7 +934,7 @@ h6 {
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    gap: clamp(20px, 3vw, 40px);
     max-width: 1400px;
     /* Limit width to keep cards closer and centered */
     margin: 0 auto;
@@ -971,7 +972,7 @@ h6 {
 
 .stat-card {
     background-color: #ffffff;
-    padding: 28px 80px 32px;
+    padding: clamp(20px, 4vw, 28px) clamp(30px, 5vw, 80px) clamp(20px, 4vw, 32px);
     max-width: 580px;
     /* Increased from implicitly smaller flex limits */
     width: 100%;
@@ -986,8 +987,8 @@ h6 {
 .stat-icon {
     margin-top: 14px;
     margin-bottom: 24px;
-    height: 92px;
-    width: 92px;
+    height: clamp(60px, 8vw, 92px);
+    width: clamp(60px, 8vw, 92px);
 }
 
 .stat-img {
@@ -998,7 +999,7 @@ h6 {
 
 .stat-number {
     font-family: 'Inter', sans-serif;
-    font-size: 86px;
+    font-size: clamp(48px, 6vw, 86px);
     font-weight: 500;
     color: var(--text-dark);
     line-height: 1.1;
@@ -1014,7 +1015,7 @@ h6 {
 
 .stat-label {
     font-family: var(--subheading-font);
-    font-size: 1.23rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.23rem);
     font-weight: var(--subheading-weight);
     color: #000000;
     text-transform: uppercase;
@@ -2035,7 +2036,7 @@ h6 {
 }
 
 .story-content {
-    padding: 40px;
+    padding: clamp(20px, 3vw, 40px);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -2043,7 +2044,7 @@ h6 {
 
 .story-title {
     font-family: var(--subheading-font);
-    font-size: 2.3rem;
+    font-size: clamp(1.6rem, 2.2vw, 2.3rem);
     font-weight: 500;
     color: #0a0a0a;
     margin-bottom: 14px;
@@ -2056,7 +2057,7 @@ h6 {
 
 .meta-row {
     display: flex;
-    font-size: 1.34rem;
+    font-size: clamp(1rem, 1.2vw, 1.34rem);
     margin-bottom: 10px;
     color: #1a1a1a;
     align-items: baseline;
@@ -2178,7 +2179,7 @@ h6 {
     display: flex;
     align-items: flex-start;
     /* Aligned to top to match photo */
-    gap: 80px;
+    gap: clamp(30px, 5vw, 80px);
     margin-bottom: 40px;
     /* Reduced to push content up */
 }
@@ -2193,7 +2194,7 @@ h6 {
 
 .process-wrapper {
     display: flex;
-    gap: 80px;
+    gap: clamp(30px, 5vw, 80px);
     align-items: flex-start;
 }
 
@@ -2505,7 +2506,7 @@ h6 {
 
 .case-stat-item {
     background: #ffffff;
-    padding: 40px;
+    padding: clamp(24px, 3vw, 40px);
     border-right: 1px solid #E5E7EB;
     border-bottom: 1px solid #E5E7EB;
     transition: all 0.3s ease;
@@ -2535,7 +2536,7 @@ h6 {
 }
 
 .stat-title-lg {
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 2vw, 2.2rem);
     font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 16px;
@@ -2543,7 +2544,7 @@ h6 {
 }
 
 .stat-desc-lg {
-    font-size: 1.23rem;
+    font-size: clamp(1rem, 1.2vw, 1.23rem);
     color: #6B7280;
     font-weight: 400;
     line-height: 1.6;
@@ -2561,7 +2562,7 @@ h6 {
 .case-img-panel {
     position: relative;
     overflow: hidden;
-    height: 480px;
+    height: clamp(300px, 35vw, 480px);
     --cut: 50px;
     transform: translateZ(0);
     /* Prevent Safari border deformation on hover */
@@ -2615,7 +2616,7 @@ h6 {
 
 .case-testimonial-card {
 
-    padding: 60px 48px;
+    padding: clamp(30px, 4vw, 60px) clamp(24px, 3vw, 48px);
     height: 100%;
     box-sizing: border-box;
     position: relative;
@@ -2661,10 +2662,10 @@ h6 {
 
 .testimonial-red-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3.2rem;
+    font-size: clamp(2rem, 3vw, 3.2rem);
     font-weight: 400;
     color: var(--primary-red);
-    margin-bottom: 24px;
+    margin-bottom: clamp(12px, 2vw, 24px);
     line-height: 1.2;
     z-index: 1;
     position: relative;
@@ -2697,10 +2698,10 @@ h6 {
 }
 
 .testimonial-body {
-    font-size: 1.19rem;
+    font-size: clamp(0.95rem, 1.2vw, 1.19rem);
     color: #4B5563;
     line-height: 1.65;
-    margin-bottom: 32px;
+    margin-bottom: clamp(16px, 2vw, 32px);
     max-width: 680px;
     z-index: 1;
     position: relative;
@@ -3047,7 +3048,7 @@ h6 {
 .footer-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
-    gap: 40px;
+    gap: clamp(20px, 3vw, 40px);
     margin-bottom: 60px;
 }
 
@@ -3267,7 +3268,7 @@ h6 {
 .footer-top-new {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
-    gap: 60px;
+    gap: clamp(30px, 4vw, 60px);
     padding-bottom: 60px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -3471,7 +3472,7 @@ h6 {
     width: 100%;
     height: 100%;
     background-color: #ffffff;
-    padding: 2.5rem 2rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.2rem, 2.5vw, 2rem);
     box-sizing: border-box;
     transition: background 0.3s ease;
     display: flex;
@@ -3483,9 +3484,9 @@ h6 {
 }
 
 .why-icon-wrapper {
-    margin-bottom: 2rem;
-    width: 6rem;
-    height: 6rem;
+    margin-bottom: clamp(1rem, 2vw, 2rem);
+    width: clamp(4rem, 6vw, 6rem);
+    height: clamp(4rem, 6vw, 6rem);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3500,17 +3501,18 @@ h6 {
 
 .why-card-title {
     font-family: var(--subheading-font);
-    font-size: 2.23rem;
+    font-size: clamp(1.5rem, 2vw, 2.23rem);
     font-weight: 500;
     color: #111827;
     margin-bottom: 0.75rem;
 }
 
 .why-card-desc {
-    font-size: 1.135rem;
+    font-size: clamp(0.9rem, 1.2vw, 1.135rem);
     color: #6B7280;
     line-height: 1.625;
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
 }
 
 /* --- 2. Founder Message --- */
@@ -3751,6 +3753,15 @@ h6 {
     background: #E5E7EB;
     padding: 1px;
     box-sizing: border-box;
+}
+
+@media (min-width: 769px) and (max-width: 1366px) {
+    .client-video-card-wrap {
+        width: calc((100vw - var(--pad-left) - var(--pad-right) - 40px) / 3);
+        max-width: 360px;
+        height: 65vh;
+        max-height: 680px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -4803,7 +4814,7 @@ h6 {
 
 /* 3) Inner Layout */
 .modal-inner {
-    padding: 70px 85px 60px;
+    padding: clamp(30px, 5vw, 70px) clamp(20px, 5vw, 85px) clamp(30px, 5vw, 60px);
     width: 100%;
     height: 100%;
     display: flex;
@@ -4840,7 +4851,7 @@ h6 {
     font-family: 'Inter', sans-serif;
     /* Screenshot looks sans */
     font-weight: 400;
-    font-size: 44px;
+    font-size: clamp(28px, 4vw, 44px);
     color: #6f6f6f;
     line-height: 1.1;
 }
@@ -4848,7 +4859,7 @@ h6 {
 .heading-line2 {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
-    font-size: 44px;
+    font-size: clamp(28px, 4vw, 44px);
     color: #111111;
     line-height: 1.1;
 }
@@ -4865,7 +4876,7 @@ h6 {
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 80px;
+    column-gap: clamp(40px, 6vw, 80px);
     row-gap: 40px;
 }
 

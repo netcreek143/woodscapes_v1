@@ -60,13 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (quoteForm) {
         quoteForm.addEventListener('submit', (e) => {
             e.preventDefault();
-
-            const formData = new FormData(quoteForm);
-            const data = Object.fromEntries(formData);
-
-            alert('Thank you for your quote request! We will get back to you soon.');
-
-            quoteForm.reset();
+            window.location.href = 'thank-you.html';
         });
     }
 
@@ -251,10 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalForm) {
         modalForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const formData = new FormData(modalForm);
-            alert('Thank you for your consultation request! We will contact you shortly.');
-            modalForm.reset();
-            closeModal();
+            window.location.href = 'thank-you.html';
         });
     }
 });
