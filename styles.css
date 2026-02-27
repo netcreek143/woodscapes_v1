@@ -5208,7 +5208,7 @@ h6 {
 
     /* 3. Stat Cards - Remove padding and fill session */
     .stats-section {
-        padding: 0 !important;
+        padding: 5px !important;
         overflow: hidden;
     }
 
