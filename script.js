@@ -3,11 +3,16 @@
    ----------------------------------------------------------------------- */
 (function () {
     const sections = [
+        { id: 'home', href: '#home' },
         { id: 'services', href: '#services' },
         { id: 'projects', href: '#projects' },
         { id: 'industries', href: '#industries' },
         { id: 'why-woodscape', href: '#why-woodscape' },
         { id: 'case-studies', href: '#case-studies' },
+        { id: 'process', href: '#process' },
+        { id: 'founder', href: '#founder' },
+        { id: 'client-stories', href: '#client-stories' },
+        { id: 'faq', href: '#faq' },
     ];
 
     function setActive(href) {
@@ -77,26 +82,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    navLinks.forEach(link => {
+    // Smooth scroll for all internal hash links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
+            if (href === '#') return; // Ignore top jump if no ID
 
             // Close mobile menu if open
             if (navWrapper && navWrapper.classList.contains('active')) {
                 mobileBtn.classList.remove('active');
                 navWrapper.classList.remove('active');
+                navWrapper.parentElement.classList.remove('active'); // ensure mobile overlay is gone
                 document.body.style.overflow = '';
             }
 
-            if (href.startsWith('#')) {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const navHeight = navbar ? navbar.offsetHeight : 80;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - (navHeight - 20);
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                // Update URL (optional, but good for bookmarking)
+                history.pushState(null, null, href);
             }
         });
     });
