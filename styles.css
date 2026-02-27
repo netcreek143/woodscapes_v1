@@ -5260,6 +5260,8 @@ h6 {
     /* 3. Stat Cards - Equal Spacing on all sides */
     .stats-section {
         padding: 20px !important;
+        margin-top: 0 !important;
+        /* Reset desktop overlap to ensure true 20px top gap */
         /* Equal top, right, bottom, left padding */
         overflow: hidden;
     }
