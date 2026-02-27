@@ -5158,3 +5158,68 @@ h6 {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* -------------------------------------------------------------------------- */
+/* MOBILE-ONLY REFINEMENTS (max-width: 768px)                                  */
+/* These rules ONLY affect mobile. Desktop is untouched.                       */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* 1. Hide hero slider indicators on mobile */
+    .slider-indicators {
+        display: none !important;
+    }
+
+    /* 2. Reduce hero title size and view-projects button font */
+    .hero-title {
+        font-size: 2rem !important;
+    }
+
+    .btn-view-projects .btn-text {
+        font-size: 0.85rem !important;
+    }
+
+    .btn-view-projects {
+        padding: 10px 20px !important;
+    }
+
+    /* 3. Fix stat-card border – remove clip-path cut so border is a full rectangle */
+    .stat-card-wrapper {
+        clip-path: none !important;
+        border-radius: 12px;
+    }
+
+    .stat-card {
+        clip-path: none !important;
+        border-radius: 12px;
+    }
+
+    /* 4. Increase commercial construction/interiors title size & weight */
+    .commercial-section .section-title {
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+    }
+
+    /* 5. Left-align project highlights label and success stories title */
+    .stories-header-left {
+        text-align: left !important;
+    }
+
+    .stories-header-left .section-label-red {
+        text-align: left !important;
+    }
+
+    .stories-header-left .display-title {
+        text-align: left !important;
+    }
+
+    /* 6. Hide left/right nav buttons in success stories on mobile */
+    .stories-header-right {
+        display: none !important;
+    }
+
+    /* 8. Reduce delivery process title size */
+    .display-title-serif {
+        font-size: 2.2rem !important;
+    }
+}

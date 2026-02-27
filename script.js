@@ -465,8 +465,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     wrapper.addEventListener('mouseenter', stopAutoScroll);
-    wrapper.addEventListener('mouseleave', startAutoScroll);
-    startAutoScroll();
+    wrapper.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 768) startAutoScroll();
+    });
+    // Only auto-scroll on desktop
+    if (window.innerWidth > 768) startAutoScroll();
 });
 
 /* -------------------------------------------------------------------------- */
