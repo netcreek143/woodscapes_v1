@@ -26,15 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // Form Validation & Success Toast
+    // Form Validation & Google Sheets Submission
     // ==========================================
-    const form = document.getElementById('estimateForm');
+    const form = document.getElementById('estimateFormProject');
 
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            // Basic validation check (browser handles 'required', this is double check)
+            // Basic validation check
             const inputs = form.querySelectorAll('input, select');
             let isValid = true;
 
@@ -48,7 +48,24 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (isValid) {
-                window.location.href = 'thank-you.html';
+                const btn = form.querySelector('.estimate-submit-btn');
+                const data = {
+                    formType: 'estimate',
+                    name: form.querySelector('[name="name"]').value,
+                    phone: form.querySelector('[name="phone"]').value,
+                    company: form.querySelector('[name="company"]').value,
+                    email: form.querySelector('[name="email"]').value,
+                    service: form.querySelector('[name="service"]').value,
+                    sqft: form.querySelector('[name="sqft"]').value,
+                    budget: form.querySelector('[name="budget"]').value,
+                    location: form.querySelector('[name="location"]').value,
+                    source: window.location.pathname + window.location.search
+                };
+                submitToGoogleSheet(data, btn).then(function (ok) {
+                    if (ok) {
+                        setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
+                    }
+                });
             }
         });
     }

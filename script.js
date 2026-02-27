@@ -60,13 +60,85 @@
     });
 })();
 
+/* -------------------------------------------------------------------------- */
+/* GOOGLE SHEETS FORM SUBMISSION HELPER                                        */
+/* -------------------------------------------------------------------------- */
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzkVKwaqBfA-W-MrkJVbKpQG55aMPFJ3S5pVTVFARnaAnxp4xgs69kCEhAjaXk4FMiK/exec'; // ← Replace after deploying Apps Script
+
+function submitToGoogleSheet(formData, submitBtn) {
+    // Save original button content
+    const originalHTML = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span>Sending...</span>';
+
+    return fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+    })
+        .then(function () {
+            // With no-cors we can't read the response, but if fetch didn't throw, it was sent
+            submitBtn.innerHTML = '<span>Sent ✓</span>';
+            return true;
+        })
+        .catch(function (err) {
+            console.error('Form submission error:', err);
+            submitBtn.innerHTML = '<span>Error – Retry</span>';
+            submitBtn.disabled = false;
+            // Restore original button after 3 seconds
+            setTimeout(function () { submitBtn.innerHTML = originalHTML; }, 3000);
+            return false;
+        });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ── Hero Quote Form ─────────────────────────────────────────────────
     const quoteForm = document.querySelector('.quote-form');
     if (quoteForm) {
         quoteForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            window.location.href = 'thank-you.html';
+            const btn = quoteForm.querySelector('button[type="submit"]');
+            const data = {
+                formType: 'quote',
+                name: quoteForm.querySelector('[name="name"]').value,
+                mobile: quoteForm.querySelector('[name="mobile"]').value,
+                email: quoteForm.querySelector('[name="email"]').value,
+                message: quoteForm.querySelector('[name="message"]').value,
+                source: window.location.pathname
+            };
+            submitToGoogleSheet(data, btn).then(function (ok) {
+                if (ok) {
+                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
+                }
+            });
+        });
+    }
+
+    // ── Estimate Form (Home page section) ────────────────────────────────
+    const estimateForm = document.getElementById('estimateFormHome');
+    if (estimateForm) {
+        estimateForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = estimateForm.querySelector('.estimate-submit-btn');
+            const data = {
+                formType: 'estimate',
+                name: estimateForm.querySelector('[name="name"]').value,
+                phone: estimateForm.querySelector('[name="phone"]').value,
+                company: estimateForm.querySelector('[name="company"]').value,
+                email: estimateForm.querySelector('[name="email"]').value,
+                service: estimateForm.querySelector('[name="service"]').value,
+                sqft: estimateForm.querySelector('[name="sqft"]').value,
+                budget: estimateForm.querySelector('[name="budget"]').value,
+                location: estimateForm.querySelector('[name="location"]').value,
+                source: window.location.pathname
+            };
+            submitToGoogleSheet(data, btn).then(function (ok) {
+                if (ok) {
+                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
+                }
+            });
         });
     }
 
@@ -280,7 +352,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (modalForm) {
         modalForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            window.location.href = 'thank-you.html';
+            const btn = modalForm.querySelector('.btn-modal-submit');
+            const data = {
+                formType: 'quote',
+                name: modalForm.querySelector('[name="name"]').value,
+                mobile: modalForm.querySelector('[name="phone"]').value,
+                email: modalForm.querySelector('[name="email"]').value,
+                company: modalForm.querySelector('[name="company"]').value,
+                message: modalForm.querySelector('[name="message"]').value,
+                source: window.location.pathname + ' (Modal)'
+            };
+            submitToGoogleSheet(data, btn).then(function (ok) {
+                if (ok) {
+                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
+                }
+            });
         });
     }
 });
