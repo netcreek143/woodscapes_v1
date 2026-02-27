@@ -5296,7 +5296,8 @@ h6 {
         padding: 20px !important;
         /* Equal padding inside the card */
         background-color: #ffffff !important;
-        --cut: 34.9px !important;
+        --cut: 34px !important;
+        /* Reduced cut size by 1px to fit perfectly inside the wrapper's 35px cut */
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
         border-radius: 0 !important;
         aspect-ratio: 1 / 1 !important;
