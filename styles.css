@@ -1861,7 +1861,7 @@ h6 {
 
 .stories-header-center {
     flex: 1 1 auto;
-    max-width: 650px;
+    max-width: 800px !important;
 }
 
 .stories-header-right {
@@ -2067,7 +2067,8 @@ h6 {
 }
 
 .story-img-wrapper {
-    height: 30%;
+    height: 45% !important;
+    /* Corrected proportions to match project-details */
     width: 100%;
     overflow: hidden;
 }

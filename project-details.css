@@ -1548,7 +1548,7 @@ h4 {
 
     .stories-header-center {
         flex: 1 1 auto;
-        max-width: 650px;
+        max-width: 800px !important;
     }
 
     .stories-header-right {
@@ -1712,6 +1712,7 @@ h4 {
         transform: rotate(45deg) translateX(2px);
     }
 }
+
 /* Success Stories Mobile Specific */
 @media (max-width: 768px) {
     .stories-header-center {
