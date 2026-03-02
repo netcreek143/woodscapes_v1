@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
 
-        if (currentScroll > 50) {
+        if (currentScroll > 120) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
@@ -280,6 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startAutoPlay() {
+        if (window.innerWidth <= 768) return;
         slideInterval = setInterval(nextSlide, 5000);
     }
 
@@ -580,8 +581,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const navbarHeight = navbar.offsetHeight;
             const delta = st - lastScrollTop; // positive = scrolling down, negative = scrolling up
 
-            // Clamp offset between -navbarHeight (hidden) and 0 (visible)
-            navbarOffset = Math.min(0, Math.max(-navbarHeight, navbarOffset - delta));
+            if (st <= 0) {
+                // At the very top
+                navbarOffset = 0;
+            } else if (st <= navbarHeight) {
+                // Initial scroll down: hide matching scroll speed (feel static)
+                navbarOffset = -st;
+            } else {
+                // Further down: show/hide based on scroll direction (pull down to reveal)
+                navbarOffset = Math.min(0, Math.max(-navbarHeight, navbarOffset - delta));
+            }
 
             navbar.style.transition = 'none';
             navbar.style.setProperty('transform', `translateY(${navbarOffset}px)`, 'important');
@@ -789,6 +798,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (totalImages > 1) {
             setInterval(() => {
+                if (window.innerWidth <= 768) return;
                 // Remove active class from current images
                 beforeImages[currentIndex].classList.remove('active');
                 afterImages[currentIndex].classList.remove('active');
@@ -873,6 +883,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startTestimonialTimer() {
         stopTestimonialTimer();
+        if (window.innerWidth <= 768) return;
         testimonialInterval = setInterval(nextTestimonial, 5000); // Change every 5 seconds
     }
 

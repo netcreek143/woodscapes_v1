@@ -3529,7 +3529,7 @@ h6 {
     display: flex;
     gap: 24px;
     width: max-content;
-    padding: 0 var(--pad-right) 0 var(--pad-left);
+    padding: 0 0 0 var(--pad-left);
 }
 
 /* Scrollbar */
@@ -3882,7 +3882,7 @@ h6 {
     gap: 30px;
     /* Increased gap */
     width: max-content;
-    padding: 0 var(--container-padding);
+    padding: 0 0 0 var(--container-padding);
 }
 
 /* Video Card with Corner Cut */
