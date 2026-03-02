@@ -98,11 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const quoteForm = document.querySelector('.quote-form');
     if (quoteForm) {
         quoteForm.addEventListener('submit', (e) => {
-            if (!quoteForm.checkValidity()) return;
+            if (!quoteForm.checkValidity()) {
+                return;
+            }
             e.preventDefault();
             const btn = quoteForm.querySelector('button[type="submit"]');
             const data = {
-                formType: 'Hero Quote',
+                formType: 'quote',
                 name: quoteForm.querySelector('[name="name"]').value,
                 mobile: quoteForm.querySelector('[name="mobile"]').value,
                 email: quoteForm.querySelector('[name="email"]').value,
@@ -111,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             submitToGoogleSheet(data, btn).then(function (ok) {
                 if (ok) {
-                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 800);
+                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
                 }
             });
         });
@@ -121,11 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const estimateForm = document.getElementById('estimateFormHome');
     if (estimateForm) {
         estimateForm.addEventListener('submit', (e) => {
-            if (!estimateForm.checkValidity()) return;
+            if (!estimateForm.checkValidity()) {
+                return;
+            }
             e.preventDefault();
             const btn = estimateForm.querySelector('.estimate-submit-btn');
             const data = {
-                formType: 'Quick Estimate (Home)',
+                formType: 'estimate',
                 name: estimateForm.querySelector('[name="name"]').value,
                 phone: estimateForm.querySelector('[name="phone"]').value,
                 company: estimateForm.querySelector('[name="company"]').value,
@@ -138,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             submitToGoogleSheet(data, btn).then(function (ok) {
                 if (ok) {
-                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 800);
+                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
                 }
             });
         });
@@ -213,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
 
-        if (currentScroll > 120) {
+        if (currentScroll > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
@@ -280,7 +284,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startAutoPlay() {
-        if (window.innerWidth <= 768) return;
         slideInterval = setInterval(nextSlide, 5000);
     }
 
@@ -355,13 +358,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Submit
     if (modalForm) {
         modalForm.addEventListener('submit', (e) => {
-            if (!modalForm.checkValidity()) return;
+            if (!modalForm.checkValidity()) {
+                return;
+            }
             e.preventDefault();
             const btn = modalForm.querySelector('.btn-modal-submit');
             const data = {
-                formType: 'Modal Consultation',
+                formType: 'quote',
                 name: modalForm.querySelector('[name="name"]').value,
-                phone: modalForm.querySelector('[name="phone"]').value,
+                mobile: modalForm.querySelector('[name="phone"]').value,
                 email: modalForm.querySelector('[name="email"]').value,
                 company: modalForm.querySelector('[name="company"]').value,
                 message: modalForm.querySelector('[name="message"]').value,
@@ -369,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             submitToGoogleSheet(data, btn).then(function (ok) {
                 if (ok) {
-                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 800);
+                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
                 }
             });
         });
@@ -581,16 +586,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const navbarHeight = navbar.offsetHeight;
             const delta = st - lastScrollTop; // positive = scrolling down, negative = scrolling up
 
-            if (st <= 0) {
-                // At the very top
-                navbarOffset = 0;
-            } else if (st <= navbarHeight) {
-                // Initial scroll down: hide matching scroll speed (feel static)
-                navbarOffset = -st;
-            } else {
-                // Further down: show/hide based on scroll direction (pull down to reveal)
-                navbarOffset = Math.min(0, Math.max(-navbarHeight, navbarOffset - delta));
-            }
+            // Clamp offset between -navbarHeight (hidden) and 0 (visible)
+            navbarOffset = Math.min(0, Math.max(-navbarHeight, navbarOffset - delta));
 
             navbar.style.transition = 'none';
             navbar.style.setProperty('transform', `translateY(${navbarOffset}px)`, 'important');
@@ -798,7 +795,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (totalImages > 1) {
             setInterval(() => {
-                if (window.innerWidth <= 768) return;
                 // Remove active class from current images
                 beforeImages[currentIndex].classList.remove('active');
                 afterImages[currentIndex].classList.remove('active');
@@ -883,7 +879,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startTestimonialTimer() {
         stopTestimonialTimer();
-        if (window.innerWidth <= 768) return;
         testimonialInterval = setInterval(nextTestimonial, 5000); // Change every 5 seconds
     }
 

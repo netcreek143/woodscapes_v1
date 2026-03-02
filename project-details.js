@@ -32,27 +32,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (form) {
         form.addEventListener('submit', (e) => {
-            if (!form.checkValidity()) return;
-            e.preventDefault();
+            if (!form.checkValidity()) {
+                // Highlight empty fields
+                const inputs = form.querySelectorAll('input, select, textarea');
+                inputs.forEach(input => {
+                    if (input.hasAttribute('required') && !input.value.trim()) {
+                        input.style.borderColor = 'red';
+                    } else {
+                        input.style.borderColor = 'transparent';
+                    }
+                });
+                return;
+            }
 
-            const btn = form.querySelector('.estimate-submit-btn');
-            const data = {
-                formType: 'Quick Estimate (Project)',
-                name: form.querySelector('[name="name"]').value,
-                phone: form.querySelector('[name="phone"]').value,
-                company: form.querySelector('[name="company"]').value,
-                email: form.querySelector('[name="email"]').value,
-                service: form.querySelector('[name="service"]').value,
-                sqft: form.querySelector('[name="sqft"]').value,
-                budget: form.querySelector('[name="budget"]').value,
-                location: form.querySelector('[name="location"]').value,
-                source: window.location.pathname + window.location.search
-            };
-            submitToGoogleSheet(data, btn).then(function (ok) {
-                if (ok) {
-                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 800);
-                }
+            e.preventDefault();
+            // Reset borders if valid
+            form.querySelectorAll('input, select, textarea').forEach(input => {
+                input.style.borderColor = 'transparent';
             });
+
+            if (true) { // Replaces the old isValid check
+                const btn = form.querySelector('.estimate-submit-btn');
+                const data = {
+                    formType: 'estimate',
+                    name: form.querySelector('[name="name"]').value,
+                    phone: form.querySelector('[name="phone"]').value,
+                    company: form.querySelector('[name="company"]').value,
+                    email: form.querySelector('[name="email"]').value,
+                    service: form.querySelector('[name="service"]').value,
+                    sqft: form.querySelector('[name="sqft"]').value,
+                    budget: form.querySelector('[name="budget"]').value,
+                    location: form.querySelector('[name="location"]').value,
+                    source: window.location.pathname + window.location.search
+                };
+                submitToGoogleSheet(data, btn).then(function (ok) {
+                    if (ok) {
+                        setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
+                    }
+                });
+            }
         });
     }
 
@@ -412,8 +430,40 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!cardId || cardId < 1 || cardId > 4) cardId = 1;
     var proj = PROJECTS[cardId - 1];
     function setText(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; }
-    var heroImg = document.getElementById('pd-hero-img');
-    if (heroImg) { heroImg.src = proj.img; heroImg.alt = proj.name; }
+
+    // --- HERO SLIDESHOW LOGIC (MOBILE) ---
+    var heroSlider = document.getElementById('pdHeroSlider');
+    if (heroSlider && proj.gallery) {
+        var slides = heroSlider.querySelectorAll('.pd-hero-slide');
+        var isMobile = window.innerWidth <= 768;
+
+        if (isMobile && proj.gallery.length > 0) {
+            // Populate slides with gallery images for mobile
+            slides.forEach(function (slide, index) {
+                var img = slide.querySelector('img');
+                if (img) {
+                    var imgSrc = proj.gallery[index] || proj.img;
+                    img.src = imgSrc;
+                    img.alt = proj.name + ' slide ' + (index + 1);
+                }
+            });
+
+            // Start cycle
+            var currentHeroSlide = 0;
+            setInterval(function () {
+                slides[currentHeroSlide].classList.remove('active');
+                currentHeroSlide = (currentHeroSlide + 1) % slides.length;
+                slides[currentHeroSlide].classList.add('active');
+            }, 5000);
+        } else {
+            // Static single image for desktop
+            var heroImg = document.getElementById('pd-hero-img');
+            if (heroImg) {
+                heroImg.src = proj.img;
+                heroImg.alt = proj.name;
+            }
+        }
+    }
     setText('pd-project-name', proj.name);
     setText('pd-project-sub', proj.sub);
     setText('pd-meta-industry', proj.industry);

@@ -76,19 +76,22 @@
     <section class="hero" id="home">
         <div class="hero-slider">
             <div class="hero-slide active"
-                style="--bg-desktop: url('./images/banner_web_01.jpg'); --bg-mobile: url('./images/mobherobanner.jpg');">
+                style="--bg-desktop: url('./images/banner_web_01.jpg'); --bg-mobile: url('./images/mobherobanner.jpg'); background: var(--bg-desktop) center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="--bg-desktop: url('./images/banner_web_02.jpg');">
+            <div class="hero-slide"
+                style="--bg-desktop: url('./images/banner_web_02.jpg'); background: var(--bg-desktop) center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="--bg-desktop: url('./images/banner_web_03.jpg');">
+            <div class="hero-slide"
+                style="--bg-desktop: url('./images/banner_web_03.jpg'); background: var(--bg-desktop) center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="--bg-desktop: url('./images/banner_web_04.jpg');">
+            <div class="hero-slide"
+                style="--bg-desktop: url('./images/banner_web_04.jpg'); background: var(--bg-desktop) center/cover no-repeat;">
                 <div class="hero-overlay"></div>
             </div>
         </div>
@@ -170,9 +173,8 @@
                     details - our experts will take it forward.</p>
                 <form class="quote-form" id="heroQuoteForm">
                     <input type="text" name="name" placeholder="Name" class="form-input" required>
-                    <input type="tel" name="mobile" placeholder="Mobile Number" class="form-input" required
-                        pattern="[0-9]{10,15}">
-                    <input type="email" name="email" placeholder="Email (Optional)" class="form-input">
+                    <input type="text" name="mobile" placeholder="Mobile Number" class="form-input" required>
+                    <input type="email" name="email" placeholder="Email" class="form-input" required>
                     <textarea name="message" placeholder="Message" class="form-textarea" rows="4" required></textarea>
                     <button type="submit" class="btn btn-submit">
                         <span>Submit</span>
@@ -1119,7 +1121,7 @@
     </section>
 
     <!-- Estimate Form (Migrated) -->
-    <section class="estimate-section">
+    <section id="estimate-form" class="estimate-section">
         <div class="estimate-bg-pattern"></div>
         <div class="estimate-container">
             <h2 class="estimate-title">Quick Estimate Form</h2>
@@ -1129,8 +1131,7 @@
             <form class="estimate-form-grid" id="estimateFormHome">
                 <div class="estimate-form-row">
                     <input type="text" name="name" placeholder="Name" class="estimate-input" required>
-                    <input type="tel" name="phone" placeholder="Phone Number" class="estimate-input" required
-                        pattern="[0-9]{10,15}">
+                    <input type="text" name="phone" placeholder="Phone Number" class="estimate-input" required>
                 </div>
                 <div class="estimate-form-row">
                     <input type="text" name="company" placeholder="Company" class="estimate-input" required>
@@ -1613,22 +1614,21 @@
                             <input type="text" name="name" placeholder="Name" required class="modal-input">
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Mobile Number" required class="modal-input"
-                                pattern="[0-9]{10,15}">
+                            <input type="tel" name="phone" placeholder="Mobile Number" required class="modal-input">
                         </div>
 
                         <!-- Row 2 -->
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Email (Optional)" class="modal-input">
+                            <input type="email" name="email" placeholder="Email" required class="modal-input">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="company" placeholder="Company" class="modal-input">
+                            <input type="text" name="company" placeholder="Company" required class="modal-input">
                         </div>
 
                         <!-- Row 3 -->
                         <div class="form-group full-width">
                             <textarea name="message" placeholder="Your Requirement" rows="1"
-                                class="modal-input modal-textarea"></textarea>
+                                class="modal-input modal-textarea" required></textarea>
                         </div>
                     </div>
 
@@ -1648,7 +1648,7 @@
         </div>
     </div>
     <script>
-        // ── Stories Carousel (Modernized for Native Scroll) ────────────────
+        // ── Stories Carousel ────────────────────────────────────────────────
         (function () {
             const carousel = document.getElementById('storiesCarousel');
             const wrapper = carousel ? carousel.parentElement : null;
@@ -1659,76 +1659,95 @@
 
             if (!carousel || !wrapper || !track || !thumb) return;
 
-            function getCardStep() {
-                const firstCard = carousel.querySelector('.story-card');
-                if (!firstCard) return 410;
-                const style = window.getComputedStyle(carousel);
-                const gap = parseInt(style.gap) || 20;
-                return firstCard.offsetWidth + gap;
-            }
+            const isMobile = window.innerWidth <= 600;
+            const CARD_STEP = isMobile ? 320 : 410; // card width + gap
+            let currentX = 0;
 
-            function getMaxScroll() {
+            function getMaxX() {
                 return carousel.scrollWidth - wrapper.clientWidth;
             }
 
+            function clamp(val, min, max) {
+                return Math.max(min, Math.min(max, val));
+            }
+
+            function applyTranslate(x) {
+                currentX = clamp(x, 0, getMaxX());
+                carousel.style.transform = 'translateX(-' + currentX + 'px)';
+                syncThumb();
+            }
+
             function syncThumb() {
-                const maxScroll = getMaxScroll();
-                if (maxScroll <= 0) {
-                    thumb.style.width = '100%';
-                    thumb.style.left = '0';
-                    return;
-                }
-                const ratio = wrapper.scrollLeft / maxScroll;
-                const visibleRatio = wrapper.clientWidth / carousel.scrollWidth;
-                const trackW = track.clientWidth;
-                const thumbW = Math.max(60, trackW * visibleRatio);
-                const maxLeft = trackW - thumbW;
+                var maxX = getMaxX();
+                var ratio = maxX > 0 ? currentX / maxX : 0;
+                var trackW = track.clientWidth;
+                var thumbW = Math.max(60, trackW * (wrapper.clientWidth / carousel.scrollWidth));
+                var maxLeft = trackW - thumbW;
                 thumb.style.width = thumbW + 'px';
                 thumb.style.left = (ratio * maxLeft) + 'px';
             }
 
-            // Bind thumb to native scroll
-            wrapper.addEventListener('scroll', syncThumb, { passive: true });
-            window.addEventListener('resize', syncThumb);
-            syncThumb();
-
-            // Button navigation
+            // Button nav
             if (prevBtn) {
                 prevBtn.addEventListener('click', function () {
-                    wrapper.scrollBy({ left: -getCardStep(), behavior: 'smooth' });
+                    applyTranslate(currentX - CARD_STEP);
                 });
             }
             if (nextBtn) {
                 nextBtn.addEventListener('click', function () {
-                    wrapper.scrollBy({ left: getCardStep(), behavior: 'smooth' });
+                    applyTranslate(currentX + CARD_STEP);
                 });
             }
 
-            // --- Drag scroll on wrapper (Desktop) ---
-            let isDragging = false, startX = 0, startScroll = 0;
-            wrapper.addEventListener('mousedown', (e) => {
+            // Drag on carousel
+            var isDragging = false;
+            var dragStartX = 0;
+            var dragStartScrollX = 0;
+
+            wrapper.addEventListener('mousedown', function (e) {
                 isDragging = true;
-                startX = e.clientX;
-                startScroll = wrapper.scrollLeft;
+                dragStartX = e.clientX;
+                dragStartScrollX = currentX;
                 wrapper.classList.add('is-dragging');
-                wrapper.style.scrollBehavior = 'auto';
+                carousel.style.transition = 'none';
             });
-            document.addEventListener('mousemove', (e) => {
+
+            document.addEventListener('mousemove', function (e) {
                 if (!isDragging) return;
-                wrapper.scrollLeft = startScroll - (e.clientX - startX);
+                var dx = e.clientX - dragStartX;
+                applyTranslate(dragStartScrollX - dx);
             });
-            document.addEventListener('mouseup', () => {
+
+            document.addEventListener('mouseup', function () {
+                if (!isDragging) return;
                 isDragging = false;
                 wrapper.classList.remove('is-dragging');
-                wrapper.style.scrollBehavior = 'smooth';
+                carousel.style.transition = '';
+            });
+
+            // Touch drag
+            wrapper.addEventListener('touchstart', function (e) {
+                dragStartX = e.touches[0].clientX;
+                dragStartScrollX = currentX;
+                carousel.style.transition = 'none';
+            }, { passive: true });
+
+            wrapper.addEventListener('touchmove', function (e) {
+                var dx = e.touches[0].clientX - dragStartX;
+                applyTranslate(dragStartScrollX - dx);
+            }, { passive: true });
+
+            wrapper.addEventListener('touchend', function () {
+                carousel.style.transition = '';
             });
 
             // Scrollbar track click
             track.addEventListener('click', function (e) {
                 if (e.target === thumb) return;
-                const rect = track.getBoundingClientRect();
-                const clickRatio = (e.clientX - rect.left) / rect.width;
-                wrapper.scrollTo({ left: clickRatio * getMaxScroll(), behavior: 'smooth' });
+                var rect = track.getBoundingClientRect();
+                var clickRatio = (e.clientX - rect.left) / rect.width;
+                applyTranslate(clickRatio * getMaxX());
+                if (storiesSectionVisible) resetStoriesAutoScroll();
             });
 
             // ── Stories Auto Scroll Logic ────────────────────────────────────
@@ -1736,14 +1755,13 @@
             const STORIES_AUTO_DELAY = 3500;
 
             function startStoriesAutoScroll() {
-                if (window.innerWidth <= 768) return;
                 storiesAutoInterval = setInterval(() => {
-                    const max = getMaxScroll();
-                    if (wrapper.scrollLeft >= max - 10) {
-                        wrapper.scrollTo({ left: 0, behavior: 'smooth' });
-                    } else {
-                        wrapper.scrollBy({ left: getCardStep(), behavior: 'smooth' });
+                    let nextX = currentX + CARD_STEP;
+                    if (nextX > getMaxX()) {
+                        nextX = 0;
                     }
+                    carousel.style.transition = 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                    applyTranslate(nextX);
                 }, STORIES_AUTO_DELAY);
             }
 
@@ -1751,11 +1769,18 @@
                 clearInterval(storiesAutoInterval);
             }
 
+            function resetStoriesAutoScroll() {
+                stopStoriesAutoScroll();
+                startStoriesAutoScroll();
+            }
+
+            // Pause on hover
             wrapper.addEventListener('mouseenter', stopStoriesAutoScroll);
             wrapper.addEventListener('mouseleave', () => {
-                if (storiesSectionVisible && window.innerWidth > 768) startStoriesAutoScroll();
+                if (storiesSectionVisible) startStoriesAutoScroll();
             });
 
+            // Start only when section is in view
             let storiesSectionVisible = false;
             const storiesSection = document.getElementById('projects');
             if (storiesSection) {
@@ -1780,7 +1805,6 @@
 
             // Using a step-based auto-scroll for better visibility of each card
             function startAutoScroll() {
-                if (window.innerWidth <= 768) return;
                 autoScrollInterval = setInterval(() => {
                     let nextX = currentX + CARD_STEP;
                     if (nextX > getMaxX()) {

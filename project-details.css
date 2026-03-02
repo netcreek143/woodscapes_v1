@@ -16,16 +16,16 @@
     --pd-border: #e5e7eb;
 
     /* Layout */
-    --container-padding: 80px;
-    --container-max-width: 1440px;
+    --container-padding: clamp(20px, 5vw, 60px);
+    --container-max-width: 1360px;
 
     /* Desktop Overrides (Enforce 120px Margins) */
     @media (min-width: 1025px) {
         :root {
-            --container-padding: clamp(40px, 8vw, 120px) !important;
-            --pad-left: clamp(40px, 8vw, 120px) !important;
-            --pad-right: clamp(40px, 8vw, 120px) !important;
-            --container-max-width: 100% !important;
+            --container-padding: clamp(40px, 8vw, 120px);
+            --pad-left: clamp(40px, 8vw, 120px);
+            --pad-right: clamp(40px, 8vw, 120px);
+            --container-max-width: 100%;
         }
     }
 
@@ -73,12 +73,27 @@ h4 {
     overflow: hidden;
 }
 
-.pd-hero-bg {
+.pd-hero-slider {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 0;
+}
+
+.pd-hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.pd-hero-slide.active {
+    opacity: 1;
 }
 
 .pd-hero-img {
@@ -915,6 +930,8 @@ h4 {
 @media (max-width: 992px) {
     .pd-hero .nav-container {
         justify-content: space-between !important;
+        padding: 0 25px !important;
+        /* R4: Match requested 25px padding */
     }
 
     .pd-hero .nav-wrapper {
@@ -957,11 +974,13 @@ h4 {
     }
 
     .pd-hero .navbar {
-        height: 70px !important;
+        height: 80px !important;
+        /* R4: Match home page height on mobile */
     }
 
     .pd-hero .logo-img {
-        height: 55px !important;
+        height: 60px !important;
+        /* R4: Match home page logo height on mobile */
     }
 }
 
