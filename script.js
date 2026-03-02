@@ -98,10 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const quoteForm = document.querySelector('.quote-form');
     if (quoteForm) {
         quoteForm.addEventListener('submit', (e) => {
+            if (!quoteForm.checkValidity()) return;
             e.preventDefault();
             const btn = quoteForm.querySelector('button[type="submit"]');
             const data = {
-                formType: 'quote',
+                formType: 'Hero Quote',
                 name: quoteForm.querySelector('[name="name"]').value,
                 mobile: quoteForm.querySelector('[name="mobile"]').value,
                 email: quoteForm.querySelector('[name="email"]').value,
@@ -110,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             submitToGoogleSheet(data, btn).then(function (ok) {
                 if (ok) {
-                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
+                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 800);
                 }
             });
         });
@@ -120,10 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const estimateForm = document.getElementById('estimateFormHome');
     if (estimateForm) {
         estimateForm.addEventListener('submit', (e) => {
+            if (!estimateForm.checkValidity()) return;
             e.preventDefault();
             const btn = estimateForm.querySelector('.estimate-submit-btn');
             const data = {
-                formType: 'estimate',
+                formType: 'Quick Estimate (Home)',
                 name: estimateForm.querySelector('[name="name"]').value,
                 phone: estimateForm.querySelector('[name="phone"]').value,
                 company: estimateForm.querySelector('[name="company"]').value,
@@ -136,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             submitToGoogleSheet(data, btn).then(function (ok) {
                 if (ok) {
-                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
+                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 800);
                 }
             });
         });
@@ -352,12 +354,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Submit
     if (modalForm) {
         modalForm.addEventListener('submit', (e) => {
+            if (!modalForm.checkValidity()) return;
             e.preventDefault();
             const btn = modalForm.querySelector('.btn-modal-submit');
             const data = {
-                formType: 'quote',
+                formType: 'Modal Consultation',
                 name: modalForm.querySelector('[name="name"]').value,
-                mobile: modalForm.querySelector('[name="phone"]').value,
+                phone: modalForm.querySelector('[name="phone"]').value,
                 email: modalForm.querySelector('[name="email"]').value,
                 company: modalForm.querySelector('[name="company"]').value,
                 message: modalForm.querySelector('[name="message"]').value,
@@ -365,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             submitToGoogleSheet(data, btn).then(function (ok) {
                 if (ok) {
-                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
+                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 800);
                 }
             });
         });

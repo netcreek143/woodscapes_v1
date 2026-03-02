@@ -403,6 +403,10 @@ h6 {
     align-items: center;
     background-color: #0b1324;
     /* Fallback navy */
+    background-image: var(--bg-desktop);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hero-slide.active {
@@ -5661,7 +5665,7 @@ h6 {
     }
 
     .hero-slide {
-        background-image: url('./images/mobherobanner.jpg') !important;
+        background-image: var(--bg-mobile, var(--bg-desktop)) !important;
         background-size: contain !important;
         background-position: center top !important;
         background-repeat: no-repeat !important;
@@ -5721,5 +5725,20 @@ h6 {
         -webkit-backdrop-filter: none !important;
         box-shadow: none !important;
         border: none !important;
+    }
+
+    /* Slider Indicators Mobile Fix */
+    .slider-indicators {
+        bottom: auto !important;
+        top: calc(100vw * (667 / 1080) - 40px) !important;
+        gap: 8px !important;
+    }
+
+    .indicator {
+        width: 40px !important;
+    }
+
+    .indicator.active {
+        width: 40px !important;
     }
 }

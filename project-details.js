@@ -32,41 +32,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (form) {
         form.addEventListener('submit', (e) => {
+            if (!form.checkValidity()) return;
             e.preventDefault();
 
-            // Basic validation check
-            const inputs = form.querySelectorAll('input, select');
-            let isValid = true;
-
-            inputs.forEach(input => {
-                if (input.hasAttribute('required') && !input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = 'red';
-                } else {
-                    input.style.borderColor = 'transparent';
+            const btn = form.querySelector('.estimate-submit-btn');
+            const data = {
+                formType: 'Quick Estimate (Project)',
+                name: form.querySelector('[name="name"]').value,
+                phone: form.querySelector('[name="phone"]').value,
+                company: form.querySelector('[name="company"]').value,
+                email: form.querySelector('[name="email"]').value,
+                service: form.querySelector('[name="service"]').value,
+                sqft: form.querySelector('[name="sqft"]').value,
+                budget: form.querySelector('[name="budget"]').value,
+                location: form.querySelector('[name="location"]').value,
+                source: window.location.pathname + window.location.search
+            };
+            submitToGoogleSheet(data, btn).then(function (ok) {
+                if (ok) {
+                    setTimeout(function () { window.location.href = 'thank-you.html'; }, 800);
                 }
             });
-
-            if (isValid) {
-                const btn = form.querySelector('.estimate-submit-btn');
-                const data = {
-                    formType: 'estimate',
-                    name: form.querySelector('[name="name"]').value,
-                    phone: form.querySelector('[name="phone"]').value,
-                    company: form.querySelector('[name="company"]').value,
-                    email: form.querySelector('[name="email"]').value,
-                    service: form.querySelector('[name="service"]').value,
-                    sqft: form.querySelector('[name="sqft"]').value,
-                    budget: form.querySelector('[name="budget"]').value,
-                    location: form.querySelector('[name="location"]').value,
-                    source: window.location.pathname + window.location.search
-                };
-                submitToGoogleSheet(data, btn).then(function (ok) {
-                    if (ok) {
-                        setTimeout(function () { window.location.href = 'thank-you.html'; }, 600);
-                    }
-                });
-            }
         });
     }
 

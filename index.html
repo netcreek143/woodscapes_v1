@@ -76,19 +76,19 @@
     <section class="hero" id="home">
         <div class="hero-slider">
             <div class="hero-slide active"
-                style="background: url('./images/banner_web_01.jpg') center/cover no-repeat;">
+                style="--bg-desktop: url('./images/banner_web_01.jpg'); --bg-mobile: url('./images/mobherobanner.jpg');">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="background: url('./images/banner_web_02.jpg') center/cover no-repeat;">
+            <div class="hero-slide" style="--bg-desktop: url('./images/banner_web_02.jpg');">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="background: url('./images/banner_web_03.jpg') center/cover no-repeat;">
+            <div class="hero-slide" style="--bg-desktop: url('./images/banner_web_03.jpg');">
                 <div class="hero-overlay"></div>
             </div>
 
-            <div class="hero-slide" style="background: url('./images/banner_web_04.jpg') center/cover no-repeat;">
+            <div class="hero-slide" style="--bg-desktop: url('./images/banner_web_04.jpg');">
                 <div class="hero-overlay"></div>
             </div>
         </div>
@@ -170,9 +170,9 @@
                     details - our experts will take it forward.</p>
                 <form class="quote-form" id="heroQuoteForm">
                     <input type="text" name="name" placeholder="Name" class="form-input" required>
-                    <input type="text" name="mobile" placeholder="Mobile Number" class="form-input" required>
+                    <input type="tel" name="mobile" placeholder="Mobile Number" class="form-input" required pattern="[0-9]{10,15}">
                     <input type="email" name="email" placeholder="Email (Optional)" class="form-input">
-                    <textarea name="message" placeholder="Message" class="form-textarea" rows="4"></textarea>
+                    <textarea name="message" placeholder="Message" class="form-textarea" rows="4" required></textarea>
                     <button type="submit" class="btn btn-submit">
                         <span>Submit</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1127,12 +1127,12 @@
 
             <form class="estimate-form-grid" id="estimateFormHome">
                 <div class="estimate-form-row">
-                    <input type="text" name="name" placeholder="Name" class="estimate-input">
-                    <input type="text" name="phone" placeholder="Phone Number" class="estimate-input">
+                    <input type="text" name="name" placeholder="Name" class="estimate-input" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" class="estimate-input" required pattern="[0-9]{10,15}">
                 </div>
                 <div class="estimate-form-row">
-                    <input type="text" name="company" placeholder="Company" class="estimate-input">
-                    <input type="email" name="email" placeholder="Email" class="estimate-input">
+                    <input type="text" name="company" placeholder="Company" class="estimate-input" required>
+                    <input type="email" name="email" placeholder="Email" class="estimate-input" required>
                 </div>
                 <div class="estimate-form-row">
                     <div class="custom-dropdown" id="dropdownService">
@@ -1144,7 +1144,7 @@
                         </div>
                         <input type="hidden" name="service" required>
                     </div>
-                    <input type="text" name="sqft" placeholder="Sq.ft" class="estimate-input">
+                    <input type="text" name="sqft" placeholder="Sq.ft" class="estimate-input" required>
                 </div>
                 <div class="estimate-form-row">
                     <div class="custom-dropdown" id="dropdownBudget">
@@ -1157,7 +1157,7 @@
                         </div>
                         <input type="hidden" name="budget" required>
                     </div>
-                    <input type="text" name="location" placeholder="Project Location" class="estimate-input">
+                    <input type="text" name="location" placeholder="Project Location" class="estimate-input" required>
                 </div>
 
                 <div class="estimate-submit-wrap">
@@ -1611,7 +1611,7 @@
                             <input type="text" name="name" placeholder="Name" required class="modal-input">
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Mobile Number" required class="modal-input">
+                            <input type="tel" name="phone" placeholder="Mobile Number" required class="modal-input" pattern="[0-9]{10,15}">
                         </div>
 
                         <!-- Row 2 -->
