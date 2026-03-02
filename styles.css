@@ -62,10 +62,12 @@ video {
         --container-max-width: 100%;
     }
 
-    @media (min-width: 1250px) {
-        --container-padding: 120px !important;
-        --pad-left: 120px !important;
-        --pad-right: 120px !important;
+    @media (min-width: 1440px) {
+        :root {
+            --container-padding: 120px !important;
+            --pad-left: 120px !important;
+            --pad-right: 120px !important;
+        }
     }
 
     /* Standardized Typography */
@@ -2197,7 +2199,7 @@ h6 {
 }
 
 /* MacBook 13/14 Inch Optimizations */
-@media (min-width: 1250px) and (max-width: 1439px) {
+@media (min-width: 1250px) and (max-width: 1440px) {
     .section-desc-small {
         font-size: 0.85rem !important;
     }
