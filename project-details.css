@@ -21,12 +21,16 @@
 
     /* Desktop Overrides (Enforce 120px Margins) */
     @media (min-width: 1025px) {
-        :root {
-            --container-padding: clamp(40px, 8vw, 120px);
-            --pad-left: clamp(40px, 8vw, 120px);
-            --pad-right: clamp(40px, 8vw, 120px);
-            --container-max-width: 100%;
-        }
+        --container-padding: clamp(40px, 8vw, 120px);
+        --pad-left: clamp(40px, 8vw, 120px);
+        --pad-right: clamp(40px, 8vw, 120px);
+        --container-max-width: 100%;
+    }
+
+    @media (min-width: 1440px) {
+        --container-padding: 120px !important;
+        --pad-left: 120px !important;
+        --pad-right: 120px !important;
     }
 
     /* Typography */

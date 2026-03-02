@@ -62,6 +62,12 @@ video {
         --container-max-width: 100%;
     }
 
+    @media (min-width: 1440px) {
+        --container-padding: 120px !important;
+        --pad-left: 120px !important;
+        --pad-right: 120px !important;
+    }
+
     /* Standardized Typography */
     --heading-font: 'Playfair Display',
     serif;
