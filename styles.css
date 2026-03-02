@@ -402,7 +402,17 @@ h6 {
     display: flex;
     align-items: center;
     background-color: #0b1324;
-    /* Fallback navy */
+    /* Hero Banner Responsive Logic */
+    background-image: var(--bg-desktop);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .hero-slide {
+        background-image: var(--bg-mobile) !important;
+    }
 }
 
 .hero-slide.active {
@@ -1851,8 +1861,7 @@ h6 {
 
 .stories-header-center {
     flex: 1 1 auto;
-    max-width: 800px;
-    /* Adjusted to target 4-line wrap for description */
+    max-width: 650px;
 }
 
 .stories-header-right {
@@ -1966,6 +1975,10 @@ h6 {
 }
 
 @media (max-width: 768px) {
+    .stories-header-center {
+        max-width: 650px !important;
+    }
+
     .story-card {
         --story-cut: 40px;
         flex: 0 0 calc(100vw - 40px);
@@ -2585,27 +2598,27 @@ h6 {
     line-height: 1.6;
 }
 
-/* ── Case Visuals Redesign ───────────────────────── */
+/* ── Before / After image panels ─── */
 .case-visuals-redesign {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     gap: 24px;
+    --cut: 50px;
+    /* Share variable scoped to the redesign section */
 }
 
-/* ── Before / After image panels ─── */
 .case-img-panel {
     position: relative;
     overflow: hidden;
     height: clamp(300px, 35vw, 480px);
-    --cut: 50px;
     transform: translateZ(0);
-    /* Prevent Safari border deformation on hover */
 }
 
-/* Only the right-side image gets the cut corner */
-.case-img-panel:last-child {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%);
+/* All images and the testimonial card in the redesign get the cut corner */
+.case-img-panel,
+.case-testimonial-card {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;
 }
 
 .case-img-panel img {
@@ -4753,11 +4766,26 @@ h6 {
     gap: 20px;
 }
 
-@media (min-width: 992px) {
+
+
+@media (min-width: 1025px) {
     .footer-bottom {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .footer-bottom-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 100% !important;
+        padding-left: 120px !important;
+        padding-right: 120px !important;
+        /* Forced 120px padding as requested */
     }
 
     .footer-bottom-links {
@@ -4813,12 +4841,16 @@ h6 {
 .btn-nav-estimate .btn-icon {
     width: 60px;
     height: 60px;
-    background-color: var(--primary-red);
+    background: var(--primary-red) !important;
+    background-color: var(--primary-red) !important;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    /* No hover transform sync */
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(230, 0, 36, 0.2) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 .btn-nav-estimate svg {
@@ -4835,9 +4867,10 @@ h6 {
 }
 
 .btn-nav-estimate:hover .btn-icon {
-    background-color: var(--primary-red-hover);
+    background: var(--primary-red-hover) !important;
+    background-color: var(--primary-red-hover) !important;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(230, 0, 36, 0.3);
+    box-shadow: 0 8px 25px rgba(230, 0, 36, 0.4) !important;
 }
 
 .btn-nav-estimate:hover svg {
@@ -5373,7 +5406,7 @@ h6 {
 
     .stat-card-wrapper {
         background-color: #f1f1f1eb !important;
-        padding: 1.5px !important;
+        padding: 2px !important;
         --cut: 35px !important;
         /* Re-added cut */
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%) !important;

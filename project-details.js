@@ -333,7 +333,6 @@ document.addEventListener('DOMContentLoaded', () => {
             p1: 'India Metamation is a 20,000 sq.ft industrial development completed within an 8-month timeline, covering both construction and interior execution. The project required precise structural coordination, efficient space planning, and high-quality finish implementation.',
             p2: 'From core civil works to detailed interior fit-outs, the execution focused on durability, operational efficiency, and timely delivery — resulting in a well-structured and performance-driven industrial facility.',
             gallery: [
-                './images/pj1-1.jpg',
                 './images/pj1-2.jpg',
                 './images/pj1-3.jpg',
                 './images/pj1-4.jpg',
