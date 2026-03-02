@@ -27,7 +27,7 @@
         --container-max-width: 100%;
     }
 
-    @media (min-width: 1440px) {
+    @media (min-width: 1250px) {
         --container-padding: 120px !important;
         --pad-left: 120px !important;
         --pad-right: 120px !important;

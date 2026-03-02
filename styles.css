@@ -62,7 +62,7 @@ video {
         --container-max-width: 100%;
     }
 
-    @media (min-width: 1440px) {
+    @media (min-width: 1250px) {
         --container-padding: 120px !important;
         --pad-left: 120px !important;
         --pad-right: 120px !important;
@@ -75,7 +75,7 @@ video {
     sans-serif;
 
     /* Fluid Heading Sizes */
-    --heading-size: clamp(32px, 8vw, 82px);
+    --heading-size: clamp(32px, 5.5vw, 82px);
     --heading-weight: 300;
     --subheading-size: clamp(12px, 2vw, 14px);
     --subheading-weight: 700;
