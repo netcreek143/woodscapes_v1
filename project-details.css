@@ -1717,6 +1717,34 @@ h4 {
     }
 }
 
+/* MacBook 13/14 Inch Optimizations */
+@media (min-width: 1250px) and (max-width: 1439px) {
+    .section-desc-small {
+        font-size: 0.85rem !important;
+    }
+
+    .story-title {
+        font-size: 1.5rem !important;
+    }
+
+    .meta-row {
+        font-size: 0.9rem !important;
+    }
+
+    .story-impact {
+        font-size: 0.95rem !important;
+    }
+
+    .story-btn-text {
+        font-size: 0.9rem !important;
+    }
+
+    .story-img-wrapper img {
+        object-fit: contain !important;
+        background-color: #f4f4f4;
+    }
+}
+
 /* Success Stories Mobile Specific */
 @media (max-width: 768px) {
     .stories-header-center {
