@@ -1976,10 +1976,35 @@ h6 {
     flex-direction: column;
     flex: 0 0 calc((100vw - var(--pad-left) - var(--pad-right) - 60px) / 3);
     width: calc((100vw - var(--pad-left) - var(--pad-right) - 60px) / 3);
-    height: 65vh;
+    height: auto;
+    min-height: 65vh;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     --story-cut: 96px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--story-cut)), calc(100% - var(--story-cut)) 100%, 0 100%);
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.story-img-wrapper {
+    height: auto !important;
+    aspect-ratio: 16 / 10;
+    /* Corrected proportions to match project-details */
+    width: 100%;
+    overflow: hidden;
+}
+
+.story-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.story-card:hover .story-img-wrapper img {
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -2002,6 +2027,12 @@ h6 {
 
     .story-img-wrapper {
         height: 240px !important;
+    }
+
+    .story-img-wrapper img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
     }
 
     .story-title {
@@ -2067,29 +2098,6 @@ h6 {
         text-decoration: none !important;
         flex-shrink: 0 !important;
     }
-}
-
-.story-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-}
-
-.story-img-wrapper {
-    height: 45% !important;
-    /* Corrected proportions to match project-details */
-    width: 100%;
-    overflow: hidden;
-}
-
-.story-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.story-card:hover .story-img-wrapper img {
-    transform: scale(1.05);
 }
 
 .story-content {
@@ -2221,7 +2229,7 @@ h6 {
     }
 
     .story-img-wrapper img {
-        object-fit: contain !important;
+        object-fit: cover !important;
         background-color: #f4f4f4;
     }
 }

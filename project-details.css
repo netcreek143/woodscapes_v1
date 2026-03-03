@@ -179,7 +179,7 @@ h4 {
 .btn-pd-text {
     padding: 0 24px;
     font-size: 28px;
-    font-weight: 500;
+    font-weight: 300;
     letter-spacing: 0.02em;
 }
 
@@ -1179,7 +1179,7 @@ h4 {
     color: #fff;
     font-family: 'Inter', sans-serif;
     font-size: 28px;
-    font-weight: 400;
+    font-weight: 300;
     white-space: nowrap;
     border-radius: 0;
     transition: background 0.3s ease;
@@ -1552,6 +1552,10 @@ h4 {
         min-width: 320px;
     }
 
+    .stories-header-left .display-title {
+        margin-bottom: 1.5rem;
+    }
+
     .stories-header-center {
         flex: 1 1 auto;
         max-width: 800px !important;
@@ -1595,7 +1599,8 @@ h4 {
         flex-direction: column;
         flex: 0 0 calc((100vw - var(--pad-left) - var(--pad-right) - 60px) / 3);
         width: calc((100vw - var(--pad-left) - var(--pad-right) - 60px) / 3);
-        height: 65vh;
+        height: auto;
+        min-height: 65vh;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         --story-cut: 96px;
         clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--story-cut)), calc(100% - var(--story-cut)) 100%, 0 100%);
@@ -1607,7 +1612,8 @@ h4 {
     }
 
     .story-img-wrapper {
-        height: 45% !important;
+        height: auto !important;
+        aspect-ratio: 16 / 10;
         /* Enforced for project-details desktop proportions */
         width: 100%;
         overflow: hidden;
@@ -1742,7 +1748,7 @@ h4 {
     }
 
     .story-img-wrapper img {
-        object-fit: contain !important;
+        object-fit: cover !important;
         background-color: #f4f4f4;
     }
 }
@@ -1751,5 +1757,15 @@ h4 {
 @media (max-width: 768px) {
     .stories-header-center {
         max-width: 650px !important;
+    }
+
+    .story-img-wrapper {
+        height: 240px !important;
+    }
+
+    .story-img-wrapper img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
     }
 }
