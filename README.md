@@ -1,8 +1,8 @@
-# 🌲 Woodscape Engineering — Website
+# 🌲 Woodscape Infrastructure — Website
 
-**Premium Commercial Interiors & Construction landing site for Woodscape Engineering.**
+**Premium Commercial Interiors & Construction landing site for Woodscape Infrastructure.**
 
-Live production website for Woodscape Engineering, a commercial interior design and construction firm based in India. The site is a fully hand-crafted, static HTML/CSS/JS website — no frameworks, no build tools. Designed for maximum performance.
+Live production website for Woodscape Infrastructure, a commercial interior design and construction firm based in India. The site is a fully hand-crafted, static HTML/CSS/JS website — no frameworks, no build tools. Designed for maximum performance.
 
 ---
 
@@ -236,7 +236,7 @@ All loaded via CDN — no local npm build required.
 
 ## 📞 Contact / Business Info
 
-**Woodscape Engineering**
+**Woodscape Infrastructure**
 - 📞 Phone: Available via the Connect to an Expert section
 - 💬 WhatsApp: Linked in the Expert CTA section
 - 🌐 Domain: Configured in Netlify
@@ -255,4 +255,4 @@ cd woodscapes_v1/woodscape_Dsignxt
 
 ---
 
-*Built by DsignXt | Woodscape Engineering Website © 2026*
+*Built by DsignXt | Woodscape Infrastructure Website © 2026*

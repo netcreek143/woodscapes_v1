@@ -472,7 +472,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setText('pd-overview-p1', proj.p1);
     setText('pd-overview-p2', proj.p2);
     setText('pd-page-counter', cardId + '/4');
-    document.title = proj.name + ' | Woodscape Engineering';
+    document.title = proj.name + ' | Woodscape Infrastructure';
     var activeCard = document.querySelector('[data-card-id="' + cardId + '"]');
     if (activeCard) activeCard.style.display = 'none';
     var prevId = cardId === 1 ? 4 : cardId - 1;
