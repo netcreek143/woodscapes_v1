@@ -83,7 +83,8 @@
 
                 <div class="nav-wrapper">
                     <div class="nav-cta" style="display:flex; align-items:center; gap:16px;">
-                        <a href="index.html" class="btn btn-nav-estimate btn-animate-gap">
+                        <a href="index.html" onclick="if(document.referrer) { window.history.back(); return false; }"
+                            class="btn btn-nav-estimate btn-animate-gap">
                             <span class="btn-icon">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -161,15 +162,16 @@
                     </div>
 
                     <div class="pd-desc-actions">
-                        <a href="#" class="btn-pd-black open-estimate-modal">
-                            <span class="btn-pd-text">Request Estimate</span>
-                            <span class="btn-pd-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white"
-                                    stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                        <button class="btn btn-split btn-commercial btn-animate-gap open-estimate-modal">
+                            <span class="btn-text">Request Estimate</span>
+                            <span class="btn-icon">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="white" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </span>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
